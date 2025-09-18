@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Service Packages | Your Complete Business Solution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Unified Styling & Variables --- */
+        :root {
+            --primary-color: #343a40; /* Authoritative charcoal for consistency */
+            --secondary-color: #007bff; /* A vibrant blue for highlighting popular plans */
+            --dark-color: #212529;
+            --light-color: #ffffff;
+            --grey-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1400px; /* Wider container for 4-column layouts */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; text-align: center; color: var(--primary-color); }
+        h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center;}
+        h3 { font-size: 1.75rem; margin-top: 40px; } /* For sub-headings */
+        
+        .page-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* --- Pricing Table Styling --- */
+        .pricing-table {
+            display: grid;
+            gap: 25px;
+            margin-top: 50px;
+            align-items: start;
+        }
+        .pricing-table-3-col { grid-template-columns: repeat(3, 1fr); }
+        .pricing-table-4-col { grid-template-columns: repeat(4, 1fr); }
+
+        .pricing-plan {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-plan.pro {
+            border-color: var(--secondary-color);
+            border-width: 2px;
+            position: relative;
+            transform: scale(1.05);
+        }
+        .pricing-plan.pro::before {
+            content: attr(data-badge-text); /* Dynamic badge text */
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .plan-header h4 { color: var(--primary-color); font-size: 1.5rem; }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
+        .plan-price { font-size: 2.2rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 1rem; font-weight: 400; color: #777; display: block; line-height: 1.3; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+        .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); font-size: 0.95rem; }
+        .plan-features li:last-child { border-bottom: none; }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 1200px) {
+            .pricing-table-4-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .pricing-table-3-col, .pricing-table-4-col {
+                grid-template-columns: 1fr;
+            }
+            .pricing-plan.pro {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section id="header">
+            <div class="container">
+                <h1>Our Integrated Service Packages</h1>
+                <p class="page-intro">Explore our comprehensive suite of services designed to support your business at every stage of growth. From legal and financial foundations to strategic marketing and technology, we provide the expertise you need to thrive.</p>
+            </div>
+        </section>
+
+        <section id="foundational-services">
+            <div class="container">
+                <h2>Foundational Services: Legal, Finance, Tax & HR</h2>
+
+                <h3>Legal & Corporate Services</h3>
+                <div class="pricing-table pricing-table-3-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Basic</h4>
+                            <p class="ideal-for">Startup Founders</p>
+                            <div class="plan-price">₹4,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Company Registration (Pvt Ltd/LLP)</li>
+                            <li>Founders' Agreement Drafting</li>
+                            <li>Start-up India/DPIIT Recognition</li>
+                            <li>Basic NDA Template</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Incorporate Now</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="MOST POPULAR">
+                        <div class="plan-header">
+                            <h4>Compliant</h4>
+                            <p class="ideal-for">Pvt Ltd / LLP / NGO</p>
+                            <div class="plan-price">₹12,999 <span>/ year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Basic, plus:</li>
+                            <li>Annual ROC Compliance Filing</li>
+                            <li>Board Resolution & Meeting Drafting</li>
+                            <li>Director KYC (DIR-3 KYC)</li>
+                            <li>Shareholder Agreement Filings</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Ensure Compliance</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">Growth Startups / SMEs</p>
+                            <div class="plan-price">₹24,999 <span>/ year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Compliant, plus:</li>
+                            <li>Trademark Search & Registration</li>
+                            <li>HR Policy Manual Drafting</li>
+                            <li>Custom Agreement Drafting</li>
+                            <li>ESOP & Cap Table Advisory</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Protect My Growth</a>
+                    </div>
+                </div>
+
+                <h3>Accounting & Bookkeeping</h3>
+                <div class="pricing-table pricing-table-3-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">Freelancers / Early Startups</p>
+                            <div class="plan-price">₹4,999 – ₹7,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Daily Transaction Recording</li>
+                            <li>Bank Reconciliation (BRS)</li>
+                            <li>GST Accounting & Filing Support</li>
+                            <li>P&L and Balance Sheet Prep</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Organize My Books</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="BEST FOR MSMEs">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">MSMEs / Funded Startups</p>
+                            <div class="plan-price">₹11,999 – ₹19,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Monthly/Quarterly MIS Reports</li>
+                            <li>Payroll Accounting & Processing</li>
+                            <li>TDS Accounting & Filing</li>
+                            <li>Fixed Asset Register Management</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Streamline Finances</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Enterprise</h4>
+                            <p class="ideal-for">Companies >50 employees</p>
+                            <div class="plan-price">₹25,000+ <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Virtual CFO Services</li>
+                            <li>Budgeting & Cash Flow Forecasting</li>
+                            <li>Accounting for Audit Support</li>
+                            <li>Investor/Board-Ready Reports</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Strategic Oversight</a>
+                    </div>
+                </div>
+
+                <h3>Tax & Compliance</h3>
+                <div class="pricing-table pricing-table-3-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Basic</h4>
+                            <p class="ideal-for">Individuals / Freelancers</p>
+                            <div class="plan-price">₹1,999 <span>/ year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>ITR Filing (ITR-1 to ITR-4)</li>
+                            <li>Income Tax Planning & Savings</li>
+                            <li>TDS Refund Assistance</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">File My Return</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="RECOMMENDED">
+                        <div class="plan-header">
+                            <h4>Startup</h4>
+                            <p class="ideal-for">Proprietorship / Early-Stage</p>
+                            <div class="plan-price">₹9,999 <span>/ year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Basic, plus:</li>
+                            <li>GST Registration & Filing</li>
+                            <li>Business ITR Filing</li>
+                            <li>MSME Registration</li>
+                            <li>PAN / TAN Application</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Secure My Startup</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Business</h4>
+                            <p class="ideal-for">LLP / Pvt Ltd</p>
+                            <div class="plan-price">₹24,999 <span>/ year</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Startup, plus:</li>
+                            <li>Company/LLP Annual Filing (ROC)</li>
+                            <li>TDS & TCS Return Filing</li>
+                            <li>Reply to IT/GST Notices</li>
+                            <li>Compliance Calendar Setup</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Manage My Compliance</a>
+                    </div>
+                </div>
+
+                <h3>Human Resources Services</h3>
+                <div class="pricing-table pricing-table-3-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Essentials</h4>
+                            <p class="ideal-for">Startups (0-10 employees)</p>
+                            <div class="plan-price">₹7,999 – ₹11,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>HR Policy Manual Creation</li>
+                            <li>Payroll Processing & Salary Structuring</li>
+                            <li>Statutory Compliance (PF, ESI, PT)</li>
+                            <li>Employee Onboarding & Exit Management</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Set Up My HR</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="FOR SCALING TEAMS">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">SMEs & Funded Startups</p>
+                            <div class="plan-price">₹14,999 – ₹24,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Essentials, plus:</li>
+                            <li>End-to-End Recruitment (RPO)</li>
+                            <li>Performance Management System Setup</li>
+                            <li>Learning & Development (L&D) Programs</li>
+                            <li>Employee Engagement Surveys</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Scale My Team</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Enterprise</h4>
+                            <p class="ideal-for">>50 employees</p>
+                            <div class="plan-price">₹29,999+ <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Virtual CHRO / Strategic HR Support</li>
+                            <li>Organizational Design & Restructuring</li>
+                            <li>Leadership Development Programs</li>
+                            <li>HR Audit & Process Improvement</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Lead My Organization</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth-services">
+            <div class="container">
+                <h2>Growth & Strategy Services</h2>
+                
+                <h3>Business Strategy & Consulting</h3>
+                <div class="pricing-table pricing-table-3-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">New Startups / Founders</p>
+                            <div class="plan-price">₹4,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Vision, Mission & Goal Setting</li>
+                            <li>Business Model Design (BMC)</li>
+                            <li>SWOT & PESTEL Analysis</li>
+                            <li>Startup Strategy Advisory</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Build My Foundation</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="BEST VALUE">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">Scaling SMEs</p>
+                            <div class="plan-price">₹14,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Product Launch & GTM Strategy</li>
+                            <li>SOP Creation</li>
+                            <li>Organizational Design & Restructuring</li>
+                            <li>Customer Acquisition Plan</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Scale My Business</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Pro</h4>
+                            <p class="ideal-for">Mid-size / VC-Funded</p>
+                            <div class="plan-price">₹34,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>3-Year / 5-Year Strategic Roadmap</li>
+                            <li>Data & BI Strategy (KPI Dashboards)</li>
+                            <li>Digital Transformation Strategy</li>
+                            <li>Risk Identification & Mitigation</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Lead My Market</a>
+                    </div>
+                </div>
+
+                 <h3>Strategic Financial Solutions</h3>
+                <div class="pricing-table pricing-table-3-col">
+                     <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">Individuals / Freelancers</p>
+                            <div class="plan-price">₹2,499 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Personal Financial Planning</li>
+                            <li>Retirement & Tax Planning</li>
+                            <li>Credit & Insurance Advisory</li>
+                            <li>Budgeting & Expense Tracking</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Started</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="MOST POPULAR">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">Startups / MSMEs</p>
+                            <div class="plan-price">₹9,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Accounting & Bookkeeping</li>
+                            <li>Business Taxation (GST & Income Tax)</li>
+                            <li>Financial Analysis & Reporting</li>
+                            <li>ROC Compliance & Annual Filing</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Started</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Pro</h4>
+                            <p class="ideal-for">Funded Startups / SMEs</p>
+                            <div class="plan-price">₹24,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Virtual CFO Services</li>
+                            <li>Project Finance & Feasibility Reports</li>
+                            <li>Startup Funding & Valuation Advisory</li>
+                            <li>Advanced Financial Analysis</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Book a Strategy Call</a>
+                    </div>
+                </div>
+
+                <h3>Branding & Marketing</h3>
+                <div class="pricing-table pricing-table-4-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">Personal Branding / Local Biz</p>
+                            <div class="plan-price">₹9,999 – ₹14,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Logo Design & Brand Identity Kit</li>
+                            <li>Initial Social Media Profile Setup</li>
+                            <li>Brand Positioning Statement</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Launch My Brand</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="BEST FOR STARTUPS">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">Startups & MSMEs</p>
+                            <div class="plan-price">₹24,999 – ₹44,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Full Brand Guidelines</li>
+                            <li>Social Media Marketing (SMM)</li>
+                            <li>Search Engine Optimization (SEO)</li>
+                            <li>Basic Google/Meta Ads Setup</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Grow My Business</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Scale</h4>
+                            <p class="ideal-for">E-Commerce / B2B</p>
+                            <div class="plan-price">₹59,999 – ₹1,20,000 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Advanced Paid Ads (PPC)</li>
+                            <li>Press Releases & Media (PR)</li>
+                            <li>Email & WhatsApp Automation</li>
+                            <li>Funnel & ROI Optimization</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Scale My Market</a>
+                    </div>
+                     <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Retainer</h4>
+                            <p class="ideal-for">Long-Term Partners</p>
+                            <div class="plan-price">₹15,000 – ₹75,000 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Monthly Content Calendar</li>
+                            <li>Ongoing Ad Management</li>
+                            <li>Lead Nurturing & CRM Support</li>
+                            <li>Monthly Performance Reporting</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Become a Partner</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology-services">
+            <div class="container">
+                <h2>Technology & Automation Services</h2>
+
+                <h3>Web Design & Development</h3>
+                <div class="pricing-table pricing-table-4-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">Personal / Portfolio Sites</p>
+                            <div class="plan-price">₹9,999 – ₹14,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>5-Page Static Website</li>
+                            <li>Responsive & Mobile-Friendly</li>
+                            <li>Domain & Hosting Setup</li>
+                            <li>Contact Form Integration</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get My Site</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="POPULAR CHOICE">
+                        <div class="plan-header">
+                            <h4>Business</h4>
+                            <p class="ideal-for">Small Businesses / Corporates</p>
+                            <div class="plan-price">₹19,999 – ₹34,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Dynamic Website with CMS</li>
+                            <li>Admin Panel for Updates</li>
+                            <li>On-Page SEO Setup</li>
+                            <li>Corporate Website Design</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Build My Business Site</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>E-Commerce</h4>
+                            <p class="ideal-for">Online Stores / Retailers</p>
+                            <div class="plan-price">₹39,999 – ₹79,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>E-commerce Platform Setup</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>Product Catalog Management</li>
+                            <li>Shopping Cart Integration</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Launch My Store</a>
+                    </div>
+                     <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Maintenance</h4>
+                            <p class="ideal-for">All Website Owners</p>
+                            <div class="plan-price">₹1,499 – ₹5,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Regular Security Patching</li>
+                            <li>Software & Plugin Updates</li>
+                            <li>Performance Optimization</li>
+                            <li>Backup & Recovery</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Protect My Site</a>
+                    </div>
+                </div>
+
+                <h3>CRM & System Automation</h3>
+                <div class="pricing-table pricing-table-4-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">Solopreneurs / Small Agencies</p>
+                            <div class="plan-price">₹9,999 – ₹14,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Basic CRM Software Setup</li>
+                            <li>Website Lead Form Integration</li>
+                            <li>Automated Welcome Email</li>
+                            <li>Contact & Data Migration</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Organized</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="BEST FOR TEAMS">
+                        <div class="plan-header">
+                            <h4>Growth</h4>
+                            <p class="ideal-for">Service Teams / Consultancies</p>
+                            <div class="plan-price">₹24,999 – ₹39,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Client Onboarding Process</li>
+                            <li>Drip Email & Nurturing</li>
+                            <li>Task & Reminder Automation</li>
+                            <li>Custom CRM Workflow Design</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Automate My Process</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Full</h4>
+                            <p class="ideal-for">SaaS / D2C / MSMEs</p>
+                            <div class="plan-price">₹49,999 – ₹89,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Sales Funnel & Pipeline Mgmt</li>
+                            <li>Customer Support & Ticketing</li>
+                            <li>Custom Dashboards & Reports</li>
+                            <li>Multi-Channel Integration</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Build My System</a>
+                    </div>
+                     <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Retainer</h4>
+                            <p class="ideal-for">Long-Term Support</p>
+                            <div class="plan-price">₹14,999 – ₹49,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Monthly CRM Audit</li>
+                            <li>New Automation Creation</li>
+                            <li>Custom Report Generation</li>
+                            <li>CRM User Training for Teams</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Ongoing Support</a>
+                    </div>
+                </div>
+                
+                <h3>IT Infrastructure & Support</h3>
+                <div class="pricing-table pricing-table-4-col">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Starter</h4>
+                            <p class="ideal-for">New/Small Office</p>
+                            <div class="plan-price">₹14,999 – ₹24,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Network Setup (LAN, Wi-Fi)</li>
+                            <li>Email & Domain Configuration</li>
+                            <li>Hardware & Software Procurement</li>
+                            <li>Basic OS & Software Installation</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Set Up My Office</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Cloud</h4>
+                            <p class="ideal-for">Remote/Hybrid Teams</p>
+                            <div class="plan-price">₹29,999 – ₹49,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Cloud Setup (AWS/Azure)</li>
+                            <li>VPN for Remote Access</li>
+                            <li>Collaboration Tools Integration</li>
+                            <li>Data Migration to Cloud</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Empower My Team</a>
+                    </div>
+                    <div class="pricing-plan pro" data-badge-text="ESSENTIAL PROTECTION">
+                        <div class="plan-header">
+                            <h4>Security</h4>
+                            <p class="ideal-for">Fintech / Edtech / MSME</p>
+                            <div class="plan-price">₹39,999 – ₹69,999 <span>(one-time)</span></div>
+                        </div>
+                        <ul class="plan-features">
+                             <li>Everything in Cloud, plus:</li>
+                            <li>Network Security Assessment</li>
+                            <li>Firewall & Antivirus Setup</li>
+                            <li>IT Policy Creation</li>
+                            <li>Data Encryption & Access Control</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Secure My Business</a>
+                    </div>
+                     <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h4>Managed</h4>
+                            <p class="ideal-for">Businesses with 10+ Team</p>
+                            <div class="plan-price">₹14,999 – ₹59,999 <span>/ month</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>End-to-End IT Support</li>
+                            <li>Proactive Monitoring</li>
+                            <li>IT Helpdesk & Tech Support</li>
+                            <li>AMC & IT Asset Management</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Manage My IT</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
