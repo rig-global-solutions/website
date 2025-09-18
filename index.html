@@ -142,7 +142,6 @@
 
         .main-nav ul li {
             margin-left: 30px;
-            position: relative;
         }
         
         .main-nav ul li a {
@@ -150,48 +149,77 @@
             color: var(--dark-color);
             font-weight: 600;
             transition: color 0.3s ease;
+            padding: 20px 0;
         }
 
         .main-nav ul li a:hover, .main-nav ul li a.active {
             color: var(--primary-color);
         }
         
-        .dropdown {
-            display: none;
+        /* --- NEW: Mega Menu Styles --- */
+        .has-megamenu {
+            position: static;
+        }
+
+        .mega-menu {
             position: absolute;
             top: 100%;
-            left: -20px;
+            left: 0;
+            width: 100%;
             background: var(--light-color);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            padding: 10px 0;
-            min-width: 280px;
             border-top: 3px solid var(--primary-color);
+            padding: 30px 0;
+            
+            /* Hidden by default */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
         }
         
-        .has-dropdown:hover .dropdown {
+        .has-megamenu:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mega-menu-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .mega-menu-col .category {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mega-menu-col ul {
+            list-style: none;
             display: block;
         }
 
-        .dropdown li {
-            margin: 0;
-            padding: 12px 20px;
+        .mega-menu-col ul li {
+            margin: 0 0 12px 0;
         }
-        
-        .dropdown li.category {
-            font-weight: 700;
-            color: var(--primary-color);
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-        
-        .dropdown li a {
+
+        .mega-menu-col ul li a {
             font-weight: 400;
-            white-space: nowrap;
+            padding: 0;
+            transition: padding-left 0.3s ease;
         }
+        
+        .mega-menu-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
         
         /* --- Hero Section --- */
         header.hero {
@@ -228,92 +256,21 @@
         .solution-split-card h3 { color: var(--growth-color); margin-bottom: 15px; }
         .solution-icon { font-size: 3rem; color: var(--primary-color); }
 
-        /* --- MODIFIED: Interactive Services Section --- */
-        #services {
-            background-color: var(--grey-bg);
-        }
-
-        .tabs-nav {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .tabs-nav button {
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .tabs-nav button::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .tabs-nav button:hover {
-            color: var(--primary-color);
-        }
-
-        .tabs-nav button.active {
-            color: var(--primary-color);
-        }
-        
-        .tabs-nav button.active::after {
-            transform: scaleX(1);
-        }
-        
-        .tab-pane {
-            display: none;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .tab-pane.active {
-            display: grid;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .service-pillar {
-            background: var(--light-color);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        .service-pillar:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: var(--primary-color);
-        }
-        .service-pillar .icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-        }
-        .service-pillar h3 {
-            font-size: 1.25rem;
-            margin-top: 15px;
-            color: var(--dark-color);
-        }
+        /* --- Interactive Services Section --- */
+        #services { background-color: var(--grey-bg); }
+        .tabs-nav { display: flex; justify-content: center; margin-bottom: 40px; border-bottom: 1px solid var(--border-color); }
+        .tabs-nav button { padding: 15px 30px; font-size: 1.1rem; font-weight: 600; color: var(--dark-color); background: transparent; border: none; cursor: pointer; position: relative; transition: color 0.3s ease; }
+        .tabs-nav button::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background-color: var(--primary-color); transform: scaleX(0); transition: transform 0.3s ease; }
+        .tabs-nav button:hover { color: var(--primary-color); }
+        .tabs-nav button.active { color: var(--primary-color); }
+        .tabs-nav button.active::after { transform: scaleX(1); }
+        .tab-pane { display: none; grid-template-columns: repeat(3, 1fr); gap: 30px; animation: fadeIn 0.5s ease; }
+        .tab-pane.active { display: grid; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .service-pillar { background: var(--light-color); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; text-align: center; }
+        .service-pillar:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--primary-color); }
+        .service-pillar .icon { font-size: 3rem; color: var(--primary-color); }
+        .service-pillar h3 { font-size: 1.25rem; margin-top: 15px; color: var(--dark-color); }
         
         /* --- Who We Help --- */
         .who-we-help-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
@@ -372,6 +329,8 @@
             .testimonials-grid { grid-template-columns: 1fr; }
             .case-study-card { grid-column: span 1; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .mega-menu { display: none; } /* Hide mega menu on tablets, fallback to simple link */
+            .has-megamenu:hover .mega-menu { display: none; }
         }
 
         @media (max-width: 768px) {
@@ -383,7 +342,7 @@
             .main-nav { margin-top: 15px; width: 100%;}
             .main-nav ul { flex-direction: column; text-align: center; width: 100%;}
             .main-nav ul li { margin: 10px 0; }
-            .has-dropdown .dropdown { display: none; }
+            .has-megamenu .mega-menu { display: none !important; } /* Hide mega menu on mobile */
             .tabs-nav { flex-direction: column; }
             .tabs-nav button { border-bottom: 1px solid var(--border-color); }
             .tab-pane { grid-template-columns: 1fr; }
@@ -409,25 +368,37 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="https://rig-global-solutions.github.io/website/" class="active">Home</a></li>
-                    <li class="has-dropdown">
+                    <li class="has-megamenu">
                         <a href="#services">Services</a>
-                        <ul class="dropdown">
-                            <li class="category">Foundational Services</li>
-                            <li><a href="https://rig-global-solutions.github.io/website/acounting_page.html">Accounting & Bookkeeping</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/legal_page.html">Legal & Corporate Services</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/tax_page.html">Tax & Compliance</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/hr_page.html">Human Resources Services</a></li>
-
-                            <li class="category">Growth & Strategy Services</li>
-                            <li><a href="https://rig-global-solutions.github.io/website/business_strategy_page.html">Business Strategy & Consulting</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/finance_page.html">Strategic Financial Solutions</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/marketing_&_branding_page.html">Branding & Marketing</a></li>
-                            
-                            <li class="category">Technology & Automation</li>
-                            <li><a href="https://rig-global-solutions.github.io/website/web_development_page.html">Web Design & Development</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/crm_page.html">CRM & System Automation</a></li>
-                            <li><a href="https://rig-global-solutions.github.io/website/it_page.html">IT Infrastructure & Support</a></li>
-                        </ul>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Foundational Services</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/acounting_page.html">Accounting & Bookkeeping</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/legal_page.html">Legal & Corporate Services</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/tax_page.html">Tax & Compliance</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/hr_page.html">Human Resources Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Growth & Strategy</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/business_strategy_page.html">Business Strategy & Consulting</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/finance_page.html">Strategic Financial Solutions</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/marketing_&_branding_page.html">Branding & Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Technology & Automation</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/web_development_page.html">Web Design & Development</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/crm_page.html">CRM & System Automation</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/it_page.html">IT Infrastructure & Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li><a href="https://sites.google.com/view/rig-talent/home">Career</a></li>
                     <li><a href="#">About Us</a></li>
