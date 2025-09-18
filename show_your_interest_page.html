@@ -7,14 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* --- General Styling & Variables --- */
+        /* --- General Styling & Brand Variables --- */
         :root {
-            --primary-color: #0D47A1; /* A strong, primary corporate blue */
-            --secondary-color: #1976D2; /* A complementary, slightly brighter blue */
-            --dark-color: #2c3e50;
-            --light-color: #ffffff;
-            --grey-bg: #f8f9fa;
+            --primary-color: #0033A0; /* RIG Strategic Blue */
+            --growth-color: #3E9B40;  /* RIG Growth Green */
+            --accent-color: #FFC425;  /* Innovation Gold */
+            --dark-color: #333333;    /* Foundation Grey */
+            --light-color: #ffffff;   /* Pure White */
+            --grey-bg: #F8F9FA;      /* Cloud White */
             --border-color: #dee2e6;
             --success-color: #28a745;
             --error-color: #dc3545;
@@ -26,18 +28,187 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
-            background-color: var(--grey-bg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            background-color: var(--grey-bg); /* Use grey-bg for the form page */
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2.25rem; color: var(--primary-color); }
+        h3 { font-size: 1.5rem; }
+        
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #002269;
+            border-color: #002269;
+        }
+        
+        /* --- Header --- */
+        .main-header {
+            background: var(--light-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand .logo {
+            width: 50px;
+            height: 50px;
+            background-color: #ccc; /* Placeholder */
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .brand-text h4 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .brand-text p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 30px;
+        }
+        
+        .main-nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            padding: 20px 0;
+        }
+
+        .main-nav ul li a:hover, .main-nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        /* --- Mega Menu Styles --- */
+        .has-megamenu {
+            position: static;
+        }
+
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--light-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--primary-color);
+            padding: 30px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .has-megamenu:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mega-menu-inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .mega-menu-col .category {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mega-menu-col ul {
+            list-style: none;
+            display: block;
+        }
+
+        .mega-menu-col ul li {
+            margin: 0 0 12px 0;
+        }
+
+        .mega-menu-col ul li a {
+            font-weight: 400;
+            padding: 0;
+            transition: padding-left 0.3s ease;
+        }
+        
+        .mega-menu-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        /* --- Form Styles --- */
         .form-container {
             background-color: var(--light-color);
             padding: 40px;
@@ -45,9 +216,9 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             width: 100%;
             max-width: 800px;
+            margin: 0 auto; /* Center the form in the section */
         }
 
-        /* --- Header --- */
         .form-header {
             text-align: center;
             margin-bottom: 30px;
@@ -61,13 +232,13 @@
             color: #555;
         }
 
-        /* --- Form Sections & Fields --- */
         .form-section {
             margin-bottom: 30px;
         }
         .form-section h2 {
             font-size: 1.25rem;
             color: var(--dark-color);
+            text-align: left; /* Override centered h2 */
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             margin-bottom: 20px;
@@ -125,8 +296,7 @@
             min-height: 120px;
             resize: vertical;
         }
-
-        /* --- Dynamic Checkbox Section --- */
+        
         .checkbox-group {
             margin-top: 20px;
             background-color: #fcfdff;
@@ -153,8 +323,7 @@
             margin-bottom: 0;
             font-weight: 400;
         }
-
-        /* --- Radio Button Section --- */
+        
         .radio-options {
             display: flex;
             flex-wrap: wrap;
@@ -173,8 +342,7 @@
             margin-bottom: 0;
             font-weight: 400;
         }
-
-        /* --- Submission --- */
+        
         .submit-btn {
             display: block;
             width: 100%;
@@ -193,7 +361,7 @@
             cursor: not-allowed;
         }
         .submit-btn:hover:not(:disabled) {
-            background-color: var(--secondary-color);
+            background-color: #002269; /* Darker hover from btn-primary */
         }
         .privacy-notice {
             text-align: center;
@@ -221,194 +389,369 @@
         .hidden {
             display: none;
         }
+        
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col .footer-brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .footer-col .logo {
+            width: 60px;
+            height: 60px;
+            background: #ccc;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .footer-col .brand-text h4 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--light-color);
+        }
+        .footer-col .brand-text p {
+            font-size: 0.8rem;
+            margin: 0;
+            opacity: 0.8;
+        }
+        .footer-col h4.col-title {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: var(--light-color);
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        .footer-col ul li i {
+            margin-right: 10px;
+            width: 15px;
+            text-align: center;
+        }
+        .footer-col ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s, opacity 0.3s;
+        }
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+        .social-links a {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
 
         /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .main-nav ul li { margin-left: 20px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .mega-menu { display: none; }
+            .has-megamenu:hover .mega-menu { display: none; }
+        }
+
         @media (max-width: 768px) {
-            .form-container {
-                padding: 20px;
-            }
-            .input-grid, .checkbox-options {
-                grid-template-columns: 1fr;
-            }
+            .main-header { padding: 10px 0; }
+            .main-header .container { flex-direction: column; }
+            .main-nav { margin-top: 15px; width: 100%;}
+            .main-nav ul { flex-direction: column; text-align: center; width: 100%;}
+            .main-nav ul li { margin: 10px 0; }
+            .has-megamenu .mega-menu { display: none !important; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-col .footer-brand, .footer-col ul { align-items: center; justify-content: center; text-align: center;}
+            .footer-col ul li i { display: none; }
+            .social-links { margin-top: 20px; }
+            .form-container { padding: 20px; }
+            .input-grid, .checkbox-options { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="form-container" id="formWrapper">
-        <div class="form-header">
-            <h1>Let's Build Your Solution</h1>
-            <p>Tell us a bit about your needs, and one of our expert consultants will contact you within one business day to schedule a free, no-obligation consultation.</p>
+    <header class="main-header">
+        <div class="container">
+            <a href="https://rig-global-solutions.github.io/website/" class="brand" style="text-decoration: none;">
+                <div class="logo"></div>
+                <div class="brand-text">
+                    <h4>Rig Global Solutions</h4>
+                    <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="https://rig-global-solutions.github.io/website/">Home</a></li>
+                    <li class="has-megamenu">
+                        <a href="https://rig-global-solutions.github.io/website/#services">Services</a>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Foundational Services</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/acounting_page.html">Accounting & Bookkeeping</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/legal_page.html">Legal & Corporate Services</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/tax_page.html">Tax & Compliance</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/hr_page.html">Human Resources Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Growth & Strategy</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/business_strategy_page.html">Business Strategy & Consulting</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/finance_page.html">Strategic Financial Solutions</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/marketing_&_branding_page.html">Branding & Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Technology & Automation</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/web_development_page.html">Web Design & Development</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/crm_page.html">CRM & System Automation</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/it_page.html">IT Infrastructure & Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="https://sites.google.com/view/rig-talent/home">Career</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <form id="consultationForm" novalidate>
-            <!-- Section 1: Contact Information -->
-            <div class="form-section">
-                <h2>1. Your Contact Information</h2>
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label for="fullName" class="required">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" placeholder="e.g., Priya Sharma" required>
+    <main>
+        <section id="form-section">
+            <div class="container">
+                <div class="form-container" id="formWrapper">
+                    <div class="form-header">
+                        <h1>Let's Build Your Solution</h1>
+                        <p>Tell us a bit about your needs, and one of our expert consultants will contact you within one business day to schedule a free, no-obligation consultation.</p>
                     </div>
-                    <div class="input-group">
-                        <label for="workEmail" class="required">Work Email</label>
-                        <input type="email" id="workEmail" name="workEmail" placeholder="e.g., priya.sharma@example.com" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="phoneNumber" class="required">Phone Number</label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g., +91 98765 43210" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="companyName">Company Name</label>
-                        <input type="text" id="companyName" name="companyName" placeholder="e.g., Sharma Innovations Pvt. Ltd.">
-                    </div>
+
+                    <form id="consultationForm" novalidate>
+                        <div class="form-section">
+                            <h2>1. Your Contact Information</h2>
+                            <div class="input-grid">
+                                <div class="input-group">
+                                    <label for="fullName" class="required">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="e.g., Priya Sharma" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="workEmail" class="required">Work Email</label>
+                                    <input type="email" id="workEmail" name="workEmail" placeholder="e.g., priya.sharma@example.com" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="phoneNumber" class="required">Phone Number</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g., +91 98765 43210" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="companyName">Company Name</label>
+                                    <input type="text" id="companyName" name="companyName" placeholder="e.g., Sharma Innovations Pvt. Ltd.">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="website">Website</label>
+                                <input type="url" id="website" name="website" placeholder="e.g., www.sharmainnovations.com">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>2. What Services Are You Interested In?</h2>
+                            <div class="input-group">
+                                <label for="serviceCategory" class="required">Select a Service Category</label>
+                                <select id="serviceCategory" name="serviceCategory" required>
+                                    <option value="" disabled selected>Please choose the primary area you need help with...</option>
+                                    <option value="financial">Financial Services</option>
+                                    <option value="strategic">Strategic Packages</option>
+                                    <option value="tax">Tax & Compliance</option>
+                                    <option value="legal">Legal Services</option>
+                                    <option value="hr">HR Services</option>
+                                    <option value="accounting">Accounting Services</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="marketing">Branding & Marketing</option>
+                                    <option value="crm">CRM & System Services</option>
+                                    <option value="it">IT Services</option>
+                                    <option value="multiple">I'm Not Sure / Need Multiple Services</option>
+                                </select>
+                            </div>
+
+                            <div id="specificServicesContainer" class="checkbox-group hidden">
+                                <label class="required">Which specific services do you need?</label>
+                                <div id="financial-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Personal Finance"><label>Personal Financial Support</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Business Compliance"><label>Business Compliance & Bookkeeping</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Virtual CFO"><label>Strategic Finance / Virtual CFO</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="strategic-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Foundational Strategy"><label>Foundational Strategy</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="GTM & SOPs"><label>Go-to-Market & Process Optimization</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Growth Roadmap"><label>Comprehensive Growth Roadmap & KPIs</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="tax-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Personal ITR"><label>Personal ITR Filing</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Startup Compliance"><label>Startup & Business Compliance</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Corporate Compliance"><label>Full Corporate Compliance</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="legal-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Registration"><label>Company Registration & Agreements</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Annual Compliance"><label>Annual Corporate Compliance (ROC)</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Advanced Legal"><label>Advanced Legal Support</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="hr-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Foundational HR"><label>Foundational HR Setup</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Scaling HR"><label>Scaling HR Functions</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Strategic HR"><label>Strategic HR Leadership (vCHRO)</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="accounting-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Basic Bookkeeping"><label>Basic Bookkeeping & P&L</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="MIS & Payroll"><label>MIS Reporting, Payroll & TDS</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Full Accounting"><label>Full Accounting with vCFO</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="web-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Static Site"><label>Basic Static Website</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Dynamic Site"><label>Dynamic CMS Website</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="E-commerce"><label>E-Commerce Online Store</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Maintenance"><label>Ongoing Website Maintenance</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="marketing-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Basic Branding"><label>Basic Branding</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Digital Marketing"><label>Comprehensive Digital Marketing</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Full Scale Campaigns"><label>Full-Scale Campaigns</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Retainer"><label>Ongoing Marketing Support</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="crm-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Basic CRM"><label>Basic CRM Setup</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Automation"><label>Automation for Onboarding</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="End-to-End System"><label>End-to-End System Automation</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Retainer"><label>Ongoing CRM Management</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                                <div id="it-options" class="checkbox-options hidden">
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Office Setup"><label>New Office IT Setup</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Cloud & Remote"><label>Cloud & Remote Work Setup</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Cybersecurity"><label>Cybersecurity Audit & Policy</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Managed IT"><label>Fully Managed IT Support (AMC)</label></div>
+                                    <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>3. Tell Us About Your Business & Goals</h2>
+                            <div class="input-group">
+                                <label class="required">Which of these best describes you?</label>
+                                <div class="radio-options">
+                                    <div class="radio-item"><input type="radio" id="typeIndividual" name="businessType" value="Individual" required><label for="typeIndividual">Individual / Freelancer</label></div>
+                                    <div class="radio-item"><input type="radio" id="typeStartup" name="businessType" value="Startup"><label for="typeStartup">New Startup / Founder</label></div>
+                                    <div class="radio-item"><input type="radio" id="typeSME" name="businessType" value="SME"><label for="typeSME">Small to Medium Business (SME / MSME)</label></div>
+                                    <div class="radio-item"><input type="radio" id="typeCorporate" name="businessType" value="Corporate"><label for="typeCorporate">Large Corporate / Enterprise</label></div>
+                                    <div class="radio-item"><input type="radio" id="typeNGO" name="businessType" value="NGO"><label for="typeNGO">NGO / Non-Profit</label></div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="businessGoals" class="required">Please briefly describe your business and your primary goals.</label>
+                                <textarea id="businessGoals" name="businessGoals" placeholder="e.g., 'We are a B2B SaaS startup that just raised a seed round. Our primary goal is to set up a scalable sales process using a new CRM and launch a digital marketing campaign to generate 100 new leads per month.'" required></textarea>
+                            </div>
+                            <div class="input-group">
+                                <label for="additionalInfo">Is there anything else you'd like to add?</label>
+                                <textarea id="additionalInfo" name="additionalInfo" placeholder="e.g., 'We have a specific deadline for our website launch,' or 'Our estimated monthly budget for this is around ₹50,000.'"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <button type="submit" class="submit-btn">Send Request & Schedule Consultation</button>
+                            <p class="privacy-notice">We respect your privacy. The information you provide will be used solely for the purpose of contacting you regarding your inquiry.</p>
+                        </div>
+                    </form>
                 </div>
-                 <div class="input-group">
-                    <label for="website">Website</label>
-                    <input type="url" id="website" name="website" placeholder="e.g., www.sharmainnovations.com">
+
+                <div id="confirmationWrapper" class="form-container hidden">
+                    <div class="confirmation-message">
+                        <div class="icon">✔</div>
+                        <h2>Thank You!</h2>
+                        <p id="confirmationText">Your request has been successfully submitted. A consultant from our team will review your information and reach out to you within the next 24 business hours to schedule your free consultation.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Section 2: Service Interest -->
-            <div class="form-section">
-                <h2>2. What Services Are You Interested In?</h2>
-                <div class="input-group">
-                    <label for="serviceCategory" class="required">Select a Service Category</label>
-                    <select id="serviceCategory" name="serviceCategory" required>
-                        <option value="" disabled selected>Please choose the primary area you need help with...</option>
-                        <option value="financial">Financial Services</option>
-                        <option value="strategic">Strategic Packages</option>
-                        <option value="tax">Tax & Compliance</option>
-                        <option value="legal">Legal Services</option>
-                        <option value="hr">HR Services</option>
-                        <option value="accounting">Accounting Services</option>
-                        <option value="web">Web Development</option>
-                        <option value="marketing">Branding & Marketing</option>
-                        <option value="crm">CRM & System Services</option>
-                        <option value="it">IT Services</option>
-                        <option value="multiple">I'm Not Sure / Need Multiple Services</option>
-                    </select>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <div class="logo"></div>
+                        <div class="brand-text">
+                            <h4>Rig Global Solutions</h4>
+                            <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
-
-                <!-- Dynamic Checkbox Groups -->
-                <div id="specificServicesContainer" class="checkbox-group hidden">
-                    <label class="required">Which specific services do you need?</label>
-                    <!-- Financial Services -->
-                    <div id="financial-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Personal Finance"><label>Personal Financial Support</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Business Compliance"><label>Business Compliance & Bookkeeping</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Virtual CFO"><label>Strategic Finance / Virtual CFO</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- Strategic Packages -->
-                    <div id="strategic-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Foundational Strategy"><label>Foundational Strategy</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="GTM & SOPs"><label>Go-to-Market & Process Optimization</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Growth Roadmap"><label>Comprehensive Growth Roadmap & KPIs</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- Tax & Compliance -->
-                    <div id="tax-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Personal ITR"><label>Personal ITR Filing</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Startup Compliance"><label>Startup & Business Compliance</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Corporate Compliance"><label>Full Corporate Compliance</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- Legal Services -->
-                    <div id="legal-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Registration"><label>Company Registration & Agreements</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Annual Compliance"><label>Annual Corporate Compliance (ROC)</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Advanced Legal"><label>Advanced Legal Support</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- HR Services -->
-                    <div id="hr-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Foundational HR"><label>Foundational HR Setup</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Scaling HR"><label>Scaling HR Functions</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Strategic HR"><label>Strategic HR Leadership (vCHRO)</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- Accounting Services -->
-                    <div id="accounting-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Basic Bookkeeping"><label>Basic Bookkeeping & P&L</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="MIS & Payroll"><label>MIS Reporting, Payroll & TDS</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Full Accounting"><label>Full Accounting with vCFO</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- Web Development -->
-                    <div id="web-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Static Site"><label>Basic Static Website</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Dynamic Site"><label>Dynamic CMS Website</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="E-commerce"><label>E-Commerce Online Store</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Maintenance"><label>Ongoing Website Maintenance</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- Branding & Marketing -->
-                    <div id="marketing-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Basic Branding"><label>Basic Branding</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Digital Marketing"><label>Comprehensive Digital Marketing</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Full Scale Campaigns"><label>Full-Scale Campaigns</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Retainer"><label>Ongoing Marketing Support</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- CRM & System Services -->
-                    <div id="crm-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Basic CRM"><label>Basic CRM Setup</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Automation"><label>Automation for Onboarding</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="End-to-End System"><label>End-to-End System Automation</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Retainer"><label>Ongoing CRM Management</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
-                    <!-- IT Services -->
-                    <div id="it-options" class="checkbox-options hidden">
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Office Setup"><label>New Office IT Setup</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Cloud & Remote"><label>Cloud & Remote Work Setup</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Cybersecurity"><label>Cybersecurity Audit & Policy</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Managed IT"><label>Fully Managed IT Support (AMC)</label></div>
-                        <div class="checkbox-item"><input type="checkbox" name="serviceDetail" value="Other"><label>Other / Not Sure</label></div>
-                    </div>
+                <div class="footer-col">
+                   <h4 class="col-title">Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>Address: WB, India- 721601</li>
+                        <li><i class="fas fa-id-card"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                        <li><i class="fas fa-phone"></i>+91 8617715655</li>
+                        <li><i class="fas fa-envelope"></i>info@rigfinancialservices.com</li>
+                        <li><i class="fas fa-globe"></i>www.rigfinancialservices.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="col-title">Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="https://rig-global-solutions.github.io/website/#services">Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Section 3: Business & Goals -->
-            <div class="form-section">
-                <h2>3. Tell Us About Your Business & Goals</h2>
-                <div class="input-group">
-                    <label class="required">Which of these best describes you?</label>
-                    <div class="radio-options">
-                        <div class="radio-item"><input type="radio" id="typeIndividual" name="businessType" value="Individual" required><label for="typeIndividual">Individual / Freelancer</label></div>
-                        <div class="radio-item"><input type="radio" id="typeStartup" name="businessType" value="Startup"><label for="typeStartup">New Startup / Founder</label></div>
-                        <div class="radio-item"><input type="radio" id="typeSME" name="businessType" value="SME"><label for="typeSME">Small to Medium Business (SME / MSME)</label></div>
-                        <div class="radio-item"><input type="radio" id="typeCorporate" name="businessType" value="Corporate"><label for="typeCorporate">Large Corporate / Enterprise</label></div>
-                        <div class="radio-item"><input type="radio" id="typeNGO" name="businessType" value="NGO"><label for="typeNGO">NGO / Non-Profit</label></div>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label for="businessGoals" class="required">Please briefly describe your business and your primary goals.</label>
-                    <textarea id="businessGoals" name="businessGoals" placeholder="e.g., 'We are a B2B SaaS startup that just raised a seed round. Our primary goal is to set up a scalable sales process using a new CRM and launch a digital marketing campaign to generate 100 new leads per month.'" required></textarea>
-                </div>
-                <div class="input-group">
-                    <label for="additionalInfo">Is there anything else you'd like to add?</label>
-                    <textarea id="additionalInfo" name="additionalInfo" placeholder="e.g., 'We have a specific deadline for our website launch,' or 'Our estimated monthly budget for this is around ₹50,000.'"></textarea>
-                </div>
+            <div class="footer-bottom">
+                &copy; 2024 Rig Global Solutions. All Rights Reserved.
             </div>
-
-            <!-- Section 4: Submission -->
-            <div class="form-section">
-                <button type="submit" class="submit-btn">Send Request & Schedule Consultation</button>
-                <p class="privacy-notice">We respect your privacy. The information you provide will be used solely for the purpose of contacting you regarding your inquiry.</p>
-            </div>
-        </form>
-    </div>
-
-    <!-- Confirmation Message (Initially Hidden) -->
-    <div id="confirmationWrapper" class="form-container hidden">
-        <div class="confirmation-message">
-            <div class="icon">✔</div>
-            <h2>Thank You!</h2>
-            <p id="confirmationText">Your request has been successfully submitted. A consultant from our team will review your information and reach out to you within the next 24 business hours to schedule your free consultation.</p>
         </div>
-    </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
