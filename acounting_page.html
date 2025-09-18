@@ -181,4 +181,443 @@
         .btn-primary {
             background-color: var(--primary-color);
             color: var(--light-color);
-            border:
+            border: 2px solid var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 51, 160, 0.7)), url('https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 { margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .social-proof { background-color: var(--grey-bg); padding: 40px 0; text-align: center; }
+        .social-proof h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: #777; margin-bottom: 25px; }
+        .logos-bar { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .logos-bar img { max-height: 40px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease; }
+        .logos-bar img:hover { filter: grayscale(0%); opacity: 1; }
+        .challenge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .challenge-card { background: var(--light-color); border: 1px solid var(--border-color); padding: 30px; border-radius: 8px; text-align: center; }
+        .challenge-card h3 { color: var(--primary-color); }
+        #solution { background-color: var(--grey-bg); }
+        .solution-content { max-width: 800px; margin: 0 auto 50px auto; text-align: center; }
+        .differentiators-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+        .differentiator-item .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 15px; }
+        .pricing-table { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; align-items: start; }
+        .pricing-plan { border: 1px solid var(--border-color); border-radius: 8px; padding: 30px; display: flex; flex-direction: column; text-align: center; transition: all 0.3s ease; }
+        .pricing-plan:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .pricing-plan.pro { border-color: var(--primary-color); border-width: 2px; position: relative; transform: scale(1.05); }
+        .pricing-plan.pro::before { content: 'BEST FOR MSMEs'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: var(--light-color); padding: 5px 15px; font-size: 0.75rem; font-weight: 700; border-radius: 20px; }
+        .plan-header h3 { color: var(--primary-color); }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
+        .plan-price { font-size: 2.2rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 1rem; font-weight: 400; color: #777; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+        .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+        .plan-features li:last-child { border-bottom: none; }
+        #testimonials { background-color: var(--grey-bg); }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+        .testimonial-card, .case-study-card { background: var(--light-color); padding: 30px; border-radius: 8px; border-left: 5px solid var(--growth-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .testimonial-card blockquote { font-style: italic; margin-bottom: 15px; }
+        .testimonial-card cite { font-weight: 600; color: var(--primary-color); }
+        .case-study-card { grid-column: span 2; }
+        .case-study-card h4 { margin-bottom: 15px; }
+        .case-study-card p { margin-bottom: 10px; }
+        .case-study-card strong { color: var(--primary-color); }
+        .faq-container { max-width: 800px; margin: 50px auto 0; }
+        .faq-item { border-bottom: 1px solid var(--border-color); }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--primary-color); transition: transform 0.3s ease; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer p { padding: 0 0 20px; }
+        .final-cta { background-color: var(--primary-color); color: var(--light-color); text-align: center; }
+        .final-cta h2 { color: var(--light-color); }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
+        .final-cta .secondary-link { display: block; margin-top: 20px; color: var(--light-color); opacity: 0.8; text-decoration: underline; }
+
+        /* --- Footer Styles (from Script-1) --- */
+        .main-footer { background-color: var(--dark-color); color: var(--light-color); padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+        .footer-col .footer-brand { display: flex; align-items: center; margin-bottom: 15px;}
+        .footer-col .logo { width: 60px; height: 60px; background: #ccc; border-radius: 5px; margin-right: 15px; }
+        .footer-col .brand-text h4 { margin: 0; font-size: 1.5rem; color: var(--light-color); }
+        .footer-col .brand-text p { font-size: 0.8rem; margin: 0; opacity: 0.8;}
+        .footer-col h4.col-title { margin-bottom: 20px; font-size: 1.2rem; color: var(--light-color); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; opacity: 0.8; }
+        .footer-col ul li i { margin-right: 10px; width: 15px; text-align: center; }
+        .footer-col ul li a { color: var(--light-color); text-decoration: none; transition: color 0.3s, opacity 0.3s; }
+        .footer-col ul li a:hover { opacity: 1; color: var(--accent-color); }
+        .social-links a { color: var(--light-color); font-size: 1.5rem; margin-right: 15px; transition: color 0.3s ease; }
+        .social-links a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.7; }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .main-nav ul li { margin-left: 20px; }
+            .challenge-grid, .differentiators-grid { grid-template-columns: 1fr; }
+            .pricing-table { grid-template-columns: 1fr; }
+            .pricing-plan.pro { transform: scale(1); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .case-study-card { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .mega-menu { display: none; }
+            .has-megamenu:hover .mega-menu { display: none; }
+        }
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 100px 0; }
+            section { padding: 60px 0; }
+            .main-header { padding: 10px 0; }
+            .main-header .container { flex-direction: column; }
+            .main-nav { margin-top: 15px; width: 100%;}
+            .main-nav ul { flex-direction: column; text-align: center; width: 100%;}
+            .main-nav ul li { margin: 10px 0; }
+            .has-megamenu .mega-menu { display: none !important; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-col .footer-brand, .footer-col ul { align-items: center; justify-content: center; text-align: center;}
+            .footer-col ul li i { display: none; }
+            .social-links { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="https://rig-global-solutions.github.io/website/" class="brand">
+                <div class="logo"></div>
+                <div class="brand-text">
+                    <h4>Rig Global Solutions</h4>
+                    <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="https://rig-global-solutions.github.io/website/">Home</a></li>
+                    <li class="has-megamenu">
+                        <a href="https://rig-global-solutions.github.io/website/#services" class="active">Services</a>
+                        <div class="mega-menu">
+                            <div class="container mega-menu-inner">
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Foundational Services</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/acounting_page.html">Accounting & Bookkeeping</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/legal_page.html">Legal & Corporate Services</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/tax_page.html">Tax & Compliance</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/hr_page.html">Human Resources Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Growth & Strategy</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/business_strategy_page.html">Business Strategy & Consulting</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/finance_page.html">Strategic Financial Solutions</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/marketing_&_branding_page.html">Branding & Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-col">
+                                    <h4 class="category">Technology & Automation</h4>
+                                    <ul>
+                                        <li><a href="https://rig-global-solutions.github.io/website/web_development_page.html">Web Design & Development</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/crm_page.html">CRM & System Automation</a></li>
+                                        <li><a href="https://rig-global-solutions.github.io/website/it_page.html">IT Infrastructure & Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="https://sites.google.com/view/rig-talent/home">Career</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <header class="hero">
+            <div class="container hero-content">
+                <h1>Financial Clarity for Every Stage of Your Business Growth</h1>
+                <p>From meticulous bookkeeping and tax compliance to strategic financial forecasting, we provide the accurate and timely insights you need to make smarter decisions and drive profitability.</p>
+                <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-primary">Get a Free Financial Health Check</a>
+            </div>
+        </header>
+
+        <section class="social-proof">
+            <div class="container">
+                <h3>The Financial Backbone for Thriving Businesses</h3>
+                <div class="logos-bar">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=D2C+Brands" alt="Client Logo 1">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Consultants+Inc" alt="Client Logo 2">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Tech+MSME" alt="Client Logo 3">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Startup+Ventures" alt="Client Logo 4">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Enterprise+Co" alt="Client Logo 5">
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>Moving Beyond Financial Chaos to Complete Control</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>For Freelancers & Early Startups</h3>
+                        <p>"Are you spending more time trying to manage receipts and reconcile accounts than on your actual business? Are you unsure if your P&L is accurate or if your GST is filed correctly?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For MSMEs & Funded Startups</h3>
+                        <p>"As you grow, is your basic accounting failing to provide the insights you need? Do you need reliable MIS reports, streamlined payroll, and proper asset management to satisfy stakeholders?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Enterprises (>50 Employees)</h3>
+                        <p>"Is your in-house team stretched thin? Do you require high-level strategic financial oversight, robust forecasting for board meetings, and seamless support during annual audits?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div class="container">
+                <div class="solution-content">
+                    <h2>Accurate Books, Actionable Intelligence</h2>
+                    <p>"We believe that flawless accounting is the foundation of a successful business. Our approach goes beyond simple data entry. We build a robust accounting framework that ensures compliance, provides crystal-clear financial reporting, and delivers the strategic insights you need to navigate your growth journey with confidence."</p>
+                </div>
+                <div class="differentiators-grid">
+                    <div class="differentiator-item">
+                        <div class="icon">🎯</div>
+                        <h3>Impeccable Accuracy</h3>
+                        <p>Meticulous bookkeeping and reconciliation for error-free financial records you can trust.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">📊</div>
+                        <h3>Timely Reporting</h3>
+                        <p>Get the customized financial data and MIS reports you need, right when you need them.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🔍</div>
+                        <h3>Strategic Oversight</h3>
+                        <p>We provide insights that go beyond the numbers, helping you see the bigger picture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Choose Your Path to Financial Clarity</h2>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Starter</h3>
+                            <p class="ideal-for">Freelancers / Early Startups</p>
+                            <div class="plan-price">₹4,999 – ₹7,999 <span>/ month</span></div>
+                            <p>Basic bookkeeping, GST filing, and P&L statements.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Daily Transaction Recording</li>
+                            <li>Bank Reconciliation (BRS)</li>
+                            <li>GST Accounting & Filing Support</li>
+                            <li>P&L and Balance Sheet Prep</li>
+                        </ul>
+                        <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-outline">Organize My Books</a>
+                    </div>
+                    <div class="pricing-plan pro">
+                        <div class="plan-header">
+                            <h3>Growth</h3>
+                            <p class="ideal-for">MSMEs / Funded Startups</p>
+                            <div class="plan-price">₹11,999 – ₹19,999 <span>/ month</span></div>
+                            <p>MIS reporting, payroll, TDS, and asset management.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Monthly/Quarterly MIS Reports</li>
+                            <li>Payroll Accounting & Processing</li>
+                            <li>TDS Accounting & Filing</li>
+                            <li>Fixed Asset Register Management</li>
+                        </ul>
+                        <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-primary">Streamline My Finances</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Enterprise</h3>
+                            <p class="ideal-for">Companies >50 employees</p>
+                            <div class="plan-price">₹25,000+ <span>/ month</span></div>
+                            <p>Full accounting with Virtual CFO, forecasting, and audit support.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Virtual CFO Services</li>
+                            <li>Budgeting & Cash Flow Forecasting</li>
+                            <li>Accounting for Audit Support</li>
+                            <li>Investor/Board-Ready Reports</li>
+                        </ul>
+                        <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-outline">Get Strategic Oversight</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Driving Success Through Financial Discipline</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"RIG's Enterprise accounting and Virtual CFO support have been invaluable during our audit preparations. Their team is professional, meticulous, and provides the high-level forecasting we need for our board."</blockquote>
+                        <cite>— CFO of a Manufacturing Firm (Enterprise Tier)</cite>
+                    </div>
+                     <div class="testimonial-card">
+                        <blockquote>"The Starter package is a lifesaver. My books are finally clean, my GST is filed on time, and I can actually understand my profitability each month. It's a huge weight off my shoulders."</blockquote>
+                        <cite>— Freelance Consultant (Starter Tier)</cite>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>Case Study: Streamlining Investor Reporting</h4>
+                         <p><strong>Client:</strong> A funded D2C startup.</p>
+                        <p><strong>Challenge:</strong> Struggled with inaccurate MIS reports and complex payroll, which delayed investor reporting and caused compliance issues.</p>
+                        <p><strong>Solution:</strong> Implemented the Growth package, streamlining their entire accounting process from bookkeeping to payroll and MIS.</p>
+                        <p><strong>Impact:</strong> Delivered accurate investor reports 10 days faster each month and ensured 100% TDS compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Your Accounting Questions, Answered</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">What accounting software do you support?</button>
+                        <div class="faq-answer">
+                            <p>Our team is proficient with all major accounting platforms used in India, including Tally Prime, Zoho Books, QuickBooks Online, and Busy. We can seamlessly integrate with your existing software or help you migrate to a more suitable platform for your business needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you ensure the security of my financial data?</button>
+                        <div class="faq-answer">
+                            <p>Data security is paramount. We use secure, cloud-based software with role-based access controls and follow strict confidentiality protocols outlined in our engagement agreement. All data is handled with the highest level of care and discretion.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is the onboarding process like?</button>
+                        <div class="faq-answer">
+                            <p>Our onboarding is simple and efficient. It begins with a kickoff call to understand your business, followed by securely sharing access to your bank accounts and accounting software. We then conduct a health check of your existing books and establish a clear monthly workflow and reporting schedule.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How is the monthly price determined within the provided range?</button>
+                        <div class="faq-answer">
+                            <p>The final price is based on the volume and complexity of your transactions. Key factors include the number of bank accounts, average monthly transactions, number of employees for payroll, and the level of reporting required. We provide a custom, transparent quote after our initial consultation.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">What exactly does a Virtual CFO do for my business?</button>
+                        <div class="faq-answer">
+                            <p>A Virtual CFO (vCFO) provides high-level strategic financial guidance without the cost of a full-time executive. This includes budgeting, cash flow forecasting, financial modeling, preparing investor-ready reports, and offering strategic insights to help you make informed business decisions and drive growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="consultation" class="final-cta">
+            <div class="container">
+                <h2>Ready for Accurate, Stress-Free Accounting?</h2>
+                <p>Let our expert team manage your numbers so you can get back to building your business.</p>
+                <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-primary">Schedule Your Free Consultation</a>
+                <a href="https://rig-global-solutions.github.io/website/all_services_page.html" class="secondary-link">Explore our all services</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <div class="logo"></div>
+                        <div class="brand-text">
+                           <h4>Rig Global Solutions</h4>
+                           <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                     <h4 class="col-title">Contact Info</h4>
+                     <ul>
+                         <li><i class="fas fa-map-marker-alt"></i>Address: WB, India- 721601</li>
+                         <li><i class="fas fa-id-card"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                         <li><i class="fas fa-phone"></i>+91 8617715655</li>
+                         <li><i class="fas fa-envelope"></i>info@rigfinancialservices.com</li>
+                         <li><i class="fas fa-globe"></i>www.rigfinancialservices.com</li>
+                     </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="col-title">Quick Links</h4>
+                     <ul>
+                         <li><a href="#">About Us</a></li>
+                         <li><a href="https://rig-global-solutions.github.io/website/#services">Services</a></li>
+                         <li><a href="#">Privacy Policy</a></li>
+                         <li><a href="#">Terms of Service</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Rig Global Solutions. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => {
+                    if (i !== item) {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
