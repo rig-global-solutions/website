@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisory Department Careers | RIG Global Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #C5A47E;
+        }
+        .advisory-card {
+            transition: all 0.3s ease;
+            border-left-width: 4px;
+            border-color: transparent;
+        }
+        .advisory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #C5A47E;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(253, 251, 248, 0.8);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="sticky-nav shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">RIG Global Solutions</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-28 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Become a Trusted Advisor</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join our Advisory Department to guide businesses through their most critical financial, legal, and regulatory challenges.</p>
+            </div>
+        </section>
+
+        <section id="mandate" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Our Mandate: Clarity in Complexity</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We serve as the essential partner for businesses facing high-stakes decisions, providing expert guidance that ensures compliance, mitigates risk, and unlocks value.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="space-y-6">
+                            <div class="advisory-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Financial Advisory</h3>
+                                <p class="mt-2 text-gray-600">Guiding clients through investment decisions, startup funding, valuation, and complex financial planning.</p>
+                            </div>
+                            <div class="advisory-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Legal & Regulatory Advisory</h3>
+                                <p class="mt-2 text-gray-600">Navigating the complexities of corporate law, ROC compliance, and regulatory frameworks from SEBI, RBI, and IRDA.</p>
+                            </div>
+                             <div class="advisory-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Strategic Guidance</h3>
+                                <p class="mt-2 text-gray-600">Providing high-level advice on business structuring, risk management, and long-term strategic alignment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="advisoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Advisory in Action</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We provide the critical insights that allow businesses to operate with confidence. Here’s how we helped a FinTech startup launch successfully.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800">Case Study: Navigating the Regulatory Maze for a FinTech Innovator</h3>
+                    <p class="text-lg text-[#C5A47E] font-semibold mt-1">Client: "PaySwift" Technologies</p>
+                    <div class="mt-6 grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">The Challenge</h4>
+                            <p class="text-gray-600">PaySwift had a groundbreaking payment gateway product but was unprepared for the complex web of RBI regulations, data privacy laws, and licensing requirements needed to operate legally in India.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Our Solution</h4>
+                            <p class="text-gray-600">Our advisory team created a comprehensive compliance roadmap. We guided them through the entire licensing process, drafted their data privacy policies to be compliant with Indian law, and structured their corporate entity for investment readiness.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-[#F8F5F1] p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Result</h4>
+                        <p class="text-gray-600">PaySwift successfully secured all necessary regulatory approvals and launched their product on schedule, avoiding costly delays and potential legal penalties. Our guidance gave their investors the confidence to proceed with a crucial seed funding round.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join-us" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Join Our Advisory Team?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Build a career based on expertise, influence, and integrity, guiding the future of Indian enterprise.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Become a Subject Matter Expert</h3>
+                        <p class="text-gray-600">Develop deep, specialized knowledge in high-demand areas of financial, legal, and regulatory compliance.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Influence Key Decisions</h3>
+                        <p class="text-gray-600">Your advice will directly impact the strategic decisions of our clients, from startup founders to established executives.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Operate at the Highest Levels</h3>
+                        <p class="text-gray-600">Engage with complex, intellectually stimulating challenges that define the success and failure of modern businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="openings" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Open Roles in Advisory</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">If you have a passion for detail and a mind for strategy, find your next role with us.</p>
+                </div>
+                <div id="job-listings" class="max-w-2xl mx-auto space-y-6">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2a2a2a] text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">RIG Global Solutions</h3>
+                    <p class="text-sm">Empowering Solutions—Strategically, Sustainably, Globally.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                     <ul class="space-y-2 text-sm">
+                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" class="text-2xl hover:text-white">
+                        <span aria-hidden="true">in</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>&copy; 2024 RIG Global Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const advisoryChartCtx = document.getElementById('advisoryChart').getContext('2d');
+            new Chart(advisoryChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Legal & Compliance', 'Financial Advisory', 'Regulatory Guidance', 'Strategic Advisory'],
+                    datasets: [{
+                        label: 'Focus Area',
+                        data: [90, 85, 80, 70],
+                        backgroundColor: [
+                            'rgba(160, 132, 102, 0.8)',
+                            'rgba(197, 164, 126, 0.8)',
+                            'rgba(233, 216, 199, 0.8)',
+                            'rgba(248, 245, 241, 0.9)'
+                        ],
+                        borderColor: [
+                            'rgb(160, 132, 102)',
+                            'rgb(197, 164, 126)',
+                            'rgb(233, 216, 199)',
+                            'rgb(200, 200, 200)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Our Advisory Practice Areas',
+                            font: { size: 18 }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const allJobData = [
+                { title: 'Graphic Designer', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'AI Marketing Content Creator', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Sales Representative', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Project Manager', department: 'Management', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Senior Legal Consultant', department: 'Legal', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Financial Analyst', department: 'Finance', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Business Strategy Consultant', department: 'Consultancy', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'HR and Talent Specialist', department: 'Talent Acquisition (HR)', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Marketing & Branding Specialist', department: 'Marketing', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Web Developer (Frontend & Backend)', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'CRM/ System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }
+            ];
+
+            const advisoryJobs = allJobData.filter(job => job.department === 'Legal' || job.department === 'Consultancy');
+            const jobListingsContainer = document.getElementById('job-listings');
+
+            if (advisoryJobs.length > 0) {
+                advisoryJobs.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'bg-white p-6 rounded-lg shadow-md border-l-4 border-[#C5A47E] flex justify-between items-center';
+                    
+                    let actionButtonHtml;
+
+                    if (job.title === 'Senior Legal Consultant') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/advisory/legal-consultant" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else if (job.title === 'Business Strategy Consultant') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/advisory/business-strategy-consultant" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else {
+                        actionButtonHtml = `<a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Apply Now</a>`;
+                    }
+
+                    jobCard.innerHTML = `
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${job.title}</h3>
+                            <div class="mt-2 flex flex-wrap gap-2 text-sm">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.level}</span>
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.type}</span>
+                            </div>
+                        </div>
+                        ${actionButtonHtml}
+                    `;
+                    jobListingsContainer.appendChild(jobCard);
+                });
+            } else {
+                jobListingsContainer.innerHTML = `<p class="text-center text-gray-600">There are currently no open positions in the Advisory department. Please check back later.</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
