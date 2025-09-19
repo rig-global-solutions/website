@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Corporates & Enterprises - RIG Global Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- Branding & Theme Variables --- */
+        :root {
+            --primary-color: #0033A0; /* RIG Strategic Blue */
+            --growth-color: #3E9B40;  /* RIG Growth Green */
+            --accent-color: #FFC425;  /* Innovation Gold */
+            --dark-color: #333333;    /* Foundation Grey */
+            --light-color: #ffffff;   /* Pure White */
+            --grey-bg: #F8F9FA;      /* Cloud White */
+            --border-color: #dee2e6;
+            --font-family: 'Poppins', sans-serif;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --border-radius: 15px;
+        }
+
+        /* --- General Body & Reset --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-family);
+            line-height: 1.7;
+            color: var(--dark-color);
+            background-color: var(--white);
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-bg {
+            background-color: var(--grey-bg);
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--light-color); }
+        h2 { font-size: 2.25rem; margin-bottom: 2rem; text-align: center; }
+        h3 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+        h4 { font-size: 1.25rem; margin-bottom: 1rem; }
+        p { margin-bottom: 1rem; color: #555; }
+
+        /* --- Header --- */
+        .main-header {
+            background: var(--light-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .brand .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        .brand-text h4 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+        .brand-text p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--dark-color);
+        }
+        .main-nav ul { list-style: none; display: flex; }
+        .main-nav ul li { margin-left: 30px; }
+        .main-nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .main-nav ul li a:hover, .main-nav ul li a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 160, 0.85), rgba(0, 51, 160, 0.85)), url('https://source.unsplash.com/random/1600x900/?corporate,cityscape') no-repeat center center/cover;
+            color: var(--light-color);
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content { max-width: 850px; }
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* --- Button --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 14px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(255, 196, 37, 0.4);
+        }
+
+        /* --- Service Cards --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-left: 5px solid var(--accent-color);
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .service-card .icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .service-card ul { list-style: none; padding-top: 10px; }
+        .service-card ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--growth-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* --- Why Choose Us / Accordion --- */
+        .why-us-layout { display: flex; align-items: center; gap: 50px; }
+        .why-us-image { flex: 1; }
+        .why-us-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        .why-us-content { flex: 1; }
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+        }
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header h4 { margin: 0; }
+        .accordion-header .toggle-icon {
+            transition: transform 0.3s ease;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .accordion-content p {
+            padding: 0 20px 20px;
+            margin: 0;
+        }
+        .accordion-item.active .toggle-icon { transform: rotate(45deg); }
+
+        /* --- CTA Section --- */
+        #contact {
+            text-align: center;
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        #contact h2 { color: var(--white); }
+        #contact p { color: rgba(255, 255, 255, 0.9); }
+        #contact .container { max-width: 800px; }
+       
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        .social-links a {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover { color: var(--accent-color); }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* --- Animations & Responsive --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        @media (max-width: 992px) {
+            .why-us-layout { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+            .main-header .container { flex-direction: column; gap: 15px; }
+            .main-nav ul { padding: 0; }
+            .hero { height: auto; padding: 120px 0 80px 0; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-col .brand, .footer-col ul { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="https://www.rigfinancialservices.com/" class="brand">
+                <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
+                <div class="brand-text">
+                    <h4>Rig Global Solutions</h4>
+                    <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="https://www.rigfinancialservices.com/" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link active">Services</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="container hero-content fade-in">
+                <h1>For Corporates & Enterprises</h1>
+                <p>Optimize, transform, and lead with strategic advisory, digital transformation roadmaps, and enterprise-level compliance.</p>
+                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn">Request a Consultation</a>
+            </div>
+        </section>
+
+        <section id="services" class="section section-bg">
+            <div class="container">
+                <h2 class="fade-in">Enterprise-Grade Advisory & Execution</h2>
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="icon">📈</div>
+                        <h4>Strategic Advisory & Transformation</h4>
+                        <p>Navigate market shifts and realign your organization for future growth with our high-level strategic counsel.</p>
+                        <ul>
+                            <li>Long-Term Strategic Roadmaps (3-5 Years)</li>
+                            <li>Organizational Restructuring & Change Management</li>
+                            <li>Performance Management (KPIs & OKRs)</li>
+                            <li>Market Intelligence & Expansion Strategy</li>
+                        </ul>
+                    </div>
+                    <div class="service-card fade-in" style="transition-delay: 100ms;">
+                        <div class="icon">💻</div>
+                        <h4>Digital Transformation & IT Excellence</h4>
+                        <p>Harness technology to automate processes, enhance security, and unlock data-driven insights.</p>
+                        <ul>
+                            <li>Enterprise Systems Implementation (ERP, CRM)</li>
+                            <li>Cloud & Cybersecurity Frameworks</li>
+                            <li>Business Intelligence & Automation</li>
+                            <li>Managed IT Services with SLA-based delivery</li>
+                        </ul>
+                    </div>
+                     <div class="service-card fade-in" style="transition-delay: 200ms;">
+                        <div class="icon">🛡️</div>
+                        <h4>Advanced Financial & Risk Management</h4>
+                        <p>Optimize financial performance and ensure robust corporate governance with our expert advisory.</p>
+                        <ul>
+                            <li>Virtual CFO Services & Financial Forecasting</li>
+                            <li>Project Finance & Feasibility Reports</li>
+                            <li>Corporate Governance & Risk Advisory</li>
+                            <li>Family Office & Succession Planning</li>
+                        </ul>
+                    </div>
+                     <div class="service-card fade-in" style="transition-delay: 300ms;">
+                        <div class="icon">⚖️</div>
+                        <h4>Enterprise-Level Legal & Compliance</h4>
+                        <p>Navigate the complex regulatory landscape with confidence and ensure your business is always protected.</p>
+                        <ul>
+                            <li>Full-Spectrum Compliance (ROC, RBI, SEBI)</li>
+                            <li>Contract Lifecycle Management</li>
+                            <li>Intellectual Property (IP) Management</li>
+                            <li>Legal Due Diligence for M&A</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="section">
+            <div class="container">
+                <h2 class="fade-in">Why Partner with RIG Global Solutions?</h2>
+                <div class="why-us-layout">
+                    <div class="why-us-image fade-in">
+                        <img src="https://source.unsplash.com/random/800x600/?business,meeting" alt="Business meeting">
+                    </div>
+                    <div class="why-us-content fade-in" style="transition-delay: 150ms;">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Strategic Execution Partner</h4>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>We move beyond traditional consulting by providing a dedicated, cross-functional team to execute the strategies we develop together.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Deep Domain Expertise</h4>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Our seasoned professionals across finance, law, technology, and strategy bring decades of experience to solve your most complex challenges.</p>
+                                </div>
+                            </div>
+                             <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Holistic, 360-Degree Approach</h4>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>We understand that business functions are interconnected. Our ten collaborative departments ensure solutions are integrated and aligned with your overall corporate objectives.</p>
+                                </div>
+                            </div>
+                             <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Unwavering Confidentiality & Integrity</h4>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>We operate as a trusted extension of your leadership team, handling all engagements with the highest level of professionalism and discretion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+             <div class="container fade-in">
+                <h2>Ready to Optimize, Transform, and Lead?</h2>
+                <p>Let's discuss how our strategic advisory and execution capabilities can help your enterprise achieve its next phase of growth. Reach out for a confidential consultation with our senior advisors.</p>
+                 <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn">Contact Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="https://www.rigfinancialservices.com/" class="brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
+                        <div class="brand-text">
+                           <h4>Rig Global Solutions</h4>
+                           <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                        </div>
+                    </a>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                     <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Contact Info</h4>
+                     <ul style="list-style: none; opacity: 0.8; line-height: 2;">
+                          <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Address: WB, India- 721601</li>
+                          <li><i class="fas fa-id-card" style="margin-right: 10px;"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                          <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+91 8617715655</li>
+                          <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@rigfinancialservices.com</li>
+                     </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Quick Links</h4>
+                     <ul style="list-style: none; opacity: 0.8; line-height: 2;">
+                          <li><a href="#" style="color: white; text-decoration: none;">About Us</a></li>
+                          <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
+                          <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                          <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 RIG Global Solutions. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Animate on Scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach((el) => observer.observe(el));
+        
+        // --- Accordion ---
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            header.addEventListener('click', () => {
+                const openItem = document.querySelector('.accordion-item.active');
+                toggleItem(item);
+                if(openItem && openItem !== item) {
+                    toggleItem(openItem);
+                }
+            });
+        });
+
+        const toggleItem = (item) => {
+            const content = item.querySelector('.accordion-content');
+            if(item.classList.contains('active')) {
+                item.classList.remove('active');
+                content.style.maxHeight = 0;
+            } else {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+
+        // --- Active Nav Link on Scroll ---
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', ()=> {
+            let current = '';
+            sections.forEach( section => {
+                const sectionTop = section.offsetTop;
+                if(pageYOffset >= (sectionTop - 100)){
+                    current = section.getAttribute('id');
+                }
+            })
+            
+            navLinks.forEach( a => {
+                a.classList.remove('active');
+                if(a.getAttribute('href').substring(1) === current){
+                    a.classList.add('active');
+                }
+            })
+        });
+
+        // --- Smooth Scrolling for anchor links ---
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>
