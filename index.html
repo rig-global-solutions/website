@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEGHRRDLWJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -127,10 +126,11 @@
         .brand .logo {
              width: 50px;
              height: 50px;
-             background-color: #ccc; /* Placeholder */
+             /* background-color: #ccc;  <-- Optional: Remove this line */
              margin-right: 15px;
              border-radius: 5px;
-        }
+             object-fit: contain; /* Ensures logo fits well */
+         }
 
         .brand-text h4 {
             margin: 0;
@@ -321,7 +321,14 @@
         .main-footer { background-color: var(--dark-color); color: var(--light-color); padding: 60px 0 20px; }
         .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
         .footer-col .footer-brand { display: flex; align-items: center; margin-bottom: 15px;}
-        .footer-col .logo { width: 60px; height: 60px; background: #ccc; border-radius: 5px; margin-right: 15px; }
+        .footer-col .logo {
+            width: 60px;
+            height: 60px;
+            /* background: #ccc; <-- Optional: Remove this line */
+            border-radius: 5px;
+            margin-right: 15px;
+            object-fit: contain; /* Ensures logo fits well */
+        }
         .footer-col .brand-text h4 { margin: 0; font-size: 1.5rem; color: var(--light-color); }
         .footer-col .brand-text p { font-size: 0.8rem; margin: 0; opacity: 0.8;}
         .footer-col h4.col-title { margin-bottom: 20px; font-size: 1.2rem; color: var(--light-color); }
@@ -377,7 +384,8 @@
     <header class="main-header">
         <div class="container">
             <a href="https://rig-global-solutions.github.io/website/" class="brand" style="text-decoration: none;">
-                <div class="logo"></div> <div class="brand-text">
+                <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
+                <div class="brand-text">
                     <h4>Rig Global Solutions</h4>
                     <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
                 </div>
@@ -632,7 +640,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-brand">
-                        <div class="logo"></div>
+                         <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
                         <div class="brand-text">
                            <h4>Rig Global Solutions</h4>
                            <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
@@ -648,20 +656,20 @@
                 <div class="footer-col">
                      <h4 class="col-title">Contact Info</h4>
                      <ul>
-                         <li><i class="fas fa-map-marker-alt"></i>Address: WB, India- 721601</li>
-                         <li><i class="fas fa-id-card"></i>GSTIN: 19BGKPR8647B1ZX</li>
-                         <li><i class="fas fa-phone"></i>+91 8617715655</li>
-                         <li><i class="fas fa-envelope"></i>info@rigfinancialservices.com</li>
-                         <li><i class="fas fa-globe"></i>www.rigfinancialservices.com</li>
+                          <li><i class="fas fa-map-marker-alt"></i>Address: WB, India- 721601</li>
+                          <li><i class="fas fa-id-card"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                          <li><i class="fas fa-phone"></i>+91 8617715655</li>
+                          <li><i class="fas fa-envelope"></i>info@rigfinancialservices.com</li>
+                          <li><i class="fas fa-globe"></i>www.rigfinancialservices.com</li>
                      </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="col-title">Quick Links</h4>
                      <ul>
-                         <li><a href="#">About Us</a></li>
-                         <li><a href="#services">Services</a></li>
-                         <li><a href="#">Privacy Policy</a></li>
-                         <li><a href="#">Terms of Service</a></li>
+                          <li><a href="#">About Us</a></li>
+                          <li><a href="#services">Services</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Terms of Service</a></li>
                      </ul>
                 </div>
             </div>
