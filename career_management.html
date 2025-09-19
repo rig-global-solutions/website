@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Department Careers | RIG Global Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #C5A47E;
+        }
+        .management-card {
+            transition: all 0.3s ease;
+            border-bottom-width: 4px;
+            border-color: #E9D8C7;
+        }
+        .management-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #C5A47E;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(253, 251, 248, 0.8);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="sticky-nav shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">RIG Global Solutions</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-28 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Lead High-Impact Projects</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join our Management Department and be the driving force that turns strategy into successful execution across all our client engagements.</p>
+            </div>
+        </section>
+
+        <section id="what-we-do" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Engine of Execution</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our Management Department is the central nervous system of RIG Global Solutions, ensuring seamless project oversight, workflow coordination, and flawless delivery.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                     <div class="chart-container">
+                        <canvas id="managementChart"></canvas>
+                    </div>
+                    <div>
+                        <div class="space-y-6">
+                            <div class="management-card bg-white p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800">Project Oversight</h3>
+                                <p class="mt-2 text-gray-600">End-to-end management of project lifecycles, from scoping and planning to execution and delivery.</p>
+                            </div>
+                            <div class="management-card bg-white p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800">Workflow Coordination</h3>
+                                <p class="mt-2 text-gray-600">Acting as the bridge between our 10 departments to ensure resources are allocated effectively and timelines are met.</p>
+                            </div>
+                             <div class="management-card bg-white p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800">Client Relationship Management</h3>
+                                <p class="mt-2 text-gray-600">Serving as the primary point of contact for clients, ensuring clear communication and satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Management in Action</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We don't just manage projects; we guarantee their success. Here’s how we orchestrated a complex, multi-departmental digital transformation.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800">Case Study: Delivering a Unified E-Commerce Platform</h3>
+                    <p class="text-lg text-[#C5A47E] font-semibold mt-1">Client: "Heritage Foods" FMCG</p>
+                    <div class="mt-6 grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">The Challenge</h4>
+                            <p class="text-gray-600">Heritage Foods needed to launch a new e-commerce platform, a project that required seamless collaboration between our IT, Marketing, Sales, and Legal departments. The timeline was aggressive, and the risk of silos and miscommunication was high.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Our Solution</h4>
+                            <p class="text-gray-600">A dedicated Project Manager from our Management department was assigned as the single point of accountability. They developed a detailed project plan, established clear communication channels, and ran daily stand-ups to coordinate efforts across all four departments, ensuring everyone was aligned and on track.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-[#F8F5F1] p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Result</h4>
+                        <p class="text-gray-600">The platform was delivered on time and 10% under budget. The coordinated approach ensured the final product was technically robust, legally compliant, and perfectly aligned with the client's marketing and sales goals, leading to a highly successful launch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join-us" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Join Our Management Team?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Develop into a true business leader by mastering the art and science of execution.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Gain 360° Business View</h3>
+                        <p class="text-gray-600">As a project manager, you'll work with every department, giving you a unique, holistic understanding of how a business operates.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Become a Master Communicator</h3>
+                        <p class="text-gray-600">Hone your skills in negotiation, client relations, and team leadership—essential abilities for any future executive.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Deliver Tangible Results</h3>
+                        <p class="text-gray-600">This is a role where you see the direct impact of your work every day, taking projects from idea to successful completion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="openings" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Open Roles in Management</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">If you are a natural organizer and leader, we have a role for you.</p>
+                </div>
+                <div id="job-listings" class="max-w-2xl mx-auto space-y-6">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2a2a2a] text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">RIG Global Solutions</h3>
+                    <p class="text-sm">Empowering Solutions—Strategically, Sustainably, Globally.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                     <ul class="space-y-2 text-sm">
+                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" class="text-2xl hover:text-white">
+                        <span aria-hidden="true">in</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>&copy; 2024 RIG Global Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const managementChartCtx = document.getElementById('managementChart').getContext('2d');
+            new Chart(managementChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['On-Time Delivery Rate', 'Client Satisfaction Score', 'Budget Adherence', 'Project Success Rate'],
+                    datasets: [{
+                        label: 'Performance Metric (%)',
+                        data: [95, 92, 98, 97],
+                        backgroundColor: [
+                            'rgba(160, 132, 102, 0.8)',
+                            'rgba(197, 164, 126, 0.8)',
+                            'rgba(233, 216, 199, 0.8)',
+                            'rgba(120, 120, 120, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgb(160, 132, 102)',
+                            'rgb(197, 164, 126)',
+                            'rgb(233, 216, 199)',
+                            'rgb(120, 120, 120)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Our Project Management Success Metrics',
+                            font: { size: 18 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 100,
+                             ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const allJobData = [
+                { title: 'Graphic Designer', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'AI Marketing Content Creator', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Sales Representative', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Project Manager', department: 'Management', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Senior Legal Consultant', department: 'Legal', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Financial Analyst', department: 'Finance', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Business Strategy Consultant', department: 'Consultancy', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'HR and Talent Specialist', department: 'Talent Acquisition (HR)', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Marketing & Branding Specialist', department: 'Marketing', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Web Developer (Frontend & Backend)', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'CRM/ System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }
+            ];
+
+            const managementJobs = allJobData.filter(job => job.department === 'Management');
+            const jobListingsContainer = document.getElementById('job-listings');
+
+            if (managementJobs.length > 0) {
+                managementJobs.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'bg-white p-6 rounded-lg shadow-md border-l-4 border-[#C5A47E] flex justify-between items-center';
+                    
+                    let actionButtonHtml;
+
+                    if (job.title === 'Project Manager') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/management/project-manager" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else {
+                        actionButtonHtml = `<a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Apply Now</a>`;
+                    }
+
+                    jobCard.innerHTML = `
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${job.title}</h3>
+                            <div class="mt-2 flex flex-wrap gap-2 text-sm">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.level}</span>
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.type}</span>
+                            </div>
+                        </div>
+                        ${actionButtonHtml}
+                    `;
+                    jobListingsContainer.appendChild(jobCard);
+                });
+            } else {
+                jobListingsContainer.innerHTML = `<p class="text-center text-gray-600">There are currently no open positions in the Management department. Please check back later.</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
