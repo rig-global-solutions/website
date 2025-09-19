@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Acquisition (HR) Careers | RIG Global Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #C5A47E;
+        }
+        .hr-card {
+            transition: all 0.3s ease;
+            border-bottom-width: 4px;
+            border-color: transparent;
+        }
+        .hr-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #C5A47E;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(253, 251, 248, 0.8);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="sticky-nav shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">RIG Global Solutions</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-28 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Build Our Most Valuable Asset: Our People</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join our Talent Acquisition team and be the architect of our culture, dedicated to hiring, nurturing, and empowering the next generation of leaders.</p>
+            </div>
+        </section>
+
+        <section id="what-we-do" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Heartbeat of the Organization</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our HR department manages the entire employee lifecycle, from first contact to career development, ensuring RIG Global Solutions is an exceptional place to work and grow.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="chart-container">
+                        <canvas id="hrChart"></canvas>
+                    </div>
+                    <div>
+                        <div class="space-y-6">
+                            <div class="hr-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Hiring & Recruitment</h3>
+                                <p class="mt-2 text-gray-600">Managing the end-to-end recruitment cycle to attract and hire the best emerging talent in India.</p>
+                            </div>
+                            <div class="hr-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Onboarding & Employee Management</h3>
+                                <p class="mt-2 text-gray-600">Creating a seamless onboarding experience and managing all aspects of employee relations and performance.</p>
+                            </div>
+                             <div class="hr-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Culture & Engagement</h3>
+                                <p class="mt-2 text-gray-600">Driving initiatives that foster our collaborative culture, from team-building events to our mentorship programs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">HR in Action</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We build the teams that build the future. Here’s how we successfully scaled our internship program to build a robust talent pipeline.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800">Case Study: Scaling Our National Internship Program</h3>
+                    <p class="text-lg text-[#C5A47E] font-semibold mt-1">Project: Youth Empowerment Initiative</p>
+                    <div class="mt-6 grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">The Challenge</h4>
+                            <p class="text-gray-600">To fulfill our mission of youth empowerment, we needed to rapidly scale our internship program from a small cohort to a national initiative, recruiting from diverse academic backgrounds across the country without sacrificing quality or candidate experience.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Our Solution</h4>
+                            <p class="text-gray-600">The HR team designed a streamlined, multi-stage virtual recruitment process. We partnered with university career services, ran targeted social media campaigns, and developed a structured interview framework to assess both technical skills and cultural fit. We also created a comprehensive virtual onboarding program to ensure a consistent experience for all new interns.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-[#F8F5F1] p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Result</h4>
+                        <p class="text-gray-600">We successfully recruited and onboarded over 50 interns in a single quarter, a 500% increase from the previous year. The program achieved a 95% satisfaction rate from participants, and over 80% of high-performing interns were extended Pre-Placement Offers, creating a strong, pre-trained pipeline of talent for our full-time Trainee roles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join-us" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Join Our HR Team?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Be more than an HR manager. Be a culture-builder, a talent-spotter, and a career-shaper.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Shape the Future Workforce</h3>
+                        <p class="text-gray-600">You will be at the forefront of our youth empowerment mission, designing programs that launch hundreds of careers.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Drive Strategic Initiatives</h3>
+                        <p class="text-gray-600">This isn't just an administrative role. You'll lead strategic projects, from performance management systems to employee engagement.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Be a Champion of Culture</h3>
+                        <p class="text-gray-600">You will be the guardian of our unique, growth-oriented culture, ensuring RIG remains a top destination for emerging talent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="openings" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Open Roles in Talent Acquisition</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">If you have a passion for people and a talent for building great teams, we want to hear from you.</p>
+                </div>
+                <div id="job-listings" class="max-w-2xl mx-auto space-y-6">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2a2a2a] text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">RIG Global Solutions</h3>
+                    <p class="text-sm">Empowering Solutions—Strategically, Sustainably, Globally.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                     <ul class="space-y-2 text-sm">
+                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" class="text-2xl hover:text-white">
+                        <span aria-hidden="true">in</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>&copy; 2024 RIG Global Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hrChartCtx = document.getElementById('hrChart').getContext('2d');
+            new Chart(hrChartCtx, {
+                type: 'polarArea',
+                data: {
+                    labels: ['Recruitment', 'Onboarding', 'Employee Engagement', 'Performance Management', 'Culture Initiatives'],
+                    datasets: [{
+                        label: 'HR Focus Areas',
+                        data: [40, 20, 20, 10, 10],
+                        backgroundColor: [
+                            'rgba(160, 132, 102, 0.7)',
+                            'rgba(197, 164, 126, 0.7)',
+                            'rgba(233, 216, 199, 0.7)',
+                            'rgba(120, 120, 120, 0.6)',
+                            'rgba(248, 245, 241, 0.8)'
+                        ],
+                        borderColor: '#3A3A3A',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Our HR Department Functions',
+                            font: { size: 18 }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const allJobData = [
+                { title: 'Graphic Designer', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'AI Marketing Content Creator', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Sales Representative', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Project Manager', department: 'Management', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Senior Legal Consultant', department: 'Legal', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Financial Analyst', department: 'Finance', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Business Strategy Consultant', department: 'Consultancy', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'HR and Talent Specialist', department: 'Talent Acquisition (HR)', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Marketing & Branding Specialist', department: 'Marketing', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Web Developer (Frontend & Backend)', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'CRM/ System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }
+            ];
+
+            const hrJobs = allJobData.filter(job => job.department === 'Talent Acquisition (HR)');
+            const jobListingsContainer = document.getElementById('job-listings');
+
+            if (hrJobs.length > 0) {
+                hrJobs.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'bg-white p-6 rounded-lg shadow-md border-l-4 border-[#C5A47E] flex justify-between items-center';
+                    
+                    let actionButtonHtml;
+
+                    if (job.title === 'HR and Talent Specialist') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/talent-acquisition-hr/hr-talent-specialist" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else {
+                        actionButtonHtml = `<a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Apply Now</a>`;
+                    }
+                    
+                    jobCard.innerHTML = `
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${job.title}</h3>
+                            <div class="mt-2 flex flex-wrap gap-2 text-sm">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.level}</span>
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.type}</span>
+                            </div>
+                        </div>
+                        ${actionButtonHtml}
+                    `;
+                    jobListingsContainer.appendChild(jobCard);
+                });
+            } else {
+                jobListingsContainer.innerHTML = `<p class="text-center text-gray-600">There are currently no open positions in the Talent Acquisition department. Please check back later.</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
