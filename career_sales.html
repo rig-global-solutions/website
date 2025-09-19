@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Department Careers | RIG Global Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #C5A47E;
+        }
+        .sales-card {
+            transition: all 0.3s ease;
+            border-left-width: 4px;
+            border-color: transparent;
+        }
+        .sales-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #C5A47E;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(253, 251, 248, 0.8);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="sticky-nav shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">RIG Global Solutions</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-28 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Drive the Engine of Growth</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join our Sales Department and be on the front lines of our expansion, building relationships and delivering value to clients across India.</p>
+            </div>
+        </section>
+
+        <section id="what-we-do" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Architects of Opportunity</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our Sales Department identifies new opportunities, builds lasting client relationships, and closes the deals that fuel our company's growth and success.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="space-y-6">
+                            <div class="sales-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Client Acquisition & Prospecting</h3>
+                                <p class="mt-2 text-gray-600">Identifying and engaging potential clients who can benefit from our diverse portfolio of services.</p>
+                            </div>
+                            <div class="sales-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">CRM & Pipeline Management</h3>
+                                <p class="mt-2 text-gray-600">Meticulously managing the sales pipeline from lead to close using advanced CRM tools.</p>
+                            </div>
+                             <div class="sales-card bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800">Consultative Selling & Closing</h3>
+                                <p class="mt-2 text-gray-600">Understanding client needs and positioning RIG Global Solutions as the ideal strategic partner to help them achieve their goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container order-1 md:order-2">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Sales in Action</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We build partnerships that create lasting value. Here’s how our sales team secured a multi-service contract with a fast-growing manufacturing client.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800">Case Study: Forging a Strategic Partnership with an SME Manufacturer</h3>
+                    <p class="text-lg text-[#C5A47E] font-semibold mt-1">Client: "Precision Parts Inc."</p>
+                    <div class="mt-6 grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">The Challenge</h4>
+                            <p class="text-gray-600">Precision Parts Inc. was expanding rapidly but their back-office operations were struggling to keep up. They were facing challenges with financial reporting, legal compliance, and marketing, but were engaging separate, uncoordinated vendors for each.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Our Solution</h4>
+                            <p class="text-gray-600">Our sales representative took a consultative approach. Instead of selling a single service, they conducted a deep-dive needs analysis and identified multiple pain points. They then collaborated with our Finance, Legal, and Marketing departments to propose a single, integrated solution that addressed all of the client's challenges under one strategic partnership.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-[#F8F5F1] p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Result</h4>
+                        <p class="text-gray-600">The client signed a comprehensive, long-term retainer that was three times the value of the initial inquiry. This integrated approach not only solved the client's immediate problems but also positioned RIG Global Solutions as their trusted, long-term growth partner, leading to significant recurring revenue and a strong client testimonial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join-us" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Join Our Sales Team?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Build a rewarding career where your performance is directly tied to your success.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Uncapped Earning Potential</h3>
+                        <p class="text-gray-600">With our generous, performance-based incentive structure, your hard work and success are directly reflected in your earnings.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Sell Solutions, Not Products</h3>
+                        <p class="text-gray-600">You're not just a salesperson; you're a consultant. You'll learn to sell a diverse portfolio of 10+ high-value services.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Be a Key Growth Driver</h3>
+                        <p class="text-gray-600">The sales team is the lifeblood of our company. Your success is the company's success, making you a vital part of our growth story.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="openings" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Open Roles in Sales</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">If you are a driven, relationship-focused individual, find your next opportunity with us.</p>
+                </div>
+                <div id="job-listings" class="max-w-2xl mx-auto space-y-6">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2a2a2a] text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">RIG Global Solutions</h3>
+                    <p class="text-sm">Empowering Solutions—Strategically, Sustainably, Globally.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                     <ul class="space-y-2 text-sm">
+                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" class="text-2xl hover:text-white">
+                        <span aria-hidden="true">in</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>&copy; 2024 RIG Global Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const salesChartCtx = document.getElementById('salesChart').getContext('2d');
+            new Chart(salesChartCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                    datasets: [{
+                        label: 'Qualified Leads in Pipeline',
+                        data: [120, 180, 250, 400],
+                        fill: true,
+                        borderColor: 'rgb(197, 164, 126)',
+                        backgroundColor: 'rgba(197, 164, 126, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                           display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Quarterly Sales Pipeline Growth',
+                            font: { size: 18 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Qualified Leads'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const allJobData = [
+                { title: 'Graphic Designer', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'AI Marketing Content Creator', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Sales Representative', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Project Manager', department: 'Management', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Senior Legal Consultant', department: 'Legal', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Financial Analyst', department: 'Finance', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Business Strategy Consultant', department: 'Consultancy', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'HR and Talent Specialist', department: 'Talent Acquisition (HR)', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Marketing & Branding Specialist', department: 'Marketing', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Web Developer (Frontend & Backend)', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'CRM/ System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }
+            ];
+
+            const salesJobs = allJobData.filter(job => job.department === 'Sales');
+            const jobListingsContainer = document.getElementById('job-listings');
+
+            if (salesJobs.length > 0) {
+                salesJobs.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'bg-white p-6 rounded-lg shadow-md border-l-4 border-[#C5A47E] flex justify-between items-center';
+                    
+                    let actionButtonHtml;
+
+                    if (job.title === 'Sales Representative' && job.level === 'Internship') {
+                        // This matches the "Sales Representative Intern" request
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/sales/sales-representative-intern" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else if (job.title === 'Client Success Manager') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/sales/client-success-manager" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else {
+                        // Default fallback for other sales roles, like a non-intern "Sales Representative" if added later
+                         actionButtonHtml = `<a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Apply Now</a>`;
+                    }
+
+                    jobCard.innerHTML = `
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${job.title}</h3>
+                            <div class="mt-2 flex flex-wrap gap-2 text-sm">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.level}</span>
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.type}</span>
+                            </div>
+                        </div>
+                        ${actionButtonHtml}
+                    `;
+                    jobListingsContainer.appendChild(jobCard);
+                });
+            } else {
+                jobListingsContainer.innerHTML = `<p class="text-center text-gray-600">There are currently no open positions in the Sales department. Please check back later.</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
