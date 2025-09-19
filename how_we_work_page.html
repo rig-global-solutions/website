@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How We Work | RIG Global Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Professional Blue & Gold -->
-    <!-- Application Structure Plan: The application is designed as a narrative journey, guiding the user from RIG's core philosophy to their practical client engagement process, internal team structure, and finally their unique social commitment. This top-down structure helps build trust by starting with the "why" (mission/vision), explaining the "how" (process), showing the "who" (teams), and highlighting their unique differentiator (youth empowerment). The core interaction is a clickable 4-step process timeline, which breaks down a complex workflow into digestible, user-initiated sections, making the information more engaging and less overwhelming than a long page of text. This is more effective for usability than simply listing services. -->
-    <!-- Visualization & Content Choices: 
-    - Report Info: Mission & Vision from PDF. -> Goal: Establish identity & purpose. -> Presentation: Prominent text blocks at the top. -> Interaction: Static, for emphasis. -> Justification: Clearly sets the company's tone and values upfront.
-    - Report Info: Core values synthesized from mission/objectives in PDF. -> Goal: Define guiding principles. -> Presentation: Icon-based feature cards. -> Interaction: Subtle hover effects. -> Justification: Visually breaks up text and makes principles memorable.
-    - Report Info: Synthesized client workflow from service CSVs & department roles in PDF. -> Goal: Explain the client engagement process. -> Presentation: A 4-step visual process flow diagram built with HTML/CSS. -> Interaction: Clickable steps reveal detailed descriptions. -> Justification: Transforms a linear process into an interactive, explorable journey, enhancing user engagement and comprehension.
-    - Report Info: Departmental structure and responsibilities from PDF. -> Goal: Showcase internal expertise and structure. -> Presentation: A grid of department cards. -> Interaction: Clicking a card reveals its key responsibilities in a modal or expanded view. -> Justification: Organizes a large amount of information cleanly and allows users to explore only the departments relevant to them.
-    - Report Info: Youth empowerment strategic objective from PDF. -> Goal: Highlight a key differentiator. -> Presentation: A dedicated, visually distinct section. -> Interaction: Static. -> Justification: Gives this unique social commitment the prominence it deserves.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0033A0;
+            --growth-color: #3E9B40;
+            --accent-color: #FFC425;
+            --dark-color: #333333;
+            --light-color: #ffffff;
+            --grey-bg: #F8F9FA;
+            --border-color: #dee2e6;
+        }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc; /* Tailwind slate-50 */
         }
         .step-connector {
             flex-grow: 1;
             height: 2px;
-            background-color: #cbd5e1; /* slate-300 */
+            background-color: #cbd5e1; /* Tailwind slate-300 */
         }
         .step.active .step-circle {
-            background-color: #ca8a04; /* yellow-600 */
-            color: #ffffff;
-            border-color: #ca8a04; /* yellow-600 */
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border-color: var(--accent-color);
         }
         .step.active .step-title {
-            color: #ca8a04; /* yellow-600 */
-            font-weight: 600;
+            color: var(--primary-color);
+            font-weight: 700;
         }
         .process-content {
             transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -48,41 +48,91 @@
         .modal-overlay {
             transition: opacity 0.3s ease-in-out;
         }
+        .main-header {
+            background: var(--light-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .main-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand .logo {
+             width: 50px;
+             height: 50px;
+             margin-right: 15px;
+             border-radius: 5px;
+             object-fit: contain;
+         }
+        .main-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        .social-links a {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+         @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                 <div class="w-10 h-10 bg-slate-900 text-white flex items-center justify-center rounded-full font-bold text-xl">
-                    <span>R</span>
+    <header class="main-header">
+        <div class="container">
+            <a href="https://www.rigfinancialservices.com/" class="brand" style="text-decoration: none; display: flex; align-items: center;">
+                <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
+                <div class="brand-text">
+                    <h4 style="margin: 0; font-size: 1.4rem; color: var(--primary-color); font-weight: 700;">Rig Global Solutions</h4>
+                    <p style="margin: 0; font-size: 0.8rem; color: var(--dark-color);">Empowering Solutions- Strategically, Sustainably & Globally</p>
                 </div>
-                <h1 class="text-2xl font-bold text-slate-900">RIG Global Solutions</h1>
-            </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#philosophy" class="text-slate-600 hover:text-yellow-600 transition">Our Philosophy</a>
-                <a href="#process" class="text-slate-600 hover:text-yellow-600 transition">Our Process</a>
-                <a href="#teams" class="text-slate-600 hover:text-yellow-600 transition">Our Teams</a>
-                <a href="#commitment" class="text-slate-600 hover:text-yellow-600 transition">Our Commitment</a>
+            </a>
+            <nav class="hidden md:flex space-x-6" style="font-weight: 600;">
+                <a href="https://www.rigfinancialservices.com/" class="text-slate-600 hover:text-blue-800 transition">Home</a>
+                <a href="#process" class="text-slate-600 hover:text-blue-800 transition">Our Process</a>
+                <a href="#teams" class="text-slate-600 hover:text-blue-800 transition">Our Teams</a>
+                <a href="#commitment" class="text-slate-600 hover:text-blue-800 transition">Our Commitment</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12 md:py-20">
 
-        <!-- Hero Section -->
         <section class="text-center mb-20">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">How We Work</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4" style="color: var(--primary-color);">How We Work</h2>
             <p class="text-lg text-slate-600 max-w-3xl mx-auto">A transparent look into our strategic process, collaborative approach, and commitment to delivering transformative solutions.</p>
         </section>
 
-        <!-- Our Philosophy Section -->
         <section id="philosophy" class="mb-20">
             <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-slate-900">Our Guiding Philosophy</h3>
+                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Guiding Philosophy</h3>
                 <p class="text-md text-slate-500 mt-2">Our mission and vision are the bedrock of every project we undertake.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -90,49 +140,42 @@
                     <h4 class="text-2xl font-semibold text-slate-900 mb-3">Our Mission</h4>
                     <p class="text-slate-600 leading-relaxed">To deliver strategic consultancy, outsourcing, and business intelligence solutions while empowering youth through free training and guaranteed career pathways—shaping a workforce ready to drive innovation, national development, and global competitiveness.</p>
                 </div>
-                <div class="bg-slate-900 text-white p-8 rounded-lg shadow-md">
+                <div style="background-color: var(--dark-color);" class="text-white p-8 rounded-lg shadow-md">
                     <h4 class="text-2xl font-semibold mb-3">Our Vision</h4>
                     <p class="text-slate-300 leading-relaxed">To become a global catalyst for innovation, inclusive growth, and sustainable transformation—empowering enterprises, governments, and the next generation of professionals to solve real-world challenges with purpose and intelligence.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Our Process Section -->
         <section id="process" class="mb-20">
             <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-slate-900">Our Process: The Client Journey</h3>
+                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Process: The Client Journey</h3>
                 <p class="text-md text-slate-500 mt-2">We follow a structured, four-phase approach to ensure clarity, alignment, and exceptional results. Click each step to learn more.</p>
             </div>
             
-            <!-- Process Steps -->
             <div class="w-full max-w-4xl mx-auto">
                 <div class="flex items-center justify-center">
-                    <!-- Step 1 -->
-                    <div class="step text-center cursor-pointer" data-step="1">
-                        <div class="step-circle w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-xl md:text-2xl font-bold bg-white transition">1</div>
-                        <p class="step-title mt-2 text-sm md:text-base font-medium text-slate-600 transition">Discovery</p>
+                    <div class="step text-center cursor-pointer p-2" data-step="1">
+                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">1</div>
+                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Discovery</p>
                     </div>
                     <div class="step-connector"></div>
-                    <!-- Step 2 -->
-                    <div class="step text-center cursor-pointer" data-step="2">
-                        <div class="step-circle w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-xl md:text-2xl font-bold bg-white transition">2</div>
-                        <p class="step-title mt-2 text-sm md:text-base font-medium text-slate-600 transition">Strategy</p>
+                    <div class="step text-center cursor-pointer p-2" data-step="2">
+                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">2</div>
+                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Strategy</p>
                     </div>
                     <div class="step-connector"></div>
-                    <!-- Step 3 -->
-                    <div class="step text-center cursor-pointer" data-step="3">
-                        <div class="step-circle w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-xl md:text-2xl font-bold bg-white transition">3</div>
-                        <p class="step-title mt-2 text-sm md:text-base font-medium text-slate-600 transition">Execution</p>
+                    <div class="step text-center cursor-pointer p-2" data-step="3">
+                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">3</div>
+                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Execution</p>
                     </div>
                      <div class="step-connector"></div>
-                    <!-- Step 4 -->
-                    <div class="step text-center cursor-pointer" data-step="4">
-                        <div class="step-circle w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-xl md:text-2xl font-bold bg-white transition">4</div>
-                        <p class="step-title mt-2 text-sm md:text-base font-medium text-slate-600 transition">Growth</p>
+                    <div class="step text-center cursor-pointer p-2" data-step="4">
+                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">4</div>
+                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Growth</p>
                     </div>
                 </div>
 
-                <!-- Process Content -->
                 <div class="mt-8 bg-white p-8 rounded-lg shadow-md border border-slate-200 min-h-[250px]">
                     <div id="step-content-1" class="process-content">
                         <h4 class="text-xl font-bold text-yellow-600 mb-2">Phase 1: Discovery & Alignment</h4>
@@ -157,38 +200,34 @@
             </div>
         </section>
 
-        <!-- Our Teams Section -->
         <section id="teams" class="mb-20">
              <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-slate-900">Our Teams: The Engine of Innovation</h3>
+                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Teams: The Engine of Innovation</h3>
                 <p class="text-md text-slate-500 mt-2">Our departmental structure is built for synergy and specialized expertise. Click on a department to see its core focus.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- Department cards will be injected here by JS -->
-            </div>
+                </div>
         </section>
         
-        <!-- Modal for Department Details -->
         <div id="department-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-lg w-full transform transition-transform scale-95">
                 <div class="flex justify-between items-center mb-4">
                     <h3 id="modal-title" class="text-2xl font-bold text-slate-900"></h3>
-                    <button id="modal-close" class="text-slate-500 hover:text-slate-800">&times;</button>
+                    <button id="modal-close" class="text-slate-500 hover:text-slate-800 text-3xl">&times;</button>
                 </div>
                 <p id="modal-focus" class="text-sm text-yellow-600 font-semibold mb-4"></p>
-                <div id="modal-responsibilities" class="text-slate-600 space-y-2"></div>
+                <ul id="modal-responsibilities" class="text-slate-600 space-y-2 list-disc pl-5"></ul>
             </div>
         </div>
 
 
-        <!-- Our Commitment Section -->
         <section id="commitment" class="bg-white rounded-lg shadow-md border border-slate-200 p-8 md:p-12">
             <div class="text-center">
-                <h3 class="text-3xl font-bold text-slate-900">Our Commitment to Youth Empowerment</h3>
+                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Commitment to Youth Empowerment</h3>
                 <p class="text-md text-slate-500 mt-2 max-w-3xl mx-auto">More than just a business, we are a platform for nurturing future leaders.</p>
                 <div class="mt-6 border-t border-slate-200 pt-6">
                     <p class="text-lg text-slate-700 leading-relaxed max-w-4xl mx-auto">
-                        A core strategic objective at RIG is to bridge the gap between education and industry. We offer <span class="font-bold text-yellow-600">free, high-impact training programs</span> with a commitment to <span class="font-bold text-yellow-600">full-time job confirmation</span> for early starters. This initiative is central to our mission, allowing us to build a future-ready workforce and contribute meaningfully to national development and talent cultivation.
+                        A core strategic objective at RIG is to bridge the gap between education and industry. We offer <span class="font-bold" style="color: var(--accent-color);">free, high-impact training programs</span> with a commitment to <span class="font-bold" style="color: var(--accent-color);">full-time job confirmation</span> for early starters. This initiative is central to our mission, allowing us to build a future-ready workforce and contribute meaningfully to national development and talent cultivation.
                     </p>
                 </div>
             </div>
@@ -196,11 +235,47 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-white mt-20">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; 2025 RIG Global Solutions. All Rights Reserved.</p>
-            <p class="text-sm text-slate-400 mt-2">Empowering Solutions—Strategically, Sustainably, Globally.</p>
+    <footer class="main-footer">
+        <div class="container mx-auto">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand flex items-center mb-4">
+                        <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
+                        <div>
+                           <h4 class="text-xl font-bold">Rig Global Solutions</h4>
+                           <p class="text-sm text-slate-300">Empowering Solutions- Strategically, Sustainably & Globally</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                     <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                     <ul class="space-y-2 text-slate-300">
+                          <li><i class="fas fa-map-marker-alt w-5"></i> Address: WB, India- 721601</li>
+                          <li><i class="fas fa-id-card w-5"></i> GSTIN: 19BGKPR8647B1ZX</li>
+                          <li><i class="fas fa-phone w-5"></i> +91 8617715655</li>
+                          <li><i class="fas fa-envelope w-5"></i> info@rigfinancialservices.com</li>
+                          <li><i class="fas fa-globe w-5"></i> www.rigfinancialservices.com</li>
+                     </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                     <ul class="space-y-2 text-slate-300">
+                          <li><a href="#" class="hover:text-yellow-400">About Us</a></li>
+                          <li><a href="#services" class="hover:text-yellow-400">Services</a></li>
+                          <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                          <li><a href="#" class="hover:text-yellow-400">Terms of Service</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center pt-5 border-t border-slate-700 text-slate-400 text-sm">
+                &copy; 2024 Rig Global Solutions. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
