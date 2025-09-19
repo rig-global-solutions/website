@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Department Careers | RIG Global Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #C5A47E;
+        }
+        .it-card {
+            transition: all 0.3s ease;
+            border-bottom-width: 4px;
+            border-color: #E9D8C7;
+        }
+        .it-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #C5A47E;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+            background-color: rgba(253, 251, 248, 0.8);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="sticky-nav shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">RIG Global Solutions</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-20 md:py-28 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">Build the Digital Backbone of Business</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Join our IT Department and be the architect of the systems and digital solutions that power our firm and drive our clients' success.</p>
+            </div>
+        </section>
+
+        <section id="our-role" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Foundation of Innovation</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our IT Department is responsible for all system administration, digital infrastructure, and technology solutions, ensuring seamless, secure, and efficient operations.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="chart-container">
+                        <canvas id="itChart"></canvas>
+                    </div>
+                    <div>
+                        <div class="space-y-6">
+                            <div class="it-card bg-white p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800">System Administration & Support</h3>
+                                <p class="mt-2 text-gray-600">Managing all internal and client-facing IT infrastructure, from servers and networks to end-user support.</p>
+                            </div>
+                            <div class="it-card bg-white p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800">Digital Solutions & Development</h3>
+                                <p class="mt-2 text-gray-600">Developing and deploying custom digital solutions, including web applications and CRM systems, to meet business needs.</p>
+                            </div>
+                             <div class="it-card bg-white p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800">Cybersecurity & Compliance</h3>
+                                <p class="mt-2 text-gray-600">Implementing robust security measures and ensuring all systems are compliant with data protection regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">IT in Action</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">We build solutions that enable modern business. Here’s how we empowered a client to transition to a fully secure, remote work environment.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800">Case Study: Enabling a Seamless Transition to Remote Work</h3>
+                    <p class="text-lg text-[#C5A47E] font-semibold mt-1">Client: "Growth Advisory Partners"</p>
+                    <div class="mt-6 grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">The Challenge</h4>
+                            <p class="text-gray-600">Growth Advisory Partners, a mid-sized consulting firm, needed to shift its entire 100-person team to a remote work model within two weeks. They lacked the necessary IT infrastructure, security protocols, and collaboration tools to do so effectively and securely.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Our Solution</h4>
+                            <p class="text-gray-600">Our IT team designed and deployed a comprehensive remote work solution. This included setting up a secure VPN for remote access, migrating key data to a cloud server for accessibility, and integrating collaboration tools like Microsoft Teams. We also conducted virtual training sessions for all employees on the new systems and cybersecurity best practices.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-[#F8F5F1] p-6 rounded-lg">
+                        <h4 class="font-semibold text-gray-700 mb-2">The Result</h4>
+                        <p class="text-gray-600">The client transitioned to a fully remote model with zero downtime. The new infrastructure improved operational efficiency and collaboration, and the enhanced security measures protected sensitive client data. The project was completed on time and within budget, enabling the client to continue their business operations without interruption.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join-us" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Join Our IT Team?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Move beyond support tickets and become a strategic technology partner.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Work with Modern Tech Stacks</h3>
+                        <p class="text-gray-600">Gain hands-on experience with cloud infrastructure (AWS, Azure), modern development frameworks, and enterprise-level CRM systems.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Solve Real Business Problems</h3>
+                        <p class="text-gray-600">Your work isn't just about maintaining systems. You'll build and implement technology solutions that directly solve client challenges.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Be a Driver of Efficiency</h3>
+                        <p class="text-gray-600">You will be at the core of our firm's operations, with the power to automate processes and improve productivity across all 10 departments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="openings" class="py-20 bg-[#F8F5F1]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Open Roles in IT</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">If you are a problem-solver with a passion for technology, find your next challenge here.</p>
+                </div>
+                <div id="job-listings" class="max-w-2xl mx-auto space-y-6">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#2a2a2a] text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">RIG Global Solutions</h3>
+                    <p class="text-sm">Empowering Solutions—Strategically, Sustainably, Globally.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
+                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                     <ul class="space-y-2 text-sm">
+                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                     </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" class="text-2xl hover:text-white">
+                        <span aria-hidden="true">in</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>&copy; 2024 RIG Global Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const itChartCtx = document.getElementById('itChart').getContext('2d');
+            new Chart(itChartCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['System Admin & Support', 'Digital Solutions Dev', 'Cybersecurity'],
+                    datasets: [{
+                        label: 'IT Department Focus',
+                        data: [50, 30, 20],
+                        backgroundColor: [
+                            '#A08466',
+                            '#C5A47E',
+                            '#E9D8C7'
+                        ],
+                        borderColor: '#FDFBF8',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Our IT Service Distribution',
+                            font: { size: 18 }
+                        }
+                    }
+                }
+            });
+
+            const allJobData = [
+                { title: 'Graphic Designer', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'AI Marketing Content Creator', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Sales Representative', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                { title: 'Project Manager', department: 'Management', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Senior Legal Consultant', department: 'Legal', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Financial Analyst', department: 'Finance', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Business Strategy Consultant', department: 'Consultancy', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'HR and Talent Specialist', department: 'Talent Acquisition (HR)', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Marketing & Branding Specialist', department: 'Marketing', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Web Developer (Frontend & Backend)', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'CRM/ System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }
+            ];
+
+            const itJobs = allJobData.filter(job => job.department === 'IT');
+            const jobListingsContainer = document.getElementById('job-listings');
+
+            if (itJobs.length > 0) {
+                itJobs.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'bg-white p-6 rounded-lg shadow-md border-l-4 border-[#C5A47E] flex justify-between items-center';
+                    
+                    let actionButtonHtml;
+
+                    if (job.title === 'Web Developer (Frontend & Backend)') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/it/web-developer" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else if (job.title === 'CRM/ System Specialist') {
+                        actionButtonHtml = `<a href="https://sites.google.com/view/rig-talent/it/crm-system-specialist" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else {
+                        actionButtonHtml = `<a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Apply Now</a>`;
+                    }
+
+                    jobCard.innerHTML = `
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">${job.title}</h3>
+                            <div class="mt-2 flex flex-wrap gap-2 text-sm">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.level}</span>
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${job.type}</span>
+                            </div>
+                        </div>
+                        ${actionButtonHtml}
+                    `;
+                    jobListingsContainer.appendChild(jobCard);
+                });
+            } else {
+                jobListingsContainer.innerHTML = `<p class="text-center text-gray-600">There are currently no open positions in the IT department. Please check back later.</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
