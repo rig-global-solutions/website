@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* --- General Styling & Brand Variables (from Script-1) --- */
+        /* --- General Styling & Brand Variables --- */
         :root {
             --primary-color: #0033A0; /* RIG Strategic Blue */
             --growth-color: #3E9B40;  /* RIG Growth Green */
@@ -55,15 +55,16 @@
             margin-bottom: 20px;
         }
 
-        h1 { font-size: 3rem; }
+        h1 { font-size: 3rem; color: var(--light-color); }
         h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center; }
         h3 { font-size: 1.5rem; }
 
         p {
             margin-bottom: 20px;
+            color: #555;
         }
 
-        /* --- Header & Navigation (from Script-1) --- */
+        /* --- Header & Navigation --- */
         .main-header {
             background: var(--light-color);
             padding: 15px 0;
@@ -85,9 +86,9 @@
         .brand .logo {
             width: 50px;
             height: 50px;
-            background-color: #ccc;
             margin-right: 15px;
             border-radius: 5px;
+            object-fit: contain;
         }
         .brand-text h4 {
             margin: 0;
@@ -116,6 +117,8 @@
         .main-nav ul li a:hover, .main-nav ul li a.active {
             color: var(--primary-color);
         }
+
+        /* --- Mega Menu Styles --- */
         .has-megamenu {
             position: static;
         }
@@ -169,7 +172,7 @@
             padding-left: 5px;
         }
 
-        /* --- Page Specific Styles (from Script-2, adapted to brand theme) --- */
+        /* --- Buttons --- */
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -179,13 +182,14 @@
             transition: all 0.3s ease;
         }
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            border: 2px solid var(--primary-color);
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border: 2px solid var(--accent-color);
         }
         .btn-primary:hover {
-            background-color: transparent;
-            color: var(--primary-color);
+             background-color: var(--light-color);
+             color: var(--dark-color);
+             border-color: var(--light-color);
         }
         .btn-outline {
             background-color: transparent;
@@ -196,13 +200,14 @@
             background-color: var(--primary-color);
             color: var(--light-color);
         }
+
+        /* --- Hero Section --- */
         .hero {
-            /* --- MODIFIED: New Background Image --- */
             background-image: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 51, 160, 0.7)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
             background-size: cover;
             background-position: center;
             color: var(--light-color);
-            height: 90vh;
+            height: 80vh;
             display: flex;
             align-items: center;
             text-align: center;
@@ -212,27 +217,29 @@
             margin: 0 auto;
         }
         .hero h1 { margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: var(--light-color); opacity: 0.9;}
+
+        /* --- Other Sections --- */
         .social-proof { background-color: var(--grey-bg); padding: 40px 0; text-align: center; }
         .social-proof h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; color: #777; margin-bottom: 25px; }
         .logos-bar { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
         .logos-bar img { max-height: 40px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease; }
         .logos-bar img:hover { filter: grayscale(0%); opacity: 1; }
-        .challenge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .challenge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .challenge-card { background: var(--light-color); border: 1px solid var(--border-color); padding: 30px; border-radius: 8px; text-align: center; }
         .challenge-card h3 { color: var(--primary-color); }
         #solution { background-color: var(--grey-bg); }
         .solution-content { max-width: 800px; margin: 0 auto 50px auto; text-align: center; }
-        .differentiators-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+        .differentiators-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
         .differentiator-item .icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 15px; }
-        .pricing-table { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; align-items: start; }
+        .pricing-table { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; align-items: start; }
         .pricing-plan { border: 1px solid var(--border-color); border-radius: 8px; padding: 30px; display: flex; flex-direction: column; text-align: center; transition: all 0.3s ease; }
         .pricing-plan:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .pricing-plan.pro { border-color: var(--accent-color); border-width: 2px; position: relative; transform: scale(1.05); }
         .pricing-plan.pro::before { content: 'MOST POPULAR'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-color); color: var(--dark-color); padding: 5px 15px; font-size: 0.75rem; font-weight: 700; border-radius: 20px; }
         .plan-header h3 { color: var(--primary-color); }
         .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
-        .plan-price { font-size: 2.5rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price { font-size: 2.2rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
         .plan-price span { font-size: 1rem; font-weight: 400; color: #777; }
         .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
         .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
@@ -243,9 +250,6 @@
         .testimonial-card blockquote { font-style: italic; margin-bottom: 15px; }
         .testimonial-card cite { font-weight: 600; color: var(--primary-color); }
         .case-study-card { grid-column: span 2; }
-        .case-study-card h4 { margin-bottom: 15px; }
-        .case-study-card p { margin-bottom: 10px; }
-        .case-study-card strong { color: var(--primary-color); }
         .faq-container { max-width: 800px; margin: 50px auto 0; }
         .faq-item { border-bottom: 1px solid var(--border-color); }
         .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
@@ -255,33 +259,21 @@
         .faq-answer p { padding: 0 0 20px; }
         .final-cta { background-color: var(--primary-color); color: var(--light-color); text-align: center; }
         .final-cta h2 { color: var(--light-color); }
-        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
-        .final-cta .secondary-link { display: block; margin-top: 20px; color: var(--light-color); opacity: 0.8; text-decoration: underline; }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; color: var(--light-color); opacity: 0.9;}
 
-        /* --- Footer Styles (from Script-1) --- */
+        /* --- Footer --- */
         .main-footer { background-color: var(--dark-color); color: var(--light-color); padding: 60px 0 20px; }
         .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
-        .footer-col .footer-brand { display: flex; align-items: center; margin-bottom: 15px;}
-        .footer-col .logo { width: 60px; height: 60px; background: #ccc; border-radius: 5px; margin-right: 15px; }
-        .footer-col .brand-text h4 { margin: 0; font-size: 1.5rem; color: var(--light-color); }
-        .footer-col .brand-text p { font-size: 0.8rem; margin: 0; opacity: 0.8;}
-        .footer-col h4.col-title { margin-bottom: 20px; font-size: 1.2rem; color: var(--light-color); }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 10px; opacity: 0.8; }
-        .footer-col ul li i { margin-right: 10px; width: 15px; text-align: center; }
-        .footer-col ul li a { color: var(--light-color); text-decoration: none; transition: color 0.3s, opacity 0.3s; }
-        .footer-col ul li a:hover { opacity: 1; color: var(--accent-color); }
+        .footer-col .logo { width: 60px; height: 60px; margin-right: 15px; border-radius: 5px; object-fit: contain;}
         .social-links a { color: var(--light-color); font-size: 1.5rem; margin-right: 15px; transition: color 0.3s ease; }
         .social-links a:hover { color: var(--accent-color); }
         .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.7; }
-
+        
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
-            .main-nav ul li { margin-left: 20px; }
-            .challenge-grid, .differentiators-grid { grid-template-columns: 1fr; }
-            .pricing-table { grid-template-columns: 1fr; }
+            .challenge-grid, .pricing-table { grid-template-columns: 1fr; }
             .pricing-plan.pro { transform: scale(1); }
             .testimonials-grid { grid-template-columns: 1fr; }
             .case-study-card { grid-column: span 1; }
@@ -290,18 +282,15 @@
             .has-megamenu:hover .mega-menu { display: none; }
         }
         @media (max-width: 768px) {
-            .hero { height: auto; padding: 100px 0; }
-            section { padding: 60px 0; }
-            .main-header { padding: 10px 0; }
-            .main-header .container { flex-direction: column; }
-            .main-nav { margin-top: 15px; width: 100%;}
-            .main-nav ul { flex-direction: column; text-align: center; width: 100%;}
+            .hero { height: auto; padding: 120px 0 80px; }
+            .main-header .container { flex-direction: column; gap: 15px; }
+            .main-nav { width: 100%; }
+            .main-nav ul { flex-direction: column; text-align: center; width: 100%; }
             .main-nav ul li { margin: 10px 0; }
             .has-megamenu .mega-menu { display: none !important; }
+            .differentiators-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-col .footer-brand, .footer-col ul { align-items: center; justify-content: center; text-align: center;}
-            .footer-col ul li i { display: none; }
-            .social-links { margin-top: 20px; }
+            .footer-col .brand, .footer-col ul { justify-content: center; }
         }
     </style>
 </head>
@@ -309,8 +298,8 @@
 
     <header class="main-header">
         <div class="container">
-            <a href="https://rig-global-solutions.github.io/website/" class="brand">
-                <div class="logo"></div>
+            <a href="https://www.rigfinancialservices.com/" class="brand">
+                <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
                 <div class="brand-text">
                     <h4>Rig Global Solutions</h4>
                     <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
@@ -318,41 +307,40 @@
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="https://rig-global-solutions.github.io/website/">Home</a></li>
+                    <li><a href="https://www.rigfinancialservices.com/">Home</a></li>
                     <li class="has-megamenu">
-                        <a href="https://rig-global-solutions.github.io/website/#services" class="active">Services</a>
+                        <a href="https://www.rigfinancialservices.com/index.html#services" class="active">Services</a>
                         <div class="mega-menu">
                             <div class="container mega-menu-inner">
                                 <div class="mega-menu-col">
                                     <h4 class="category">Foundational Services</h4>
                                     <ul>
-                                        <li><a href="https://rig-global-solutions.github.io/website/acounting_page.html">Accounting & Bookkeeping</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/legal_page.html">Legal & Corporate Services</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/tax_page.html">Tax & Compliance</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/hr_page.html">Human Resources Services</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/accounting_page.html">Accounting & Bookkeeping</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/legal_page.html">Legal & Corporate Services</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/tax_page.html">Tax & Compliance</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/hr_page.html">Human Resources Services</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-menu-col">
                                     <h4 class="category">Growth & Strategy</h4>
                                     <ul>
-                                        <li><a href="https://rig-global-solutions.github.io/website/business_strategy_page.html">Business Strategy & Consulting</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/finance_page.html">Strategic Financial Solutions</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/marketing_&_branding_page.html">Branding & Marketing</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/business_strategy_page.html">Business Strategy & Consulting</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/finance_page.html">Strategic Financial Solutions</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/marketing_&_branding_page.html">Branding & Marketing</a></li>
                                     </ul>
                                 </div>
                                 <div class="mega-menu-col">
                                     <h4 class="category">Technology & Automation</h4>
                                     <ul>
-                                        <li><a href="https://rig-global-solutions.github.io/website/web_development_page.html">Web Design & Development</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/crm_page.html">CRM & System Automation</a></li>
-                                        <li><a href="https://rig-global-solutions.github.io/website/it_page.html">IT Infrastructure & Support</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/web_development_page.html">Web Design & Development</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/crm_page.html">CRM & System Automation</a></li>
+                                        <li><a href="https://www.rigfinancialservices.com/it_page.html">IT Infrastructure & Support</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a href="https://sites.google.com/view/rig-talent/home">Career</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="https://www.rigfinancialservices.com/show_your_interest_page.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -363,7 +351,7 @@
             <div class="container hero-content">
                 <h1>Strategic Financial Solutions to Bridge Your Vision to Value</h1>
                 <p>Integrated financial, tax, and advisory services for individuals, startups, and growing enterprises. We provide the clarity and strategy you need to thrive.</p>
-                <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-primary">Schedule a Financial Consultation</a>
+                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary">Schedule a Financial Consultation</a>
             </div>
         </header>
 
@@ -443,7 +431,7 @@
                             <li>Credit & Insurance Advisory</li>
                             <li>Budgeting & Expense Tracking</li>
                         </ul>
-                        <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-outline">Get Started</a>
+                        <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-outline">Get Started</a>
                     </div>
                     <div class="pricing-plan pro">
                         <div class="plan-header">
@@ -459,7 +447,7 @@
                             <li>Financial Analysis & Reporting</li>
                             <li>ROC Compliance & Annual Filing</li>
                         </ul>
-                        <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-primary">Get Started</a>
+                        <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary">Get Started</a>
                     </div>
                     <div class="pricing-plan">
                         <div class="plan-header">
@@ -475,7 +463,7 @@
                             <li>Startup Funding & Valuation Advisory</li>
                             <li>Advanced Financial Analysis</li>
                         </ul>
-                        <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-outline">Book a Strategy Call</a>
+                        <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-outline">Book a Strategy Call</a>
                     </div>
                 </div>
             </div>
@@ -546,8 +534,7 @@
             <div class="container">
                 <h2>Ready to Achieve Financial Clarity and Strategic Growth?</h2>
                 <p>Let our experts handle the financial complexities so you can focus on what you do best.</p>
-                <a href="https://rig-global-solutions.github.io/website/show_your_interest_page.html" class="btn btn-primary">Schedule Your Free Consultation</a>
-                <a href="https://rig-global-solutions.github.io/website/all_services_page.html" class="secondary-link">Explore our all services</a>
+                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary" style="background-color: var(--light-color); color: var(--primary-color);">Schedule Your Free Consultation</a>
             </div>
         </section>
     </main>
@@ -556,13 +543,13 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-brand">
-                        <div class="logo"></div>
+                    <a href="https://www.rigfinancialservices.com/" class="brand" style="margin-bottom: 1.5rem; display: inline-flex;">
+                        <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
                         <div class="brand-text">
                            <h4>Rig Global Solutions</h4>
                            <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -571,27 +558,26 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                     <h4 class="col-title">Contact Info</h4>
-                     <ul>
-                         <li><i class="fas fa-map-marker-alt"></i>Address: WB, India- 721601</li>
-                         <li><i class="fas fa-id-card"></i>GSTIN: 19BGKPR8647B1ZX</li>
-                         <li><i class="fas fa-phone"></i>+91 8617715655</li>
-                         <li><i class="fas fa-envelope"></i>info@rigfinancialservices.com</li>
-                         <li><i class="fas fa-globe"></i>www.rigfinancialservices.com</li>
+                     <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Contact Info</h4>
+                     <ul style="list-style: none; opacity: 0.8; line-height: 2;">
+                          <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Address: WB, India- 721601</li>
+                          <li><i class="fas fa-id-card" style="margin-right: 10px;"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                          <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+91 8617715655</li>
+                          <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@rigfinancialservices.com</li>
                      </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="col-title">Quick Links</h4>
-                     <ul>
-                         <li><a href="#">About Us</a></li>
-                         <li><a href="https://rig-global-solutions.github.io/website/#services">Services</a></li>
-                         <li><a href="#">Privacy Policy</a></li>
-                         <li><a href="#">Terms of Service</a></li>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Quick Links</h4>
+                     <ul style="list-style: none; opacity: 0.8; line-height: 2;">
+                          <li><a href="#" style="color: white; text-decoration: none;">About Us</a></li>
+                          <li><a href="https://www.rigfinancialservices.com/index.html#services" style="color: white; text-decoration: none;">Services</a></li>
+                          <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                          <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
                      </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2024 Rig Global Solutions. All Rights Reserved.
+                &copy; 2025 RIG Global Solutions. All Rights Reserved.
             </div>
         </div>
     </footer>
@@ -604,12 +590,14 @@
             const answer = item.querySelector('.faq-answer');
             question.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
+                
                 faqItems.forEach(i => {
                     if (i !== item) {
                         i.classList.remove('active');
                         i.querySelector('.faq-answer').style.maxHeight = null;
                     }
                 });
+                
                 if (!isActive) {
                     item.classList.add('active');
                     answer.style.maxHeight = answer.scrollHeight + "px";
