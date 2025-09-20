@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RIG Global Solutions offers expert business strategy and consulting for founders, SMEs, and enterprises. We build resilient business models and data-driven roadmaps for sustainable success.">
+    <meta name="keywords" content="Business Strategy, Consulting, Financial Solutions, Startups, SMEs, Go-to-Market Strategy, Corporate Services, RIG Global Solutions">
     <title>Business Strategy & Consulting | RIG Global Solutions</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +20,11 @@
             --accent-color: #FFC425;  /* Innovation Gold */
             --dark-color: #333333;    /* Foundation Grey */
             --light-color: #ffffff;   /* Pure White */
-            --grey-bg: #F8F9FA;      /* Cloud White */
+            --grey-bg: #F8F9FA;     /* Cloud White */
             --border-color: #dee2e6;
+            --shadow-medium: 0 8px 25px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 15px 35px rgba(0,0,0,0.15);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -47,6 +52,7 @@
 
         section {
             padding: 80px 0;
+            overflow-x: hidden; /* Prevents horizontal scrollbar from animations */
         }
 
         h1, h2, h3, h4 {
@@ -172,33 +178,41 @@
             padding-left: 5px;
         }
 
-        /* --- Buttons --- */
+        /* --- Buttons (Updated Styles) --- */
         .btn {
             display: inline-block;
-            padding: 12px 28px;
-            border-radius: 5px;
+            padding: 16px 36px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            border: 2px solid transparent;
+            cursor: pointer;
         }
         .btn-primary {
-            background-color: var(--accent-color);
+            background: var(--accent-color);
             color: var(--dark-color);
-            border: 2px solid var(--accent-color);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-medium);
         }
         .btn-primary:hover {
-             background-color: var(--light-color);
-             color: var(--dark-color);
-             border-color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+            background: #2E7D32; /* New Hover Color */
+            color: var(--light-color);
+            border-color: #2E7D32;
         }
         .btn-outline {
-            background-color: transparent;
+            background: transparent;
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
         }
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background: var(--primary-color);
             color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
 
         /* --- Hero Section --- */
@@ -206,6 +220,7 @@
             background-image: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 51, 160, 0.7)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: var(--light-color);
             height: 80vh;
             display: flex;
@@ -255,11 +270,20 @@
         .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 20px 0; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--primary-color); transition: transform 0.3s ease; }
         .faq-item.active .faq-question::after { transform: rotate(45deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-answer p { padding: 0 0 20px; }
         .final-cta { background-color: var(--primary-color); color: var(--light-color); text-align: center; }
         .final-cta h2 { color: var(--light-color); }
         .final-cta p { font-size: 1.1rem; margin-bottom: 30px; color: var(--light-color); opacity: 0.9;}
+        .final-cta .btn-primary { 
+            background-color: var(--light-color); 
+            color: var(--primary-color); 
+        }
+        .final-cta .btn-primary:hover {
+            background-color: #2E7D32; /* New Hover Color */
+            color: var(--light-color);
+            border-color: #2E7D32;
+        }
 
         /* --- Footer --- */
         .main-footer { background-color: var(--dark-color); color: var(--light-color); padding: 60px 0 20px; }
@@ -269,6 +293,47 @@
         .social-links a:hover { color: var(--accent-color); }
         .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.7; }
         
+        /* --- ENHANCEMENT: Scroll to Top Button --- */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        #scrollToTopBtn:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        /* --- ENHANCEMENT: Scroll Animation --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- ENHANCEMENT: Hamburger Menu --- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
             h1 { font-size: 2.5rem; }
@@ -278,16 +343,43 @@
             .testimonials-grid { grid-template-columns: 1fr; }
             .case-study-card { grid-column: span 1; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .mega-menu { display: none; }
-            .has-megamenu:hover .mega-menu { display: none; }
+            .mega-menu { display: none !important; } /* Important to override hover */
+            .has-megamenu:hover .mega-menu { display: none !important; }
         }
+        
         @media (max-width: 768px) {
             .hero { height: auto; padding: 120px 0 80px; }
-            .main-header .container { flex-direction: column; gap: 15px; }
-            .main-nav { width: 100%; }
-            .main-nav ul { flex-direction: column; text-align: center; width: 100%; }
-            .main-nav ul li { margin: 10px 0; }
-            .has-megamenu .mega-menu { display: none !important; }
+            .main-header .container {
+                flex-wrap: wrap;
+            }
+            .hamburger {
+                display: block;
+                order: 3;
+                margin-left: auto;
+            }
+            .main-nav {
+                order: 4;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+            }
+            .main-nav.is-open {
+                max-height: 500px; /* Adjust as needed */
+            }
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                padding-top: 15px;
+            }
+            .main-nav ul li {
+                margin: 10px 0;
+            }
+            .main-nav ul li a {
+                padding: 10px 0;
+                display: block;
+            }
             .differentiators-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-col .brand, .footer-col ul { justify-content: center; }
@@ -305,11 +397,14 @@
                     <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
                 </div>
             </a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="https://www.rigfinancialservices.com/">Home</a></li>
+                    <li><a href="https://www.rigfinancialservices.com/" data-section="home">Home</a></li>
                     <li class="has-megamenu">
-                        <a href="https://www.rigfinancialservices.com/index.html#services" class="active">Services</a>
+                        <a href="https://www.rigfinancialservices.com/index.html#services" data-section="services" class="active">Services</a>
                         <div class="mega-menu">
                             <div class="container mega-menu-inner">
                                 <div class="mega-menu-col">
@@ -347,28 +442,28 @@
     </header>
 
     <main>
-        <header class="hero">
-            <div class="container hero-content">
+        <header class="hero" id="home">
+            <div class="container hero-content fade-in-section is-visible">
                 <h1>From Vision to Victory: Your Blueprint for Building, Scaling, and Leading the Market</h1>
                 <p>We partner with founders, SMEs, and enterprises to build resilient business models, execute flawless go-to-market strategies, and create data-driven roadmaps for sustainable success.</p>
                 <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary">Book a Strategy Session</a>
             </div>
         </header>
 
-        <section class="social-proof">
+        <section class="social-proof fade-in-section">
             <div class="container">
                 <h3>Powering the Growth of Tomorrow's Industry Leaders</h3>
                 <div class="logos-bar">
-                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=InnovateCo" alt="Client Logo 1">
-                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=ScaleUp" alt="Client Logo 2">
-                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=MarketLead" alt="Client Logo 3">
-                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=NextGen+Corp" alt="Client Logo 4">
-                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Visionary+VC" alt="Client Logo 5">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=InnovateCo" alt="Client Logo InnovateCo">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=ScaleUp" alt="Client Logo ScaleUp">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=MarketLead" alt="Client Logo MarketLead">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=NextGen+Corp" alt="Client Logo NextGen Corp">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Visionary+VC" alt="Client Logo Visionary VC">
                 </div>
             </div>
         </section>
 
-        <section id="challenges">
+        <section id="challenges" class="fade-in-section">
             <div class="container">
                 <h2>Is Your Strategy Keeping Pace With Your Ambition?</h2>
                 <div class="challenge-grid">
@@ -388,7 +483,7 @@
             </div>
         </section>
 
-        <section id="solution">
+        <section id="solution" class="fade-in-section">
             <div class="container">
                 <div class="solution-content">
                     <h2>Your Architectural Blueprint for Sustainable Success</h2>
@@ -414,7 +509,7 @@
             </div>
         </section>
 
-        <section id="packages">
+        <section id="packages" class="fade-in-section">
             <div class="container">
                 <h2>Select Your Strategic Blueprint</h2>
                 <div class="pricing-table">
@@ -469,7 +564,7 @@
             </div>
         </section>
 
-        <section id="testimonials">
+        <section id="testimonials" class="fade-in-section">
             <div class="container">
                 <h2>Strategic Partnerships, Measurable Impact</h2>
                 <div class="testimonials-grid">
@@ -492,37 +587,37 @@
             </div>
         </section>
 
-        <section id="faq">
+        <section id="faq" class="fade-in-section">
             <div class="container">
                 <h2>Your Strategic Questions, Answered.</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <button class="faq-question">How do you measure the success of a strategy?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1-answer">How do you measure the success of a strategy?</button>
+                        <div class="faq-answer" id="faq1-answer">
                             <p>Success is measured against the Key Performance Indicators (KPIs) we establish together at the beginning of our engagement. These could be financial metrics (like revenue growth or profitability), customer metrics (like acquisition cost or retention), or operational metrics (like efficiency gains). We build dashboards to track these KPIs transparently.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">How involved will my team need to be in the process?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2-answer">How involved will my team need to be in the process?</button>
+                        <div class="faq-answer" id="faq2-answer">
                             <p>Strategy is a collaborative process. We facilitate workshops and interviews with key stakeholders to ensure the strategy is grounded in your reality and gets full buy-in. While we do the heavy lifting on research, analysis, and documentation, your team's insights and participation are crucial for success.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">Is this a one-time plan or an ongoing partnership?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3-answer">Is this a one-time plan or an ongoing partnership?</button>
+                        <div class="faq-answer" id="faq3-answer">
                             <p>While we can deliver a one-time strategic plan, our most successful clients engage with us on an ongoing basis. The monthly packages are designed for continuous partnership, allowing us to help you execute, monitor progress, and adapt the strategy as your business and the market evolve.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">How do you adapt the strategy if market conditions change?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4-answer">How do you adapt the strategy if market conditions change?</button>
+                        <div class="faq-answer" id="faq4-answer">
                             <p>A modern strategy is not static. Our framework is built for agility. Through regular (quarterly) reviews and continuous market monitoring, we identify shifts and work with you to pivot or adjust your roadmap. This proactive approach turns potential threats into opportunities.</p>
                         </div>
                     </div>
                      <div class="faq-item">
-                        <button class="faq-question">What makes your strategic approach different from other consultants?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq5-answer">What makes your strategic approach different from other consultants?</button>
+                        <div class="faq-answer" id="faq5-answer">
                             <p>Three things: First, we are execution-focused; we build strategies that are actionable, not just theoretical. Second, our 'Strategic Enabler' framework is integrated, connecting market insights with your financial and operational realities. Third, we act as true partners, embedding ourselves in your success rather than just delivering a report.</p>
                         </div>
                     </div>
@@ -530,11 +625,11 @@
             </div>
         </section>
         
-        <section id="consultation" class="final-cta">
+        <section id="consultation" class="final-cta fade-in-section">
             <div class="container">
                 <h2>Ready to Build Your Future, Strategically?</h2>
                 <p>Let's build a resilient, scalable, and market-leading business together. Your journey to strategic clarity starts here.</p>
-                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary" style="background-color: var(--light-color); color: var(--primary-color);">Schedule a Discovery Call</a>
+                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary">Schedule a Discovery Call</a>
             </div>
         </section>
     </main>
@@ -546,34 +641,34 @@
                     <a href="https://www.rigfinancialservices.com/" class="brand" style="margin-bottom: 1.5rem; display: inline-flex;">
                         <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
                         <div class="brand-text">
-                           <h4>Rig Global Solutions</h4>
-                           <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                            <h4>Rig Global Solutions</h4>
+                            <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
                         </div>
                     </a>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                     <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Contact Info</h4>
-                     <ul style="list-style: none; opacity: 0.8; line-height: 2;">
-                          <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Address: WB, India- 721601</li>
-                          <li><i class="fas fa-id-card" style="margin-right: 10px;"></i>GSTIN: 19BGKPR8647B1ZX</li>
-                          <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+91 8617715655</li>
-                          <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@rigfinancialservices.com</li>
-                     </ul>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Contact Info</h4>
+                    <ul style="list-style: none; opacity: 0.8; line-height: 2;">
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Address: WB, India- 721601</li>
+                        <li><i class="fas fa-id-card" style="margin-right: 10px;"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+91 8617715655</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@rigfinancialservices.com</li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Quick Links</h4>
-                     <ul style="list-style: none; opacity: 0.8; line-height: 2;">
-                          <li><a href="#" style="color: white; text-decoration: none;">About Us</a></li>
-                          <li><a href="https://www.rigfinancialservices.com/index.html#services" style="color: white; text-decoration: none;">Services</a></li>
-                          <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-                          <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
-                     </ul>
+                    <ul style="list-style: none; opacity: 0.8; line-height: 2;">
+                        <li><a href="#" style="color: white; text-decoration: none;">About Us</a></li>
+                        <li><a href="https://www.rigfinancialservices.com/index.html#services" style="color: white; text-decoration: none;">Services</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -582,31 +677,94 @@
         </div>
     </footer>
 
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
-        // --- FAQ Accordion Logic ---
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // --- ENHANCEMENT: Hamburger Menu Logic ---
+        const hamburger = document.querySelector('.hamburger');
+        const mainNav = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => {
+            mainNav.classList.toggle('is-open');
+        });
+
+        // --- ENHANCEMENT: Close mobile menu when a link is clicked ---
+        const navLinks = document.querySelectorAll('.main-nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('is-open')) {
+                    mainNav.classList.remove('is-open');
+                }
+            });
+        });
+        
+        // --- ENHANCEMENT: FAQ Accordion with Accessibility ---
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             const answer = item.querySelector('.faq-answer');
+            
             question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
                 
-                faqItems.forEach(i => {
-                    if (i !== item) {
-                        i.classList.remove('active');
-                        i.querySelector('.faq-answer').style.maxHeight = null;
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
                     }
                 });
                 
-                if (!isActive) {
+                // Toggle current item
+                if (!isExpanded) {
                     item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
                     answer.style.maxHeight = answer.scrollHeight + "px";
                 } else {
                     item.classList.remove('active');
+                    question.setAttribute('aria-expanded', 'false');
                     answer.style.maxHeight = null;
                 }
             });
         });
+
+        // --- ENHANCEMENT: Scroll to Top Button ---
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- ENHANCEMENT: Scroll Animations ---
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+    });
     </script>
 </body>
 </html>
