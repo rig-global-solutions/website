@@ -18,8 +18,11 @@
             --accent-color: #FFC425;  /* Innovation Gold */
             --dark-color: #333333;    /* Foundation Grey */
             --light-color: #ffffff;   /* Pure White */
-            --grey-bg: #F8F9FA;      /* Cloud White */
+            --grey-bg: #F8F9FA;     /* Cloud White */
             --border-color: #dee2e6;
+            --shadow-medium: 0 8px 25px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 15px 35px rgba(0,0,0,0.15);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -47,6 +50,7 @@
 
         section {
             padding: 80px 0;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -172,40 +176,49 @@
             padding-left: 5px;
         }
 
-        /* --- Buttons --- */
+        /* --- Buttons (Updated Styles) --- */
         .btn {
             display: inline-block;
-            padding: 12px 28px;
-            border-radius: 5px;
+            padding: 16px 36px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            border: 2px solid transparent;
+            cursor: pointer;
         }
         .btn-primary {
-            background-color: var(--accent-color);
+            background: var(--accent-color);
             color: var(--dark-color);
-            border: 2px solid var(--accent-color);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-medium);
         }
         .btn-primary:hover {
-             background-color: var(--light-color);
-             color: var(--dark-color);
-             border-color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+            background: #2E7D32; /* New Hover Color */
+            color: var(--light-color);
+            border-color: #2E7D32;
         }
         .btn-outline {
-            background-color: transparent;
+            background: transparent;
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
         }
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background: var(--primary-color);
             color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
         }
 
         /* --- Hero Section --- */
         .hero {
-            background-image: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 51, 160, 0.7)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-image: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 51, 160, 0.7)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: var(--light-color);
             height: 80vh;
             display: flex;
@@ -260,6 +273,15 @@
         .final-cta { background-color: var(--primary-color); color: var(--light-color); text-align: center; }
         .final-cta h2 { color: var(--light-color); }
         .final-cta p { font-size: 1.1rem; margin-bottom: 30px; color: var(--light-color); opacity: 0.9;}
+        .final-cta .btn-primary {
+             background-color: var(--light-color); 
+             color: var(--primary-color);
+        }
+        .final-cta .btn-primary:hover {
+            background-color: #2E7D32; /* New Hover Color */
+            color: var(--light-color);
+            border-color: #2E7D32;
+        }
 
         /* --- Footer --- */
         .main-footer { background-color: var(--dark-color); color: var(--light-color); padding: 60px 0 20px; }
@@ -268,6 +290,47 @@
         .social-links a { color: var(--light-color); font-size: 1.5rem; margin-right: 15px; transition: color 0.3s ease; }
         .social-links a:hover { color: var(--accent-color); }
         .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; opacity: 0.7; }
+        
+        /* --- ENHANCEMENT: Scroll Animation --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- ENHANCEMENT: Hamburger Menu --- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        /* --- ENHANCEMENT: Scroll to Top Button --- */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        #scrollToTopBtn:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
         
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
@@ -278,16 +341,26 @@
             .testimonials-grid { grid-template-columns: 1fr; }
             .case-study-card { grid-column: span 1; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .mega-menu { display: none; }
-            .has-megamenu:hover .mega-menu { display: none; }
+            .mega-menu { display: none !important; }
+            .has-megamenu:hover .mega-menu { display: none !important; }
         }
         @media (max-width: 768px) {
-            .hero { height: auto; padding: 120px 0 80px; }
-            .main-header .container { flex-direction: column; gap: 15px; }
-            .main-nav { width: 100%; }
-            .main-nav ul { flex-direction: column; text-align: center; width: 100%; }
+            .hero { height: auto; padding: 120px 0 80px; background-attachment: scroll;}
+            .main-header .container { flex-wrap: wrap; }
+            .hamburger { display: block; order: 3; margin-left: auto; }
+            .main-nav {
+                order: 4;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+            }
+            .main-nav.is-open {
+                max-height: 500px;
+            }
+            .main-nav ul { flex-direction: column; text-align: center; width: 100%; padding-top: 15px;}
             .main-nav ul li { margin: 10px 0; }
-            .has-megamenu .mega-menu { display: none !important; }
+            .main-nav ul li a { padding: 10px 0; display: block; }
             .differentiators-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-col .brand, .footer-col ul { justify-content: center; }
@@ -305,6 +378,9 @@
                     <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
                 </div>
             </a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="https://www.rigfinancialservices.com/">Home</a></li>
@@ -355,7 +431,7 @@
             </div>
         </header>
 
-        <section class="social-proof">
+        <section class="social-proof fade-in-section">
             <div class="container">
                 <h3>Trusted by Industry Leaders and Innovators</h3>
                 <div class="logos-bar">
@@ -368,7 +444,7 @@
             </div>
         </section>
 
-        <section id="challenges">
+        <section id="challenges" class="fade-in-section">
             <div class="container">
                 <h2>Navigating Financial Complexity at Every Scale</h2>
                 <div class="challenge-grid">
@@ -388,7 +464,7 @@
             </div>
         </section>
 
-        <section id="solution">
+        <section id="solution" class="fade-in-section">
             <div class="container">
                 <div class="solution-content">
                     <h2>Your Integrated Financial Partner for Strategic Growth</h2>
@@ -414,7 +490,7 @@
             </div>
         </section>
 
-        <section id="packages">
+        <section id="packages" class="fade-in-section">
             <div class="container">
                 <h2>Find the Right Financial Support for Your Journey</h2>
                 <div class="pricing-table">
@@ -469,7 +545,7 @@
             </div>
         </section>
 
-        <section id="testimonials">
+        <section id="testimonials" class="fade-in-section">
             <div class="container">
                 <h2>Real Results for Our Clients</h2>
                 <div class="testimonials-grid">
@@ -492,7 +568,7 @@
             </div>
         </section>
 
-        <section id="faq">
+        <section id="faq" class="fade-in-section">
             <div class="container">
                 <h2>Have Questions? We Have Answers.</h2>
                 <div class="faq-container">
@@ -534,7 +610,7 @@
             <div class="container">
                 <h2>Ready to Achieve Financial Clarity and Strategic Growth?</h2>
                 <p>Let our experts handle the financial complexities so you can focus on what you do best.</p>
-                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary" style="background-color: var(--light-color); color: var(--primary-color);">Schedule Your Free Consultation</a>
+                <a href="https://www.rigfinancialservices.com/show_your_interest_page.html" class="btn btn-primary">Schedule Your Free Consultation</a>
             </div>
         </section>
     </main>
@@ -546,66 +622,132 @@
                     <a href="https://www.rigfinancialservices.com/" class="brand" style="margin-bottom: 1.5rem; display: inline-flex;">
                         <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
                         <div class="brand-text">
-                           <h4>Rig Global Solutions</h4>
-                           <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
+                            <h4>Rig Global Solutions</h4>
+                            <p>Empowering Solutions- Strategically, Sustainably & Globally</p>
                         </div>
                     </a>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                      <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Contact Info</h4>
                      <ul style="list-style: none; opacity: 0.8; line-height: 2;">
-                          <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Address: WB, India- 721601</li>
-                          <li><i class="fas fa-id-card" style="margin-right: 10px;"></i>GSTIN: 19BGKPR8647B1ZX</li>
-                          <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+91 8617715655</li>
-                          <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@rigfinancialservices.com</li>
+                           <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Address: WB, India- 721601</li>
+                           <li><i class="fas fa-id-card" style="margin-right: 10px;"></i>GSTIN: 19BGKPR8647B1ZX</li>
+                           <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+91 8617715655</li>
+                           <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@rigfinancialservices.com</li>
                      </ul>
                 </div>
                 <div class="footer-col">
                     <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Quick Links</h4>
                      <ul style="list-style: none; opacity: 0.8; line-height: 2;">
-                          <li><a href="#" style="color: white; text-decoration: none;">About Us</a></li>
-                          <li><a href="https://www.rigfinancialservices.com/index.html#services" style="color: white; text-decoration: none;">Services</a></li>
-                          <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-                          <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                           <li><a href="#" style="color: white; text-decoration: none;">About Us</a></li>
+                           <li><a href="https://www.rigfinancialservices.com/index.html#services" style="color: white; text-decoration: none;">Services</a></li>
+                           <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                           <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
                      </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2025 RIG Global Solutions. All Rights Reserved.
+                &copy; <span id="copyright-year">2025</span> RIG Global Solutions. All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
-        // --- FAQ Accordion Logic ---
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                faqItems.forEach(i => {
-                    if (i !== item) {
-                        i.classList.remove('active');
-                        i.querySelector('.faq-answer').style.maxHeight = null;
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- Hamburger Menu Logic ---
+            const hamburger = document.querySelector('.hamburger');
+            const mainNav = document.querySelector('.main-nav');
+            if (hamburger && mainNav) {
+                hamburger.addEventListener('click', () => {
+                    mainNav.classList.toggle('is-open');
+                });
+
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('is-open')) {
+                            mainNav.classList.remove('is-open');
+                        }
+                    });
+                });
+            }
+    
+            // --- FAQ Accordion Logic ---
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    faqItems.forEach(i => {
+                        if (i !== item) {
+                            i.classList.remove('active');
+                            i.querySelector('.faq-answer').style.maxHeight = null;
+                        }
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = null;
                     }
                 });
-                
-                if (!isActive) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                } else {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = null;
-                }
             });
+
+            // --- Scroll to Top Button ---
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (scrollToTopBtn) {
+                window.onscroll = function() {
+                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                        scrollToTopBtn.style.display = "block";
+                    } else {
+                        scrollToTopBtn.style.display = "none";
+                    }
+                };
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // --- Scroll Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            } else {
+                // Fallback for older browsers
+                sections.forEach(section => {
+                    section.classList.add('is-visible');
+                });
+            }
+
+            // --- Dynamic Copyright Year ---
+            const yearSpan = document.getElementById('copyright-year');
+            if(yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
         });
     </script>
 </body>
