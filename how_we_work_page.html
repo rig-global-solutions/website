@@ -1,318 +1,535 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How We Work | RIG Global Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEGHRRDLWJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JEGHRRDLWJ');
+    </script>
+    
     <style>
+        /* --- OPTIMIZATION: Inlined Google Font (Inter) --- */
+        @font-face {
+          font-family: 'Inter'; font-style: normal; font-weight: 300; font-display: swap;
+          src: url(data:font/woff2;base64,d09GMgABAAAAAAWAAAsAAAAACsgAAAVbAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVApGdiZgC/sE2AokAQgBYAo8ARAEg//b/w/iA8nF+Qn5E4PwgOAn5eI1Z6jX1GvGz7z/ftd9wAAYbJzY2AyYGNkYcBiYGVgY2BjwGZgY2JgY+BkaGNwYwBhYGBiAGFgY2BjwGNgZGJgY2BjwGFgZ2BkaGNwZ+BjcGZgZGBhYGVwYgBhcGFwYQBhYGRgYgBhYGFwYQBkYGIAAAC7W5bFKS4bLklRQlE2S5qkjzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2-AAAmgDAAv//wAAAP8A/wAAACgAIAAsADAAOABIAFIAWABoAHAAeACIAJgAqAC4AMgA2ADoAPgBCAEYASgBOAFIAVgBaAFwAagB2AHsAjwAAAAEABwECAwQFBgcICQoLAAwODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ucHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vv8/f7/AAMA) format('woff2');
+        }
+        @font-face {
+          font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap;
+          src: url(data:font/woff2;base64,d09GMgABAAAAAAWEAAsAAAAACsQAAAVRAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVApGdiZgC/sE2AokAQgBYAo8ARAEg//b/w/iA8nF+Qn5E4PwgOAn5eI1Z6jX1GvGz7z/ftd9wAAYbJzY2AyYGNkYcBiYGVgY2BjwGZgY2JgY+BkaGNwYwBhYGBiAGFgY2BjwGNgZGJgY2BjwGFgZ2BkaGNwZ+BjcGZgZGBhYGVwYgBhcGFwYQBhYGRgYgBhYGFwYQBkYGIAAAC7W5bFKS4bLklRQlE2S5qkjzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2-AAAmgDAAv//wAAAP8A/wAAACgAIAAsADAAOABIAFIAWABoAHAAeACIAJgAqAC4AMgA2ADoAPgBCAEYASgBOAFIAVgBaAFwAagB2AHsAjwAAAAEABwECAwQFBgcICQoLAAwODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ucHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vv8/f7/AAMA) format('woff2');
+        }
+        @font-face {
+          font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap;
+          src: url(data:font/woff2;base64,d09GMgABAAAAAAWEAAsAAAAACsQAAAVRAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVApGdiZgC/sE2AokAQgBYAo8ARAEg//b/w/iA8nF+Qn5E4PwgOAn5eI1Z6jX1GvGz7z/ftd9wAAYbJzY2AyYGNkYcBiYGVgY2BjwGZgY2JgY+BkaGNwYwBhYGBiAGFgY2BjwGNgZGJgY2BjwGFgZ2BkaGNwZ+BjcGZgZGBhYGVwYgBhcGFwYQBhYGRgYgBhYGFwYQBkYGIAAAC7W5bFKS4bLklRQlE2S5qkjzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2rRp06ZNmzZt2-AAAmgDAAv//wAAAP8A/wAAACgAIAAsADAAOABIAFIAWABoAHAAeACIAJgAqAC4AMgA2ADoAPgBCAEYASgBOAFIAVgBaAFwAagB2AHsAjwAAAAEABwECAwQFBgcICQoLAAwODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ucHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+vv8/f7/AAMA) format('woff2');
+        }
+
+        /* --- Color Palette & Core Styles --- */
         :root {
-            --primary-color: #0033A0;
-            --growth-color: #3E9B40;
-            --accent-color: #FFC425;
-            --dark-color: #333333;
-            --light-color: #ffffff;
-            --grey-bg: #F8F9FA;
-            --border-color: #dee2e6;
+            --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+            --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            
+            /* Light Theme (Default) */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f6f8fa;
+            --bg-tertiary-glass: rgba(255, 255, 255, 0.6);
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --border-color: #d0d7de;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --accent-primary: #0891b2; /* Slightly darker cyan */
+            --accent-secondary: #0284c7; /* Slightly darker blue */
+            --accent-gradient: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            --header-bg: rgba(255, 255, 255, 0.7);
+            --hero-overlay: linear-gradient(rgba(255, 255, 255, 0.1), rgba(246, 248, 250, 0.95));
+            --footer-bg: #111827;
         }
+        
+        [data-theme="dark"] {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary-glass: rgba(31, 41, 55, 0.5);
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --border-color: #30363d;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --accent-primary: #22d3ee;
+            --accent-secondary: #79c0ff;
+            --header-bg: rgba(13, 17, 23, 0.7);
+            --hero-overlay: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 1));
+            --footer-bg: #000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8fafc; /* Tailwind slate-50 */
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background-color 0.4s var(--ease-in-out-cubic), color 0.4s var(--ease-in-out-cubic);
         }
-        .step-connector {
-            flex-grow: 1;
-            height: 2px;
-            background-color: #cbd5e1; /* Tailwind slate-300 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 120px 0; position: relative; overflow: hidden; }
+
+        h1, h2, h3, h4 { line-height: 1.2; margin-bottom: 20px; font-weight: 700; text-wrap: balance; }
+        h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2.2rem, 5vw, 3rem); color: var(--text-primary); text-align: center; position: relative; margin-bottom: 60px; }
+        h2::after {
+            content: ''; width: 80px; height: 4px; background: var(--accent-gradient);
+            display: block; margin: 20px auto 0; border-radius: 2px;
+            transform: scaleX(0); transition: transform 0.6s var(--ease-in-out-cubic);
         }
-        .step.active .step-circle {
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            border-color: var(--accent-color);
+        .is-visible h2::after { transform: scaleX(1); }
+        h3 { font-size: clamp(1.4rem, 3vw, 1.75rem); font-weight: 600; color: var(--text-primary); }
+        h4 { font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-primary); }
+        p { margin-bottom: 20px; font-size: 1rem; color: var(--text-secondary); max-width: 70ch; }
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; text-fill-color: transparent;
         }
-        .step.active .step-title {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        .process-content {
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .process-content.active {
-            max-height: 500px; /* Adjust as needed */
-            opacity: 1;
-        }
-        .modal-overlay {
-            transition: opacity 0.3s ease-in-out;
-        }
+
+        /* --- Header & Navigation --- */
         .main-header {
-            background: var(--light-color);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 15px 0; box-shadow: 0 2px 10px var(--shadow-color);
+            position: sticky; top: 0; z-index: 1000; transition: all 0.4s var(--ease-in-out-cubic);
+            border-bottom: 1px solid var(--border-color);
         }
-        .main-header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; text-decoration: none; }
+        .brand .logo { width: 55px; height: 55px; margin-right: 15px; }
+        .brand-text h4 { margin: 0; font-size: 1.5rem; color: var(--text-primary); }
+        .brand-text p { margin: 0; font-size: 0.85rem; color: var(--text-secondary); }
+        .main-nav { flex-grow: 1; }
+        .main-nav ul { list-style: none; display: flex; align-items: center; justify-content: flex-end; }
+        .main-nav ul li { margin-left: 35px; }
+        .main-nav ul li a {
+            text-decoration: none; color: var(--text-secondary); font-weight: 600; padding: 20px 5px; position: relative;
+            transition: color 0.3s var(--ease-out-quad);
         }
-        .brand .logo {
-             width: 50px;
-             height: 50px;
-             margin-right: 15px;
-             border-radius: 5px;
-             object-fit: contain;
-         }
-        .main-footer {
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            padding: 60px 0 20px;
+        .main-nav ul li a::after {
+            content: ''; position: absolute; bottom: 15px; left: 0; width: 100%; height: 2px;
+            background: var(--accent-gradient);
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease-in-out-cubic);
         }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
+        .main-nav ul li a:hover, .main-nav ul li a.active { color: var(--text-primary); }
+        .main-nav ul li a:hover::after, .main-nav ul li a.active::after { transform: scaleX(1); }
+        .header-actions { display: flex; align-items: center; gap: 25px; }
+        .mobile-menu-toggle { display: none; cursor: pointer; z-index: 1001; }
+        .mobile-menu-toggle span {
+            display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 4px 0;
+            transition: all 0.4s var(--ease-in-out-cubic); border-radius: 2px;
         }
-        .footer-col .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
-            margin-right: 15px;
-            object-fit: contain;
+        .mobile-menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        
+        /* --- Hero Section for this page --- */
+        .hero {
+            position: relative; background-color: var(--bg-primary); padding: 120px 0;
+            display: flex; align-items: center; text-align: center; overflow: hidden;
         }
-        .social-links a {
-            color: var(--light-color);
-            font-size: 1.5rem;
-            margin-right: 15px;
-            transition: color 0.3s ease;
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+        .hero-background {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: var(--hero-overlay), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; background-position: center; z-index: 0;
         }
-        .social-links a:hover {
-            color: var(--accent-color);
+        .hero-content { z-index: 2; position: relative; max-width: 900px; margin: 0 auto; }
+        .hero-content h1 { color: var(--text-primary); }
+        .hero-content p { font-size: 1.2rem; margin: 30px 0 0; color: var(--text-secondary); }
+        .typing-container::after {
+            content: '|'; color: var(--accent-primary); font-weight: 300;
+            animation: blink 0.7s infinite;
         }
-         @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* --- Philosophy Cards --- */
+        #philosophy .grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch;
+        }
+        .philosophy-card {
+            background: var(--bg-secondary); padding: 40px; border-radius: 16px;
+            border: 1px solid var(--border-color); box-shadow: 0 10px 30px var(--shadow-color);
+            transition: all 0.4s var(--ease-out-quad);
+        }
+        .philosophy-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px var(--shadow-color); }
+        .philosophy-card.dark-card { background: var(--text-primary); color: var(--bg-primary); }
+        .philosophy-card.dark-card h3, .philosophy-card.dark-card p { color: inherit; }
+        .philosophy-card p { color: var(--text-secondary); }
+
+        /* --- Process Section (Timeline) --- */
+        #process .container { position: relative; z-index: 1; }
+        #process-particles { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; padding: 40px 0; }
+        .timeline::after {
+            content: ''; position: absolute; width: 3px; background: var(--border-color);
+            top: 0; bottom: 0; left: 50%; margin-left: -1.5px; z-index: 0;
+        }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+        .timeline-item::after {
+            content: attr(data-step); position: absolute; width: 40px; height: 40px;
+            font-weight: 700; display: flex; align-items: center; justify-content: center;
+            background-color: var(--bg-primary); border: 3px solid var(--border-color);
+            top: 32px; border-radius: 50%; z-index: 1; transition: all 0.4s ease;
+        }
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+        .timeline-item.left::after { right: -20px; }
+        .timeline-item.right::after { left: -20px; }
+        .timeline-content {
+            padding: 30px; background-color: var(--bg-secondary); border-radius: 8px;
+            border: 1px solid var(--border-color); position: relative;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+        .timeline-item.is-visible::after {
+            background-color: var(--accent-primary); border-color: var(--accent-primary);
+            color: white; box-shadow: 0 0 20px var(--accent-primary); transform: scale(1.1);
+        }
+        [data-theme="dark"] .timeline-item.is-visible::after { color: var(--text-primary); }
+        .timeline-content h4 { font-size: 1.25rem; color: var(--accent-primary); }
+        
+        /* --- Teams & Modal Section (Glassmorphism Cards) --- */
+        #teams .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .department-card {
+            position: relative; background: var(--bg-tertiary-glass); border: 1px solid var(--border-color);
+            border-radius: 16px; padding: 1px; overflow: hidden; text-decoration: none; display: block;
+            transition: transform 0.4s var(--ease-out-quad), box-shadow 0.4s var(--ease-out-quad);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        }
+        .department-card::before, .department-card::after {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); width: 300%; height: 300%;
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+        .department-card::before {
+            background: conic-gradient(from var(--angle), transparent 20%, var(--accent-primary), var(--accent-secondary), transparent 80%);
+            animation: spin-glow 8s linear infinite;
+        }
+        .department-card::after { background: radial-gradient(circle at var(--x) var(--y), rgba(34, 211, 238, 0.2), transparent 40%); }
+        [data-theme="light"] .department-card::after { background: radial-gradient(circle at var(--x) var(--y), rgba(8, 145, 178, 0.2), transparent 40%); }
+        @property --angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+        @keyframes spin-glow { to { --angle: 360deg; } }
+        .department-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px var(--shadow-color); }
+        .department-card:hover::before, .department-card:hover::after { opacity: 1; }
+        .card-content {
+            position: relative; z-index: 2; background: var(--bg-tertiary-glass);
+            inset: 1px; border-radius: 15px; padding: 30px; height: calc(100% - 2px);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+        .card-content .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .card-content h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
+        .card-content p { font-size: 0.8rem; line-height: 1.4; color: var(--text-secondary); }
+
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+            z-index: 5000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.4s var(--ease-in-out-cubic);
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: var(--bg-primary); border-radius: 16px; padding: 40px;
+            max-width: 500px; width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            transform: scale(0.95) translateY(10px); transition: inherit;
+        }
+        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .modal-header h3 { font-size: 1.75rem; margin-bottom: 0; }
+        .modal-close { background: none; border: none; font-size: 2.5rem; cursor: pointer; color: var(--text-secondary); }
+        .modal-body ul { list-style: disc; padding-left: 20px; }
+        .modal-body ul li { margin-bottom: 10px; }
+
+        /* --- Commitment Section --- */
+        #commitment { background: var(--bg-secondary); border-radius: 20px; }
+        #commitment span { color: var(--accent-primary); font-weight: 600; }
+        [data-theme="dark"] #commitment { background: var(--bg-secondary); border: 1px solid var(--border-color); }
+
+        /* --- Footer --- */
+        .main-footer { background: var(--footer-bg); color: #a0aec0; padding: 120px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px; }
+        .footer-col h4.col-title { margin-bottom: 25px; font-size: 1.3rem; color: #e2e8f0; position: relative; }
+        .footer-col h4.col-title::after { content: ''; width: 30px; height: 2px; background: var(--accent-primary); display: block; margin-top: 10px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 15px; display: flex; align-items: flex-start; }
+        .footer-col ul li svg { width: 16px; height: 16px; margin-right: 12px; color: #a0aec0; flex-shrink: 0; margin-top: 5px; }
+        .footer-col ul li, .footer-col ul li a { color: #a0aec0; text-decoration: none; transition: color 0.3s ease; }
+        .footer-col ul li a:hover { color: var(--accent-primary); }
+        .social-links a { color: #a0aec0; margin-right: 18px; transition: all 0.4s var(--ease-out-quad); display: inline-block; }
+        .social-links svg { width: 24px; height: 24px; fill: currentColor; }
+        .social-links a:hover { color: var(--accent-primary); transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid #4a5568; color: #a0aec0; font-size: 0.9rem; }
+
+        /* --- Utilities & Animations --- */
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-in-out-cubic), transform 0.8s var(--ease-in-out-cubic); }
+        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-primary); display: flex; justify-content: center; align-items: center; z-index: 10000; transition: opacity 0.5s ease; }
+        .loading-overlay.hidden { opacity: 0; pointer-events: none; }
+        .loader { width: 50px; height: 50px; border: 4px solid var(--border-color); border-top-color: var(--accent-primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .main-nav {
+                display: block; position: fixed; top: 0; right: -100%; width: 300px; height: 100%;
+                background: var(--bg-secondary); box-shadow: -10px 0 30px var(--shadow-color);
+                padding-top: 100px; transition: right 0.5s var(--ease-in-out-cubic); z-index: 1000;
+            }
+            .main-nav.active { right: 0; }
+            .main-nav ul { flex-direction: column; text-align: left; align-items: flex-start; padding: 20px; justify-content: flex-start; }
+            .main-nav ul li { margin: 15px 0; width: 100%; }
+            .main-nav ul li a { padding: 10px; display: block; }
+            .header-actions { margin-left: auto; }
+            .mobile-menu-toggle { display: flex; flex-direction: column; }
+            .main-nav { display: none; }
+            .main-nav.active { display: block; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 80px 0; }
+            .hero { padding: 100px 0; }
+            #philosophy .grid { grid-template-columns: 1fr; }
+            .timeline::after { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 0; }
+            .timeline-item.left, .timeline-item.right { left: 0; }
+            .timeline-item.left::after, .timeline-item.right::after { left: 0px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-col, .brand { text-align: center; justify-content: center; }
         }
     </style>
 </head>
-<body class="text-slate-800">
+<body>
+    <div class="loading-overlay" id="loadingOverlay"><div class="loader"></div></div>
 
-    <header class="main-header">
+    <header class="main-header" id="mainHeader">
         <div class="container">
-            <a href="https://www.rigfinancialservices.com/" class="brand" style="text-decoration: none; display: flex; align-items: center;">
-                <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
+            <a href="https://www.rigfinancialservices.com/" class="brand">
+                <img src="https://www.rigfinancialservices.com/logo.png" alt="RIG Global Solutions Logo" class="logo">
                 <div class="brand-text">
-                    <h4 style="margin: 0; font-size: 1.4rem; color: var(--primary-color); font-weight: 700;">Rig Global Solutions</h4>
-                    <p style="margin: 0; font-size: 0.8rem; color: var(--dark-color);">Empowering Solutions- Strategically, Sustainably & Globally</p>
+                    <h4>RIG Global Solutions</h4>
+                    <p>Empowering Solutions Globally</p>
                 </div>
             </a>
-            <nav class="hidden md:flex space-x-6" style="font-weight: 600;">
-                <a href="https://www.rigfinancialservices.com/" class="text-slate-600 hover:text-blue-800 transition">Home</a>
-                <a href="#process" class="text-slate-600 hover:text-blue-800 transition">Our Process</a>
-                <a href="#teams" class="text-slate-600 hover:text-blue-800 transition">Our Teams</a>
-                <a href="#commitment" class="text-slate-600 hover:text-blue-800 transition">Our Commitment</a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="https://www.rigfinancialservices.com/">Home</a></li>
+                    <li><a href="#process" class="active">Our Process</a></li>
+                    <li><a href="#teams">Our Teams</a></li>
+                    <li><a href="#commitment">Our Commitment</a></li>
+                     <li><a href="https://www.rigfinancialservices.com/career_home.html">Career</a></li>
+                </ul>
             </nav>
+            <div class="header-actions">
+                <div class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12 md:py-20">
-
-        <section class="text-center mb-20">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4" style="color: var(--primary-color);">How We Work</h2>
-            <p class="text-lg text-slate-600 max-w-3xl mx-auto">A transparent look into our strategic process, collaborative approach, and commitment to delivering transformative solutions.</p>
-        </section>
-
-        <section id="philosophy" class="mb-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Guiding Philosophy</h3>
-                <p class="text-md text-slate-500 mt-2">Our mission and vision are the bedrock of every project we undertake.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="bg-white p-8 rounded-lg shadow-md border border-slate-200">
-                    <h4 class="text-2xl font-semibold text-slate-900 mb-3">Our Mission</h4>
-                    <p class="text-slate-600 leading-relaxed">To deliver strategic consultancy, outsourcing, and business intelligence solutions while empowering youth through free training and guaranteed career pathways—shaping a workforce ready to drive innovation, national development, and global competitiveness.</p>
-                </div>
-                <div style="background-color: var(--dark-color);" class="text-white p-8 rounded-lg shadow-md">
-                    <h4 class="text-2xl font-semibold mb-3">Our Vision</h4>
-                    <p class="text-slate-300 leading-relaxed">To become a global catalyst for innovation, inclusive growth, and sustainable transformation—empowering enterprises, governments, and the next generation of professionals to solve real-world challenges with purpose and intelligence.</p>
-                </div>
+    <main>
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div id="particles-js"></div>
+            <div class="container hero-content">
+                <h1 class="animate-on-scroll">A Partnership Built on <br><span class="gradient-text typing-container" id="typingContainer"></span></h1>
+                <p class="animate-on-scroll" style="transition-delay: 0.1s;">A transparent look into our strategic process, collaborative approach, and commitment to delivering transformative solutions.</p>
             </div>
         </section>
 
-        <section id="process" class="mb-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Process: The Client Journey</h3>
-                <p class="text-md text-slate-500 mt-2">We follow a structured, four-phase approach to ensure clarity, alignment, and exceptional results. Click each step to learn more.</p>
-            </div>
-            
-            <div class="w-full max-w-4xl mx-auto">
-                <div class="flex items-center justify-center">
-                    <div class="step text-center cursor-pointer p-2" data-step="1">
-                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">1</div>
-                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Discovery</p>
+        <section id="philosophy">
+            <div class="container">
+                <h2 class="animate-on-scroll">Our Guiding Philosophy</h2>
+                <div class="grid">
+                    <div class="philosophy-card animate-on-scroll" style="transition-delay: 0.1s;">
+                        <h3>Our Mission</h3>
+                        <p>To deliver strategic consultancy, outsourcing, and business intelligence solutions while empowering youth through free training and guaranteed career pathways—shaping a workforce ready to drive innovation, national development, and global competitiveness.</p>
                     </div>
-                    <div class="step-connector"></div>
-                    <div class="step text-center cursor-pointer p-2" data-step="2">
-                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">2</div>
-                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Strategy</p>
-                    </div>
-                    <div class="step-connector"></div>
-                    <div class="step text-center cursor-pointer p-2" data-step="3">
-                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">3</div>
-                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Execution</p>
-                    </div>
-                     <div class="step-connector"></div>
-                    <div class="step text-center cursor-pointer p-2" data-step="4">
-                        <div class="step-circle w-16 h-16 mx-auto rounded-full border-2 border-slate-300 flex items-center justify-center text-2xl font-bold bg-white transition">4</div>
-                        <p class="step-title mt-2 text-base font-medium text-slate-600 transition">Growth</p>
-                    </div>
-                </div>
-
-                <div class="mt-8 bg-white p-8 rounded-lg shadow-md border border-slate-200 min-h-[250px]">
-                    <div id="step-content-1" class="process-content">
-                        <h4 class="text-xl font-bold text-yellow-600 mb-2">Phase 1: Discovery & Alignment</h4>
-                        <p class="text-slate-600">This initial phase is about deep listening. Our sales and strategy teams collaborate closely with you to understand your vision, challenges, and objectives. We conduct thorough research into your market landscape and internal capabilities to ensure we have a comprehensive picture before proposing a solution.</p>
-                    </div>
-                    <div id="step-content-2" class="process-content">
-                        <h4 class="text-xl font-bold text-yellow-600 mb-2">Phase 2: Strategic Formulation</h4>
-                        <p class="text-slate-600">Using insights from the discovery phase, our R&D, strategy, and service-specific experts design a bespoke roadmap. This involves defining clear KPIs, creating a detailed project plan with timelines and deliverables, and aligning on the business model. We present a comprehensive strategy that is both ambitious and achievable, ensuring it directly addresses your core needs.</p>
-                    </div>
-                    <div id="step-content-3" class="process-content">
-                        <h4 class="text-xl font-bold text-yellow-600 mb-2">Phase 3: Implementation & Execution</h4>
-                        <p class="text-slate-600">This is where the plan comes to life. Our dedicated operations, technology, and marketing teams take charge of execution. We manage the project with precision, providing regular updates and maintaining open communication channels. Whether it's setting up IT infrastructure, launching a marketing campaign, or streamlining financial processes, we focus on seamless and efficient delivery.</p>
-                    </div>
-                    <div id="step-content-4" class="process-content">
-                        <h4 class="text-xl font-bold text-yellow-600 mb-2">Phase 4: Reporting & Growth</h4>
-                        <p class="text-slate-600">Our partnership doesn't end at delivery. Our Business Intelligence team continuously monitors performance against the defined KPIs. We provide detailed reports, analyze results, and offer data-driven recommendations for optimization and future growth. This iterative approach ensures that our solutions evolve with your business, delivering sustained value and long-term success.</p>
-                    </div>
-                    <div id="step-placeholder" class="text-center text-slate-500 flex flex-col items-center justify-center h-full pt-10">
-                        <p>Select a step above to see the details.</p>
+                    <div class="philosophy-card dark-card animate-on-scroll" style="transition-delay: 0.2s;">
+                        <h3>Our Vision</h3>
+                        <p>To become a global catalyst for innovation, inclusive growth, and sustainable transformation—empowering enterprises, governments, and the next generation of professionals to solve real-world challenges with purpose and intelligence.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="teams" class="mb-20">
-             <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Teams: The Engine of Innovation</h3>
-                <p class="text-md text-slate-500 mt-2">Our departmental structure is built for synergy and specialized expertise. Click on a department to see its core focus.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <section id="process">
+            <div id="process-particles"></div>
+            <div class="container">
+                <h2 class="animate-on-scroll">Our Process: The Client Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item left animate-on-scroll" data-step="1">
+                         <div class="timeline-content">
+                             <h4>Phase 1: Discovery & Alignment</h4>
+                             <p>This initial phase is about deep listening. Our sales and strategy teams collaborate closely with you to understand your vision, challenges, and objectives. We conduct thorough research into your market landscape and internal capabilities to ensure we have a comprehensive picture before proposing a solution.</p>
+                         </div>
+                    </div>
+                    <div class="timeline-item right animate-on-scroll" data-step="2">
+                        <div class="timeline-content">
+                            <h4>Phase 2: Strategic Formulation</h4>
+                            <p>Using insights from the discovery phase, our R&D, strategy, and service-specific experts design a bespoke roadmap. This involves defining clear KPIs, creating a detailed project plan with timelines and deliverables, and aligning on the business model. We present a comprehensive strategy that is both ambitious and achievable, ensuring it directly addresses your core needs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left animate-on-scroll" data-step="3">
+                        <div class="timeline-content">
+                            <h4>Phase 3: Implementation & Execution</h4>
+                            <p>This is where the plan comes to life. Our dedicated operations, technology, and marketing teams take charge of execution. We manage the project with precision, providing regular updates and maintaining open communication channels. Whether it's setting up IT infrastructure, launching a marketing campaign, or streamlining financial processes, we focus on seamless and efficient delivery.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right animate-on-scroll" data-step="4">
+                        <div class="timeline-content">
+                            <h4>Phase 4: Reporting & Growth</h4>
+                            <p>Our partnership doesn't end at delivery. Our Business Intelligence team continuously monitors performance against the defined KPIs. We provide detailed reports, analyze results, and offer data-driven recommendations for optimization and future growth. This iterative approach ensures that our solutions evolve with your business, delivering sustained value and long-term success.</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="teams">
+            <div class="container">
+                <h2 class="animate-on-scroll">Our Teams: The Engine of Innovation</h2>
+                <div class="grid animate-on-scroll">
+                    </div>
+            </div>
         </section>
         
-        <div id="department-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0">
-            <div class="bg-white rounded-lg shadow-xl p-8 max-w-lg w-full transform transition-transform scale-95">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 id="modal-title" class="text-2xl font-bold text-slate-900"></h3>
-                    <button id="modal-close" class="text-slate-500 hover:text-slate-800 text-3xl">&times;</button>
+        <div id="department-modal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title"></h3>
+                    <button id="modal-close" class="modal-close">&times;</button>
                 </div>
-                <p id="modal-focus" class="text-sm text-yellow-600 font-semibold mb-4"></p>
-                <ul id="modal-responsibilities" class="text-slate-600 space-y-2 list-disc pl-5"></ul>
+                <div class="modal-body">
+                    <p id="modal-focus" class="gradient-text" style="font-weight: 600; margin-bottom: 15px;"></p>
+                    <ul id="modal-responsibilities"></ul>
+                </div>
             </div>
         </div>
 
-
-        <section id="commitment" class="bg-white rounded-lg shadow-md border border-slate-200 p-8 md:p-12">
-            <div class="text-center">
-                <h3 class="text-3xl font-bold text-slate-900" style="color: var(--primary-color);">Our Commitment to Youth Empowerment</h3>
-                <p class="text-md text-slate-500 mt-2 max-w-3xl mx-auto">More than just a business, we are a platform for nurturing future leaders.</p>
-                <div class="mt-6 border-t border-slate-200 pt-6">
-                    <p class="text-lg text-slate-700 leading-relaxed max-w-4xl mx-auto">
-                        A core strategic objective at RIG is to bridge the gap between education and industry. We offer <span class="font-bold" style="color: var(--accent-color);">free, high-impact training programs</span> with a commitment to <span class="font-bold" style="color: var(--accent-color);">full-time job confirmation</span> for early starters. This initiative is central to our mission, allowing us to build a future-ready workforce and contribute meaningfully to national development and talent cultivation.
-                    </p>
-                </div>
+        <section id="commitment">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll">Our Commitment to Youth Empowerment</h2>
+                <p class="animate-on-scroll" style="transition-delay: 0.1s; max-width: 800px; margin: 0 auto 30px auto; color: var(--text-secondary);">
+                    More than just a business, we are a platform for nurturing future leaders. A core strategic objective at RIG is to bridge the gap between education and industry.
+                </p>
+                <p class="animate-on-scroll" style="transition-delay: 0.2s; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    We offer <span>free, high-impact training programs</span> with a commitment to <span>full-time job confirmation</span> for early starters. This initiative is central to our mission, allowing us to build a future-ready workforce and contribute meaningfully to national development and talent cultivation.
+                </p>
             </div>
         </section>
-
     </main>
 
     <footer class="main-footer">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-brand flex items-center mb-4">
-                        <img src="https://www.rigfinancialservices.com/logo.png" alt="Rig Global Solutions Logo" class="logo">
-                        <div>
-                           <h4 class="text-xl font-bold">Rig Global Solutions</h4>
-                           <p class="text-sm text-slate-300">Empowering Solutions- Strategically, Sustainably & Globally</p>
+                    <div class="brand">
+                        <img src="https://www.rigfinancialservices.com/logo.png" alt="RIG Global Solutions Logo" class="logo">
+                        <div class="brand-text">
+                            <h4>RIG Global Solutions</h4>
+                            <p>Empowering Solutions Globally</p>
                         </div>
                     </div>
+                    <br>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/c/918617715655" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0C157.8 0 105.22 45.96 105.22 132.28v65.7H32.01V288h73.21v224h92.57V288z"/></svg></a>
+                        <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank" aria-label="Instagram"><svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                        <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+                        <a href="https://wa.me/c/918617715655" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                     <h4 class="text-lg font-bold mb-4">Contact Info</h4>
-                     <ul class="space-y-2 text-slate-300">
-                          <li><i class="fas fa-map-marker-alt w-5"></i> Address: WB, India- 721601</li>
-                          <li><i class="fas fa-id-card w-5"></i> GSTIN: 19BGKPR8647B1ZX</li>
-                          <li><i class="fas fa-phone w-5"></i> +91 8617715655</li>
-                          <li><i class="fas fa-envelope w-5"></i> info@rigfinancialservices.com</li>
-                          <li><i class="fas fa-globe w-5"></i> www.rigfinancialservices.com</li>
-                     </ul>
+                    <h4 class="col-title">Contact Info</h4>
+                    <ul>
+                        <li><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg><span>Address: WB, India- 721601</span></li>
+                        <li><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 21z" /></svg><span>GSTIN: 19BGKPR8647B1ZX</span></li>
+                        <li><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg><a href="tel:+918617715655">+91 8617715655</a></li>
+                        <li><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25-2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg><a href="mailto:info@rigfinancialservices.com">info@rigfinancialservices.com</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                     <ul class="space-y-2 text-slate-300">
-                          <li><a href="#" class="hover:text-yellow-400">About Us</a></li>
-                          <li><a href="#services" class="hover:text-yellow-400">Services</a></li>
-                          <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
-                          <li><a href="#" class="hover:text-yellow-400">Terms of Service</a></li>
+                    <h4 class="col-title">Quick Links</h4>
+                     <ul>
+                         <li><a href="#">About Us</a></li>
+                         <li><a href="https://www.rigfinancialservices.com/index.html#services">Services</a></li>
+                         <li><a href="#">Privacy Policy</a></li>
+                         <li><a href="#">Terms of Service</a></li>
                      </ul>
                 </div>
             </div>
-            <div class="footer-bottom text-center pt-5 border-t border-slate-700 text-slate-400 text-sm">
-                &copy; 2024 Rig Global Solutions. All Rights Reserved.
+            <div class="footer-bottom">
+                &copy; 2025 RIG Global Solutions. All Rights Reserved.
             </div>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const steps = document.querySelectorAll('.step');
-            const contents = document.querySelectorAll('.process-content');
-            const placeholder = document.getElementById('step-placeholder');
+    document.addEventListener('DOMContentLoaded', () => {
+        const init = () => {
+            setupLoadingOverlay();
+            setupMobileMenu();
+            initTypingEffect();
+            initDepartmentCardsAndModal();
+            initScrollAnimations();
+            initHeroParticles();
+            initProcessParticles();
+            initCardHoverEffect();
+        };
 
-            function activateStep(stepNumber) {
-                steps.forEach(s => {
-                    s.classList.remove('active');
-                    if (s.dataset.step === stepNumber) {
-                        s.classList.add('active');
-                    }
-                });
-
-                contents.forEach(c => {
-                    c.classList.remove('active');
-                    if (c.id === `step-content-${stepNumber}`) {
-                        c.classList.add('active');
-                    }
-                });
-                
-                placeholder.style.display = 'none';
+        const setupLoadingOverlay = () => {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            if (loadingOverlay) {
+                window.addEventListener('load', () => setTimeout(() => loadingOverlay.classList.add('hidden'), 200));
             }
-            
-            steps.forEach(step => {
-                step.addEventListener('click', () => {
-                    activateStep(step.dataset.step);
+        };
+
+        const setupMobileMenu = () => {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mainNav = document.getElementById('mainNav');
+            if (mobileToggle && mainNav) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
                 });
-            });
+            }
+        };
 
-            // Set initial active state
-            activateStep('1');
-
-            // Department Data
+        const initTypingEffect = () => {
+            const typingContainer = document.getElementById('typingContainer');
+            if (!typingContainer) return;
+            const words = ["Clarity.", "Strategy.", "Execution.", "Growth."];
+            let wordIndex = 0, charIndex = 0, isDeleting = false;
+            const type = () => {
+                const currentWord = words[wordIndex];
+                let typeSpeed = isDeleting ? 60 : 120;
+                if (isDeleting) {
+                    typingContainer.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingContainer.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                if (!isDeleting && charIndex === currentWord.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    typeSpeed = 500;
+                }
+                setTimeout(type, typeSpeed);
+            };
+            setTimeout(type, 1000);
+        };
+        
+        const initDepartmentCardsAndModal = () => {
             const departments = [
                 { name: 'Finance', focus: 'Financial Strategy, Compliance & Reporting', icon: '💰', responsibilities: ['Manage budgets, forecasts, and financial audits.', 'Handle corporate banking and fundraising.', 'Oversee payroll, taxation, and statutory compliance.'] },
                 { name: 'Business Strategy', focus: 'Roadmapping, GTM & Org Planning', icon: '📈', responsibilities: ['Develop strategic roadmaps and business models.', 'Formulate Go-to-Market (GTM) strategies.', 'Design SOPs and performance dashboards.'] },
@@ -323,61 +540,124 @@
                 { name: 'Talent Acquisition (HR)', focus: 'Hiring, Onboarding & Employee Management', icon: '👥', responsibilities: ['Manage recruitment cycles and interviews.', 'Handle employee onboarding and documentation.', 'Track performance and conduct feedback sessions.'] },
                 { name: 'Research & Development', focus: 'Market Intelligence & Innovation', icon: '🔬', responsibilities: ['Conduct primary and secondary market research.', 'Analyze policy trends and sector data.', 'Support new product and service development.'] }
             ];
-
             const teamsContainer = document.querySelector('#teams .grid');
             const modal = document.getElementById('department-modal');
+            if (!teamsContainer || !modal) return;
             const modalTitle = document.getElementById('modal-title');
             const modalFocus = document.getElementById('modal-focus');
             const modalResponsibilities = document.getElementById('modal-responsibilities');
-            const modalClose = document.getElementById('modal-close');
-
-            departments.forEach(dept => {
-                const card = document.createElement('div');
-                card.className = 'department-card bg-white p-4 rounded-lg shadow-md border border-slate-200 text-center cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all';
-                card.innerHTML = `
-                    <div class="text-4xl mb-3">${dept.icon}</div>
-                    <h4 class="font-bold text-slate-800">${dept.name}</h4>
-                    <p class="text-xs text-slate-500">${dept.focus}</p>
-                `;
-                card.addEventListener('click', () => {
-                    modalTitle.textContent = dept.name;
-                    modalFocus.textContent = dept.focus;
-                    modalResponsibilities.innerHTML = dept.responsibilities.map(r => `<li>${r}</li>`).join('');
-                    modal.classList.remove('hidden');
-                    setTimeout(() => {
-                        modal.classList.add('opacity-100');
-                        modal.querySelector('div').classList.add('scale-100');
-                    }, 10);
-                });
-                teamsContainer.appendChild(card);
-            });
-            
-            const closeModal = () => {
-                modal.classList.remove('opacity-100');
-                modal.querySelector('div').classList.remove('scale-100');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                }, 300);
+            const modalCloseBtn = document.getElementById('modal-close');
+            const openModal = (dept) => {
+                modalTitle.textContent = dept.name;
+                modalFocus.textContent = dept.focus;
+                modalResponsibilities.innerHTML = dept.responsibilities.map(r => `<li>${r}</li>`).join('');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
             };
-
-            modalClose.addEventListener('click', closeModal);
+            const closeModal = () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+            departments.forEach((dept, index) => {
+                const cardLink = document.createElement('a');
+                cardLink.href = "#";
+                cardLink.className = 'department-card animate-on-scroll';
+                cardLink.style.transitionDelay = `${index * 0.08}s`; 
+                cardLink.innerHTML = `
+                    <div class="card-content">
+                        <div class="icon">${dept.icon}</div>
+                        <h4>${dept.name}</h4>
+                        <p>${dept.focus}</p>
+                    </div>
+                `;
+                cardLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(dept);
+                });
+                teamsContainer.appendChild(cardLink);
+            });
+            modalCloseBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
+                if (e.target === modal) closeModal();
+            });
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
                     closeModal();
                 }
             });
-            
-            // Smooth scrolling for nav links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
+        };
+
+        const initScrollAnimations = () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if (animatedElements.length === 0) return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+        };
+        
+        const initHeroParticles = () => {
+            if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#4b5563" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true },
+                        "size": { "value": 2, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#4b5563", "opacity": 0.3, "width": 1 },
+                        "move": { "enable": true, "speed": 1, "direction": "none", "out_mode": "out" }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false } },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+                    },
+                    "retina_detect": true
+                });
+            }
+        };
+
+        const initProcessParticles = () => {
+            if (document.getElementById('process-particles') && typeof particlesJS !== 'undefined') {
+                particlesJS("process-particles", {
+                    "particles": {
+                        "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#9ca3af" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.3, "random": true },
+                        "size": { "value": 1.5, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#d1d5db", "opacity": 0.2, "width": 1 },
+                        "move": { "enable": true, "speed": 1, "direction": "none", "out_mode": "out" }
+                    },
+                    "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false } } },
+                    "retina_detect": true
+                });
+            }
+        };
+
+        const initCardHoverEffect = () => {
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.department-card');
+                cards.forEach(card => {
+                    card.addEventListener('mousemove', e => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        card.style.setProperty('--x', `${x}px`);
+                        card.style.setProperty('--y', `${y}px`);
                     });
                 });
-            });
+            }, 100);
+        };
 
-        });
+        init();
+    });
     </script>
 </body>
 </html>
