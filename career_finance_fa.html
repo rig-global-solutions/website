@@ -27,7 +27,6 @@
             z-index: 50;
             backdrop-filter: blur(10px);
             background-color: rgba(253, 251, 248, 0.8);
-            /* Added for smooth hide/show transition */
             transition: transform 0.3s ease-out;
         }
         .detail-card {
@@ -37,7 +36,6 @@
             position: relative;
             padding-left: 1.5rem;
         }
-        /* Keep list-style for job description */
         main li::before {
             content: '·';
             position: absolute;
@@ -48,7 +46,6 @@
             font-size: 1.25rem;
             line-height: 1.75rem;
         }
-        /* Ensure footer list-style is normal */
         footer li {
             padding-left: 0;
         }
@@ -70,10 +67,11 @@
                 </div>
             </a>
             
-            <div class="hidden md:flex space-x-4">
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="https://www.rigfinancialservices.com/career_home.html" class="nav-link text-gray-600 text-sm">Home</a>
+                <a href="https://forms.gle/teDcmwUh1XysX4T9A" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors text-sm">Apply Now</a>
             </div>
-            <a href="https://forms.gle/teDcmwUh1XysX4T9A" target="_blank" class="hidden md:block bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors text-sm">Apply Now</a>
+            
             <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
                 <span class="text-3xl">☰</span>
             </button>
@@ -231,6 +229,7 @@
             </div>
         </div>
     </footer>
+
     <button id="scrollToTopBtn" class="fixed bottom-6 right-6 bg-[#C5A47E] text-white p-3 rounded-full shadow-lg hover:bg-[#b5946e] transition-all duration-300 opacity-0 invisible z-50">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
     </button>
@@ -247,7 +246,6 @@
                 });
             }
             
-            // Close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     if(mobileMenu.classList.contains('hidden') === false) {
@@ -256,7 +254,6 @@
                 });
             });
 
-            // Smooth scroll for any # links (if you add any later)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -269,29 +266,24 @@
                 });
             });
 
-            // --- Sticky Header Hide/Show on Scroll ---
             const header = document.getElementById('navbar');
             let lastScrollTop = 0;
             if (header) {
                 window.addEventListener('scroll', function() {
                     let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
                     if (currentScrollTop > lastScrollTop && currentScrollTop > header.offsetHeight) {
-                        // Scroll Down
                         header.style.transform = 'translateY(-100%)';
                     } else {
-                        // Scroll Up
                         header.style.transform = 'translateY(0)';
                     }
                     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; 
                 });
             }
 
-
-            // --- Scroll to Top Button ---
             const scrollToTopBtn = document.getElementById('scrollToTopBtn');
             if (scrollToTopBtn) {
                 window.addEventListener('scroll', () => {
-                    if (window.pageYOffset > 300) { // Show after 300px
+                    if (window.pageYOffset > 300) { 
                         scrollToTopBtn.classList.remove('opacity-0', 'invisible');
                         scrollToTopBtn.classList.add('opacity-100', 'visible');
                     } else {
