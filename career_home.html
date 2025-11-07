@@ -173,7 +173,7 @@
                         </div>
                     </div>
                     <div class="chart-container">
-                         <canvas id="salaryGrowthChart"></canvas>
+                        <canvas id="salaryGrowthChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -231,12 +231,13 @@
                         <option value="all">All Work Types</option>
                         <option value="Virtual">Virtual</option>
                         <option value="On-site">On-site</option>
+                        <option value="Hybrid">Hybrid</option>
                     </select>
                 </div>
 
                 <div id="job-listings" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
-                 <div id="no-results" class="text-center py-12 text-gray-500 hidden">
+                   <div id="no-results" class="text-center py-12 text-gray-500 hidden">
                     <p class="text-xl">No openings match your criteria.</p>
                     <p>Please try different filters or check back later.</p>
                 </div>
@@ -245,19 +246,19 @@
 
         <section id="apply" class="py-20 bg-[#3A3A3A] text-white">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold">Ready to Start Your Journey?</h2>
-                 <div class="mt-10 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                     <div class="bg-white/10 p-8 rounded-lg text-left">
-                         <h3 class="text-2xl font-semibold mb-3">Internship Applications</h3>
-                         <p class="mb-6">Start your career with our 3-month, project-based internship program. Exceptional performers receive guaranteed consideration for full-time Trainee roles.</p>
-                         <a href="https://forms.gle/MbG3wAJvJRMGv26r6" target="_blank" class="bg-[#C5A47E] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#b5946e] transition-colors">Apply for Internship</a>
-                     </div>
-                     <div class="bg-white/10 p-8 rounded-lg text-left">
-                         <h3 class="text-2xl font-semibold mb-3">Experienced Professionals</h3>
-                         <p class="mb-6">Join us at the Associate level or above based on your industry experience. Benefit from immediate integration into high-impact projects.</p>
-                         <a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#C5A47E] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#b5946e] transition-colors">Apply as Professional</a>
-                     </div>
-                 </div>
+                   <h2 class="text-3xl md:text-4xl font-bold">Ready to Start Your Journey?</h2>
+                   <div class="mt-10 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="bg-white/10 p-8 rounded-lg text-left">
+                            <h3 class="text-2xl font-semibold mb-3">Internship Applications</h3>
+                            <p class="mb-6">Start your career with our 3-month, project-based internship program. Exceptional performers receive guaranteed consideration for full-time Trainee roles.</p>
+                            <a href="https://forms.gle/MbG3wAJvJRMGv26r6" target="_blank" class="bg-[#C5A47E] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#b5946e] transition-colors">Apply for Internship</a>
+                        </div>
+                        <div class="bg-white/10 p-8 rounded-lg text-left">
+                            <h3 class="text-2xl font-semibold mb-3">Experienced Professionals</h3>
+                            <p class="mb-6">Join us at the Associate level or above based on your industry experience. Benefit from immediate integration into high-impact projects.</p>
+                            <a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#C5A47E] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#b5946e] transition-colors">Apply as Professional</a>
+                        </div>
+                    </div>
             </div>
         </section>
     </main>
@@ -279,11 +280,11 @@
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
-                     <ul class="space-y-2 text-sm">
-                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
-                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
-                         <li>Website: <a href="http://www.rigfinancialservices.com" target="_blank" class="hover:text-white">www.rigfinancialservices.com</a></li>
-                     </ul>
+                       <ul class="space-y-2 text-sm">
+                            <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                            <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                            <li>Website: <a href="http://www.rigfinancialservices.com" target="_blank" class="hover:text-white">www.rigfinancialservices.com</a></li>
+                       </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
@@ -396,9 +397,9 @@
                         },
                         tooltip: {
                              callbacks: {
-                                label: function(context) {
-                                    return `Up to ${context.raw}% salary hike potential.`;
-                                }
+                                 label: function(context) {
+                                     return `Up to ${context.raw}% salary hike potential.`;
+                                 }
                             }
                         }
                     }
@@ -496,6 +497,8 @@
                 { title: 'Sales Representative', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote', url: 'https://www.rigfinancialservices.com/career_sales_sr.html' },
                 { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote', url: 'https://www.rigfinancialservices.com/career_sales_csm.html' },
                 { title: 'Sales Representative Intern', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote', url: 'https://www.rigfinancialservices.com/career_sales_sri.html' },
+                // NEW JOB LISTING IS NOW GROUPED WITH SALES JOBS
+                { title: 'Telesales / Telecaller Executive', department: 'Sales', level: 'Trainee', type: 'Hybrid', location: 'Virtual', url: 'https://www.rigfinancialservices.com/career_sales_telesales.html' }, 
                 { title: 'HR & Talent Specialist', department: 'Talent Acquisition (HR)', level: 'Trainee', type: 'Virtual', location: 'Remote', url: 'https://www.rigfinancialservices.com/career_hr_hrs.html' },
                 { title: 'Web Developer', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote', url: 'https://www.rigfinancialservices.com/career_it_wd.html' },
                 { title: 'CRM & System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote', url: 'https://www.rigfinancialservices.com/career_it_crms.html' }
