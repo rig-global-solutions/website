@@ -154,7 +154,7 @@
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">If you are a driven, relationship-focused individual, find your next opportunity with us.</p>
                 </div>
                 <div id="job-listings" class="max-w-2xl mx-auto space-y-6">
-                </div>
+                    </div>
             </div>
         </section>
 
@@ -170,16 +170,16 @@
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
-                        <li><a href="https://sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
+                        <li><a href="https.sites.google.com/view/rig-talent/home" class="hover:text-white">Main Careers Page</a></li>
+                        <li><a href="https.sites.google.com/view/rig-talent/home" class="hover:text-white">All Openings</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
-                     <ul class="space-y-2 text-sm">
-                         <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
-                         <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
-                     </ul>
+                       <ul class="space-y-2 text-sm">
+                            <li>Email: <a href="mailto:talent@rigfinancialservices.com" class="hover:text-white">talent@rigfinancialservices.com</a></li>
+                            <li>Phone: <a href="tel:+918617715655" class="hover:text-white">+91 86177 15655</a></li>
+                       </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
@@ -238,7 +238,8 @@
             const allJobData = [
                 { title: 'Graphic Designer', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
                 { title: 'AI Marketing Content Creator', department: 'Marketing', level: 'Internship', type: 'Virtual', location: 'Remote' },
-                { title: 'Sales Representative', department: 'Sales', level: 'Internship', type: 'Virtual', location: 'Remote' },
+                // CHANGE 1: 'Internship' changed to 'Trainee'
+                { title: 'Sales Representative', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }, 
                 { title: 'Project Manager', department: 'Management', level: 'Trainee', type: 'Virtual', location: 'Remote' },
                 { title: 'Senior Legal Consultant', department: 'Legal', level: 'Trainee', type: 'Virtual', location: 'Remote' },
                 { title: 'Financial Analyst', department: 'Finance', level: 'Trainee', type: 'Virtual', location: 'Remote' },
@@ -247,7 +248,9 @@
                 { title: 'Marketing & Branding Specialist', department: 'Marketing', level: 'Trainee', type: 'Virtual', location: 'Remote' },
                 { title: 'Web Developer (Frontend & Backend)', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
                 { title: 'CRM/ System Specialist', department: 'IT', level: 'Trainee', type: 'Virtual', location: 'Remote' },
-                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' }
+                { title: 'Client Success Manager', department: 'Sales', level: 'Trainee', type: 'Virtual', location: 'Remote' },
+                // CHANGE 2: New "Telecaller" job added
+                { title: 'Telecaller / Telesales Executives', department: 'Sales', level: 'Trainee', type: 'Hybrid', location: 'Hybrid' }
             ];
 
             const salesJobs = allJobData.filter(job => job.department === 'Sales');
@@ -260,13 +263,17 @@
                     
                     let actionButtonHtml;
 
-                    if (job.title === 'Sales Representative' && job.level === 'Internship') {
-                        // This matches the "Sales Representative Intern" request
+                    // CHANGE 3: Logic updated for new 'Trainee' level and new 'Telecaller' role
+                    if (job.title === 'Sales Representative' && job.level === 'Trainee') {
+                        // This now matches the "Sales Representative Trainee"
                         actionButtonHtml = `<a href="https://www.rigfinancialservices.com/career_sales_sr.html" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
                     } else if (job.title === 'Client Success Manager') {
                         actionButtonHtml = `<a href="https://www.rigfinancialservices.com/career_sales_csm.html" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
+                    } else if (job.title === 'Telecaller / Telesales Executives') {
+                        // This matches the new "Telecaller" role
+                        actionButtonHtml = `<a href="https://www.rigfinancialservices.com/career_sales_telesales.html" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Know More</a>`;
                     } else {
-                        // Default fallback for other sales roles, like a non-intern "Sales Representative" if added later
+                        // Default fallback for other sales roles (e.g., Sales Representative Intern, if you had one)
                          actionButtonHtml = `<a href="https://forms.gle/bHxCRrtxVYRxoYaG7" target="_blank" class="bg-[#3A3A3A] text-white py-2 px-4 rounded-lg hover:bg-[#505050] transition-colors whitespace-nowrap">Apply Now</a>`;
                     }
 
