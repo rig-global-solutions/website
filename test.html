@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Personal Loan Services | Credit Sarathi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .hero-bg {
+            background: linear-gradient(to right, #e0f2fe, #f0f9ff);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* *************************************************
+        * MODIFICATION: Added CSS for scrolling marquee
+        *************************************************
+        */
+        .marquee-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            /* Adds a fade effect at the edges */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            /* Adjust 80s to make it scroll faster or slower */
+            animation: scroll-marquee 80s linear infinite;
+        }
+        /* Pause scroll on hover */
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        /* The animation */
+        @keyframes scroll-marquee {
+            0% { 
+                transform: translateX(0%); 
+            }
+            100% { 
+                /* Moves by 50% of the total width (which is one full list) */
+                transform: translateX(-50%); 
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">Credit Sarathi</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#features" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#how-it-works" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+                        <a href="#calculator" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">EMI Calculator</a>
+                        <a href="#assistance" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Get Assistance</a>
+                        <a href="#faq" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-blue-600 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <span class="block h-6 w-6" aria-hidden="true">&#9776;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="text-slate-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#how-it-works" class="text-slate-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">How It Works</a>
+                <a href="#calculator" class="text-slate-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">EMI Calculator</a>
+                <a href="#assistance" class="text-slate-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Get Assistance</a>
+                <a href="#faq" class="text-slate-600 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">
+                        Instant Personal Loans.
+                        <span class="block text-blue-600">Full Assistance, Zero Fees.</span>
+                    </h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
+                        Get matched with 40+ banks and NBFCs. Receive full application assistance from our experts at no extra cost.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        
+                        <a href="https://sarathi.rigfinancialservices.com" target="_blank" class="cta-button w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            Apply Now & Get Approval Instantly
+                        </a>
+                        
+                        <a href="https://apply.rigfinancialservices.com" target="_blank" class="cta-button w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-blue-600 text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50">
+                            Need Assistance? Fill Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900">Your Trusted Loan Partner</h2>
+                    <p class="mt-2 text-lg text-slate-600">We simplify the loan process with expert guidance and unmatched access.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-3">
+                    <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">
+                            &#128176;
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Zero Consultation Fee</h3>
+                        <p class="mt-2 text-base text-slate-600">Our expert guidance and full application assistance are completely free. No hidden charges, ever.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">
+                            &#127974;
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">40+ Banks & NBFCs</h3>
+                        <p class="mt-2 text-base text-slate-600">Why settle? Get access to a wide network of lenders to find the best possible interest rates and terms for you.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">
+                            &#128100;
+                        </div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Full Application Assistance</h3>
+                        <p class="mt-2 text-base text-slate-600">From paperwork to submission, our team guides you at every step, ensuring a smooth and error-free application.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900">Get Your Loan in 4 Simple Steps</h2>
+                    <p class="mt-2 text-lg text-slate-600">Our streamlined process is designed for your convenience.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-4">
+                    <div class="text-center p-4">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white text-2xl font-bold mx-auto">1</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Tell Us Your Needs</h3>
+                        <p class="mt-2 text-base text-slate-600">Fill out our simple "Apply Now" form or request assistance. It takes just 2 minutes.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white text-2xl font-bold mx-auto">2</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Get Instantly Matched</h3>
+                        <p class="mt-2 text-base text-slate-600">Our algorithm compares your profile with 40+ lenders to find the best offers for you.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white text-2xl font-bold mx-auto">3</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Expert Assistance</h3>
+                        <p class="mt-2 text-base text-slate-600">Our loan expert contacts you to discuss options and helps you complete your application.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white text-2xl font-bold mx-auto">4</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Loan Disbursed</h3>
+                        <p class="mt-2 text-base text-slate-600">Once approved, your loan amount is transferred directly to your bank account, often within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="partners" class="py-16 bg-blue-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-xl font-semibold text-slate-700">Trusted by over 40+ leading banks and NBFCs</h2>
+                
+                <div class="marquee-container mt-8">
+                    <div class="marquee-content">
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">HDFC Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">ICICI Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Axis Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">State Bank of India (SBI)</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Kotak Mahindra Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bajaj Finserv</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Tata Capital</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IDFC First Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Poonawalla Fincorp</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bank of Baroda</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IndusInd Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Yes Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Aditya Birla Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">HDB Financial Services</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">SMFG India Credit</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Navi</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Moneyview</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Fibe (EarlySalary)</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">KreditBee</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">MoneyTap</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">PAYTM</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">L&T Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">CASHe</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">RBL Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Federal Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Union Bank of India</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Punjab National Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Canara Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Standard Chartered</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">AU Small Finance Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Mahindra Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Shriram Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IIFL Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Zype</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Upwards</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Indiabulls</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bandhan Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IDBI Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">DBS Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Lendingkart</span>
+                        
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">HDFC Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">ICICI Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Axis Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">State Bank of India (SBI)</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Kotak Mahindra Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bajaj Finserv</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Tata Capital</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IDFC First Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Poonawalla Fincorp</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bank of Baroda</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IndusInd Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Yes Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Aditya Birla Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">HDB Financial Services</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">SMFG India Credit</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Navi</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Moneyview</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Fibe (EarlySalary)</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">KreditBee</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">MoneyTap</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">PAYTM</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">L&T Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">CASHe</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">RBL Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Federal Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Union Bank of India</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Punjab National Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Canara Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Standard Chartered</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">AU Small Finance Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Mahindra Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Shriram Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IIFL Finance</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Zype</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Upwards</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Indiabulls</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bandhan Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IDBI Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">DBS Bank</span>
+                        <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Lendingkart</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900">Estimate Your EMI</h2>
+                    <p class="mt-2 text-lg text-slate-600">Use our interactive calculator to plan your finances. Adjust the sliders to see your potential monthly payment and total interest.</p>
+                </div>
+                <div class="mt-12 max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
+                    <div class="p-6">
+                        <div>
+                            <label for="loanAmount" class="flex justify-between text-sm font-medium text-slate-700">
+                                <span>Loan Amount</span>
+                                <span id="loanAmountValue" class="font-bold text-blue-600">$50,000</span>
+                            </label>
+                            <input type="range" id="loanAmount" min="1000" max="100000" value="50000" step="1000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+                        <div class="mt-6">
+                            <label for="loanTenure" class="flex justify-between text-sm font-medium text-slate-700">
+                                <span>Loan Tenure (Months)</span>
+                                <span id="loanTenureValue" class="font-bold text-blue-600">36 Months</span>
+                            </label>
+                            <input type="range" id="loanTenure" min="6" max="60" value="36" step="1" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+                        <div class="mt-6">
+                            <label for="interestRate" class="flex justify-between text-sm font-medium text-slate-700">
+                                <span>Interest Rate (p.a.)</span>
+                                <span id="interestRateValue" class="font-bold text-blue-600">10.0%</span>
+                            </label>
+                            <input type="range" id="interestRate" min="5" max="20" value="10" step="0.1" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer mt-2">
+                        </div>
+                        <div class="mt-8 p-6 bg-blue-50 rounded-lg text-center">
+                            <p class="text-sm font-medium text-slate-600">Your Estimated Monthly EMI</p>
+                            <p id="emiValue" class="text-4xl font-bold text-blue-600 mt-2">$1,613.36</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="chart-container">
+                            <canvas id="emiChart"></canvas>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-slate-600">Principal Amount: <span id="principalDisplay" class="font-semibold text-slate-800">$50,000</span></p>
+                            <p class="text-sm text-slate-600">Total Interest Paid: <span id="interestDisplay" class="font-semibold text-slate-800">$8,080.90</span></p>
+                            <p class="text-base text-slate-800 mt-2">Total Payment: <span id="totalDisplay" class="font-bold text-blue-600">$58,080.90</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="assistance" class="py-16 md:py-24 hero-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold text-slate-900 text-center">Need Assistance?</h2>
+                    <p class="mt-2 text-lg text-slate-600 text-center">Not sure where to start? Fill out this form, and one of our experts will call you back to provide free, no-obligation consultation.</p>
+                    
+                    <form id="assistance-form" class="mt-8 space-y-6">
+                        <div>
+                            <label for="assist-name" class="sr-only">Name</label>
+                            <input type="text" id="assist-name" name="name" placeholder="Your Name" required class="w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="assist-phone" class="sr-only">Phone</label>
+                            <input type="tel" id="assist-phone" name="phone" placeholder="Your Phone Number" required class="w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="assist-email" class="sr-only">Email</label>
+                            <input type="email" id="assist-email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <button type="submit" class="cta-button w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                                Request a Call Back
+                            </button>
+                        </div>
+                        <p id="assist-success-msg" class="text-center text-green-600 hidden">Thank you! Our expert will contact you shortly.</p>
+                        <p id="assist-error-msg" class="text-center text-red-600 hidden">Error: Could not submit form. Please try again.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 md:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-900 text-center">Frequently Asked Questions</h2>
+                <div class="mt-12 space-y-4">
+                    <details class="group p-4 bg-slate-50 rounded-lg">
+                        <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900 group-open:text-blue-600">
+                            What is the eligibility criteria for a personal loan?
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">&ndash;</span>
+                        </summary>
+                        <p class="mt-2 text-slate-600">Eligibility depends on your age, income, credit score, and employment status. Generally, you need to be a salaried employee or self-employed with a stable income.</p>
+                    </details>
+                    <details class="group p-4 bg-slate-50 rounded-lg">
+                        <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900 group-open:text-blue-600">
+                            What documents are required for application?
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">&ndash;</span>
+                        </summary>
+                        <p class="mt-2 text-slate-600">Commonly required documents include ID proof (Aadhaar, PAN), address proof, latest salary slips, 3-6 months bank statements, and employment proof.</p>
+                    </details>
+                    <details class="group p-4 bg-slate-50 rounded-lg">
+                        <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900 group-open:text-blue-600">
+                            How long does it take to get the loan approved?
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">&ndash;</span>
+                        </summary>
+                        <p class="mt-2 text-slate-600">With our instant matching, you get pre-approval offers instantly. After document verification, the final disbursal can happen in as little as 24-48 hours.</p>
+                    </details>
+                    <details class="group p-4 bg-slate-50 rounded-lg">
+                        <summary class="flex justify-between items-center cursor-pointer font-medium text-slate-900 group-open:text-blue-600">
+                            Is your consultation service really free?
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">&ndash;</span>
+                        </awsome.summar
+                        <p class="mt-2 text-slate-600">Yes, 100%. We offer full application assistance and consultation at zero extra cost to you. We receive our commission from the lender you choose, so our service is completely free for you.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-2xl font-bold text-white mb-2">Credit Sarathi</p>
+            <p>&copy; 2025 Credit Sarathi. All rights reserved. Your trusted partner in financial solutions.</p>
+            
+            <div class="mt-6 flex justify-center space-x-6">
+                <a href="https://www.facebook.com/61583464235456" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Facebook</a>
+                <a href="https://wa.me/918617715655" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
+                <a href="https://www.instagram.com/rig_credit" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+            </div>
+
+            <p class="text-xs mt-8">Disclaimer: We are a loan consultation service and not a lender. All loan applications are subject to approval by the respective bank or NBFC.</p>
+        </div>
+    </footer>
+
+    <div id="apply-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 opacity-0 invisible scale-95">
+        <div class="modal-content bg-white w-full max-w-lg p-8 rounded-lg shadow-2xl transform scale-100 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-slate-900">Apply for Instant Loan</h2>
+                <button id="close-modal-button" class="text-slate-500 hover:text-slate-800 text-2xl">&times;</button>
+            </div>
+            <p class="mt-2 text-slate-600">Fill in your details to get started. Our expert will guide you next.</p>
+            
+            <form id="apply-form" class="mt-6 space-y-4">
+                <div>
+                    <label for="apply-name" class="block text-sm font-medium text-slate-700">Full Name</label>
+                    <input type="text" id="apply-name" required class="mt-1 w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="apply-phone" class="block text-sm font-medium text-slate-700">Phone Number</label>
+                    <input type="tel" id="apply-phone" required class="mt-1 w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="apply-email" class="block text-sm font-medium text-slate-700">Email Address</label>
+                    <input type="email" id="apply-email" required class="mt-1 w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="apply-amount" class="block text-sm font-medium text-slate-700">Loan Amount Required</label>
+                    <input type="number" id="apply-amount" placeholder="$50,000" required class="mt-1 w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="apply-employment" class="block text-sm font-medium text-slate-700">Employment Type</label>
+                    <select id="apply-employment" required class="mt-1 w-full px-4 py-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                        <option value="">Select an option</option>
+                        <option value="salaried">Salaried</option>
+                        <option value="self-employed">Self-Employed</option>
+                    </select>
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="cta-button w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+            <div id="apply-success-msg" class="text-center p-4 mt-6 bg-green-50 text-green-700 rounded-md hidden">
+                <h3 class="font-semibold">Application Submitted!</h3>
+                <p>Thank you! An expert will review your details and contact you within 15 minutes to guide you through the next steps.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loanAmount = document.getElementById('loanAmount');
+            const loanAmountValue = document.getElementById('loanAmountValue');
+            const loanTenure = document.getElementById('loanTenure');
+            const loanTenureValue = document.getElementById('loanTenureValue');
+            const interestRate = document.getElementById('interestRate');
+            const interestRateValue = document.getElementById('interestRateValue');
+            const emiValue = document.getElementById('emiValue');
+            const principalDisplay = document.getElementById('principalDisplay');
+            const interestDisplay = document.getElementById('interestDisplay');
+            const totalDisplay = document.getElementById('totalDisplay');
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            const openModalButton = document.getElementById('open-modal-button'); 
+            const closeModalButton = document.getElementById('close-modal-button');
+            const applyModal = document.getElementById('apply-modal');
+
+            const applyForm = document.getElementById('apply-form');
+            const applySuccessMsg = document.getElementById('apply-success-msg');
+            
+            const assistanceForm = document.getElementById('assistance-form');
+            const assistSuccessMsg = document.getElementById('assist-success-msg');
+            const assistErrorMsg = document.getElementById('assist-error-msg'); 
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.hash !== "") {
+                        e.preventDefault();
+                        const hash = this.hash;
+                        document.querySelector(hash).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            const formatCurrency = (value) => {
+                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
+            };
+
+            const formatCurrencyDetailed = (value) => {
+                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(value);
+            };
+
+            const calculateEMI = () => {
+                const p = parseFloat(loanAmount.value);
+                const r = parseFloat(interestRate.value) / 100 / 12;
+                const n = parseFloat(loanTenure.value);
+                
+                if (p <= 0 || r <= 0 || n <= 0) {
+                    emiValue.textContent = formatCurrencyDetailed(0);
+                    return [0, 0, 0];
+                }
+
+                const emi = p * r * (Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1));
+                const totalPayment = emi * n;
+                const totalInterest = totalPayment - p;
+
+                emiValue.textContent = formatCurrencyDetailed(emi);
+                loanAmountValue.textContent = formatCurrency(p);
+                loanTenureValue.textContent = ${n} Months;
+                interestRateValue.textContent = ${parseFloat(interestRate.value).toFixed(1)}%;
+                
+                principalDisplay.textContent = formatCurrency(p);
+                interestDisplay.textContent = formatCurrencyDetailed(totalInterest);
+                totalDisplay.textContent = formatCurrencyDetailed(totalPayment);
+
+                return [p, totalInterest];
+            };
+
+            const ctx = document.getElementById('emiChart').getContext('2d');
+            const emiChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Principal Amount', 'Total Interest'],
+                    datasets: [{
+                        data: [50000, 8080.90],
+                        backgroundColor: ['#3b82f6', '#f0f9ff'],
+                        borderColor: ['#3b82f6', '#f0f9ff'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += formatCurrencyDetailed(context.parsed);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+
+            const updateChart = (principal, interest) => {
+                emiChart.data.datasets[0].data[0] = principal;
+                emiChart.data.datasets[0].data[1] = interest;
+                emiChart.update();
+            };
+
+            [loanAmount, loanTenure, interestRate].forEach(input => {
+                input.addEventListener('input', () => {
+                    const [principal, interest] = calculateEMI();
+                    updateChart(principal, interest);
+                });
+            });
+
+            calculateEMI();
+
+            if (openModalButton) { 
+                openModalButton.addEventListener('click', () => {
+                    applyModal.classList.remove('invisible', 'opacity-0', 'scale-95');
+                    applyModal.classList.add('opacity-100', 'scale-100');
+                });
+            }
+
+            const closeModal = () => {
+                applyModal.classList.add('opacity-0', 'scale-95');
+                applyModal.classList.remove('opacity-100', 'scale-100');
+                setTimeout(() => {
+                    applyModal.classList.add('invisible');
+                    applyForm.classList.remove('hidden');
+                    applySuccessMsg.classList.add('hidden');
+                    applyForm.reset();
+                }, 300);
+            };
+
+            closeModalButton.addEventListener('click', closeModal);
+            applyModal.addEventListener('click', (e) => {
+                if (e.target === applyModal) {
+                    closeModal();
+                }
+            });
+
+            applyForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                applyForm.classList.add('hidden');
+                applySuccessMsg.classList.remove('hidden');
+            });
+            
+            assistanceForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // IMPORTANT: Paste your Web App URL here
+                const googleScriptURL = "https://script.google.com/macros/s/AKfycbxYyil8swN1yJzjd67P3TWmV4wHmpXMAVhIBiY1Z8NXgtxGoQscmHKyLYxXTM1jgww6/exec";
+
+                const submitButton = assistanceForm.querySelector('button[type="submit"]');
+                const formData = new FormData(assistanceForm);
+
+                submitButton.disabled = true;
+                submitButton.textContent = 'Submitting...';
+                assistSuccessMsg.classList.add('hidden');
+                assistErrorMsg.classList.add('hidden');
+
+                try {
+                    const response = await fetch(googleScriptURL, {
+                        method: 'POST',
+                        body: formData,
+                    });
+
+                    const result = await response.json();
+
+                    if (result.result === "success") {
+                        assistanceForm.classList.add('hidden');
+                        assistSuccessMsg.classList.remove('hidden');
+                    } else {
+                        throw new Error(result.message || 'Unknown error');
+                    }
+
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    assistErrorMsg.classList.remove('hidden');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Request a Call Back';
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Credit Corner - Business Loans & Credit Cards</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #4a6cf7;
@@ -52,6 +55,7 @@
     }
     
     /* --- Enhanced Header with Smart Navigation --- */
+    /* --- Enhanced Header with Smart Navigation --- */
     .main-header {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
@@ -73,7 +77,6 @@
       display: flex; 
       justify-content: space-between; 
       align-items: center; 
-      padding: 0 20px;
     }
     
     .brand { 
@@ -94,6 +97,7 @@
       font-size: 1.5rem; 
       color: var(--primary-color); 
       line-height: 1.2;
+      font-weight: 700;
     }
     
     .brand-text p { 
@@ -316,7 +320,7 @@
       }
       
       .main-header .container {
-        padding: 10px 20px;
+        padding: 10px 0;
       }
       
       .brand .logo {
@@ -462,7 +466,7 @@
     }
     
     .loan-links a {
-      color: white;
+      color: #0f805b;
       text-decoration: none;
       font-size: 1rem;
       margin: 0 0.5rem;
@@ -470,28 +474,15 @@
     }
     
     .loan-links a:hover {
-      color: #f1c40f;
+      color: #50a4b5;
       text-decoration: underline;
     }
     
     /* Business Loan Section */
     .business-loan-section {
-      padding: 4rem 0 3rem;
       background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
       position: relative;
       overflow: hidden;
-    }
-    
-    .business-loan-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(52, 152, 219, 0.05) 0%, rgba(74, 108, 247, 0.05) 100%);
-      border-radius: 30% 0 0 30%;
-      transform: translateX(30%) scale(1.5);
     }
     
     .business-loan-wrapper {
@@ -503,11 +494,13 @@
       padding-top: 1rem;
       max-width: 1400px;
       margin: 0 auto;
+      justify-content: space-around;
     }
     
     .business-loan-image {
       flex: 0 0 40%;
       max-width: 450px;
+      margin-top: 2rem;
       position: relative;
       padding: 0;
       margin: -1.5rem 0 0 -3rem;
@@ -515,10 +508,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .business-loan-image:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-    }
     
     .business-img {
       width: 100%;
@@ -902,15 +891,101 @@
       font-size: 0.9rem;
     }
     
+    /* Our Services Section */
+    .services-section {
+      padding: 5rem 0;
+      background-color: #e9f7f5;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .service-card {
+      background: transparent;
+      border-radius: 30px;
+      padding: 1rem 1rem;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-logo {
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .service-card p {
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    
+    .apply-button {
+      display: inline-block;
+      background: transparent;
+      color: #0f805b;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .apply-button:hover {
+      background: transparent;
+      color: #4a6cf7;
+      border-color: #4a6cf7;
+    }
+    
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+      }
+      
+      .service-card {
+        padding: 1rem 1rem;
+      }
+    }
+    
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 6rem 0 1rem 0; /* Removed bottom padding */
+      background: #ffffff; /* White background */
+      color: #2c3e50; /* Dark text color for better contrast */
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid #eee; /* Subtle border for separation */
     }
     
     #particles-js {
@@ -928,17 +1003,22 @@
       justify-content: space-between;
       flex-wrap: wrap;
       position: relative;
-      z-index: 3; /* Increased z-index to be above particles */
+      z-index: 3;
+      margin: 0 auto;
+      width: 100%;
+      min-height: 100%;
     }
     
     .hero-content {
       flex: 1;
       min-width: 300px;
-      padding-right: 2rem;
+      padding: 2rem;
       text-align: left;
       position: relative;
       z-index: 2;
-      color: white;
+      color: #2c3e50;
+      max-width: 700px;
+      box-sizing: border-box;
     }
     
     .hero-image {
@@ -947,6 +1027,10 @@
       text-align: center;
       position: relative;
       z-index: 2;
+      max-width: 600px;
+      padding: 0 2rem;
+      box-sizing: border-box;
+      margin: 2rem 0;
     }
     
     .hero-image img {
@@ -973,24 +1057,24 @@
     
     .hero-content h1,
     .hero-content p {
-      color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      color: #2c3e50; /* Dark text color for better contrast */
+      text-shadow: none; /* Remove text shadow for better readability */
     }
     
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1.5rem;
-      color: white !important;
+      color: #2c3e50 !important; /* Dark text color for better contrast */
       line-height: 1.2;
     }
     
     .hero p {
       font-size: 1.25rem;
-      color: white !important;
+      color: #4a5568 !important; /* Slightly lighter text for paragraph */
       max-width: 700px;
       margin-bottom: 2rem;
       opacity: 1;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      text-shadow: none; /* Remove text shadow for better readability */
     }
     
     /* Removed cards carousel styles */
@@ -1301,6 +1385,35 @@
     .floating {
       animation: float 6s ease-in-out infinite;
     }
+
+    .marquee-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            /* Adds a fade effect at the edges */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            /* Adjust 80s to make it scroll faster or slower */
+            animation: scroll-marquee 80s linear infinite;
+        }
+        /* Pause scroll on hover */
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+        /* The animation */
+        @keyframes scroll-marquee {
+            0% { 
+                transform: translateX(0%); 
+            }
+            100% { 
+                /* Moves by 50% of the total width (which is one full list) */
+                transform: translateX(-50%); 
+            }
+        }
   </style>
 </head>
 <body>
@@ -1337,20 +1450,12 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div id="particles-js"></div>
-    <div class="container">
+  <section class="hero" style="width: 100%; margin: 0; padding: 5rem 0; min-height: 100vh; display: flex; align-items: center;">
+    <div class="container" style="width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem; box-sizing: border-box;">
       <div class="hero-content">
-        <h1>Get the Right Business Loan or Credit Card</h1>
-        <p>Fast, flexible financing solutions for startups and growing businesses. Compare multiple offers and get funded quickly.</p>
+        <h1>Your Complete Loan Solution Starts Here</h1>
+        <p>From personal needs to business growth—find every loan type under one platform. Quick application, multiple offers, and faster approvals.</p>
         <div class="button-group" style="display: flex; gap: 16px; margin: 20px 0;">
-          <button class="cta-button primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-            Apply for Loans
-          </button>
           <a href="https://sales.gromo.in/c/pfF8TcsFDcEL07FMumgRm?versionCode=null" target="_blank" class="cta-button secondary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #28a745; color: white; border: none; cursor: pointer; padding: 12px 24px; border-radius: 6px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-decoration: none;">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -1359,13 +1464,46 @@
           </a>
         </div>
         <div class="loan-links">
-          <a href="#business-loan">Business Loan</a> | 
-          <a href="#personal-loan">Personal Loan</a> | 
-          <a href="#home-loan">Home Loan</a>
+          <a href="#business-loan">Credit Sarathi</a> <span style="color: #50a4b5;">|</span>
+          <a href="#personal-loan">Bima Sarathi</a> <span style="color: #50a4b5;">|</span>
+          <a href="#home-loan">Invest sarathi</a>
         </div>
       </div>
       <div class="hero-image">
-        <img src="images/Group 1.png" alt="Business Finance Solutions" />
+        <img src="images/illustartion.png" alt="Business Finance Solutions" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-logo">
+            <img src="images/creditsarthi.png" alt="Credit Sarathi" style="max-width: 120px; height: auto;">
+          </div>
+          <h3>Credit Sarathi</h3>
+          <p>Credit Sarathi helps users access quick and reliable credit and loan solutions.</p>
+          <a href="credit_corner.html" class="apply-button">Explore Credit Sarathi</a>
+        </div>
+        <div class="service-card">
+          <div class="service-logo">
+            <img src="images/bimasarthi.png" alt="Bima Sarathi" style="max-width: 120px; height: auto;">
+          </div>
+          <h3>Bima Sarathi</h3>
+          <p>Bima Sarathi offers insurance guidance and support for secure financial protection.</p>
+          <a href="bima_sarathi.html" class="apply-button">Explore Bima Sarathi</a>
+        </div>
+        <div class="service-card">
+          <div class="service-logo">
+            <img src="images/investsarthi.png" alt="Invest Sarathi" style="max-width: 120px; height: auto;">
+          </div>
+          <h3>Invest Sarathi</h3>
+          <p>Invest Sarathi provides investment assistance to help users grow their wealth wisely.</p>
+          <a href="invest_sarathi.html" class="apply-button">Explore Invest Sarathi</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1373,127 +1511,74 @@
   <!-- Business Loan Section -->
   <section id="business-loan" class="business-loan-section">
     <div class="container">
+      <h1 style="text-align: center; font-size: 2.5rem; color: #1a202c; margin-top: 1rem; line-height: 1.2; font-weight: 700; width: 100%;">Credit Sarathi</h1>
       <div class="business-loan-wrapper">
         <!-- Left Column - Image -->
         <div class="business-loan-image">
-          <img src="images/business1.png" alt="Business Finance Solutions" class="business-img" />
-          <div class="floating-tag">
-            <span class="tag-icon">💼</span>
-            <div class="tag-content">
-              <span class="tag-title">Quick Approval</span>
-              <span class="tag-desc">Get approved within 24 hours</span>
-            </div>
-          </div>
-        </div>
+  <img src="images/Credit_Sarathi.png" alt="Business Finance Solutions" class="business-img" style="transition: none;" />
+</div>
         
         <!-- Right Column - Content -->
-        <div class="business-loan-content">
-          <span class="section-subtitle">Business Financing</span>
-          <h2>Grow Your Business with <span class="highlight">Custom Loans</span></h2>
-          <p class="description">Unlock your business potential with our tailored financing solutions designed to fuel your growth and expansion plans.</p>
-          
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">💰</div>
-              <div class="feature-details">
-                <h4>Up to ₹2 Crores</h4>
-                <p>Flexible Loan Amount</p>
-              </div>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">📈</div>
-              <div class="feature-details">
-                <h4>Low Interest</h4>
-                <p>Competitive Rates</p>
-              </div>
-            </div>
-            <div class="feature-card wide">
-              <div class="feature-icon">⚡</div>
-              <div class="feature-details">
-                <h4>Quick Disbursal</h4>
-                <p>Get your funds disbursed within 24-48 hours of approval</p>
-              </div>
-            </div>
+        <div class="business-loan-content" style="padding: 2rem 0 0 0;">
+          <div style="margin-top: 2rem;">
+            <h2 style="font-size: 1.8rem; color: #6bcf9c; margin-bottom: 1.5rem; font-weight: 600;">Your Trusted <span style="color: #1a202c;">Credit Sarathi</span></h2>
+            <p class="description" style="color: #000000; font-size: 1.1rem; padding: 0.75rem 1.5rem; border: 1px solid #7dc1b8; border-radius: 19px; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; background: #daebe6; border: 1px solid rgba(0, 0, 0, 0.1);">
+              Credit Sarathi makes borrowing simple by connecting you with trusted lenders and the right loan options. Whether it's a Business, Personal, or Home Loan, we guide you to the best match with quick processing and transparent support, helping you secure funds at competitive rates.
+            </p>
+            
+            <div class="cta-group" style="margin-bottom: 2rem;">
+              <a href="credit_corner.html" class="cta-button primary" style="display: inline-block; text-decoration: none; font-weight: 500; font-size: 1rem; transition: all 0.3s ease; text-align: center;min-width: 200px;max-width: 100%; background: #2f5a4d;color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid rgba(0, 0, 0, 0.1);">
+    Explore Loan Options <span style="margin-left: 6px; transition: transform 0.3s ease; display: inline-block;">→</span>
+  </a>
+            
           </div>
           
-          <div class="cta-group">
-            <a href="#apply" class="cta-button primary">Apply Now <span>→</span></a>
-          </div>
-          
-          <div class="trust-badges">
-            <div class="badge">🔒 100% Secure</div>
-            <div class="badge">🏆 Trusted by 5000+ Businesses</div>
+          <div class="trust-badges" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            <div class="badge" style="display: flex; align-items: center; gap: 0.5rem; color: #4a5568; font-size: 0.95rem;">
+              <span>🔒</span> 100% Secure
+            </div>
+            <div class="badge" style="display: flex; align-items: center; gap: 0.5rem; color: #4a5568; font-size: 0.95rem;">
+              <span>🏆</span> Trusted by 10,000+ Customers
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="personal-loan" class="personal-loan-section" style="background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); padding: 4rem 0 3rem; position: relative; overflow: hidden;">
-    <div class="container" style="max-width: 1400px; margin: 0 auto;">
-      <div class="personal-loan-wrapper" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem; position: relative; z-index: 1; padding-top: 1rem;">
-        <!-- Left Column - Content -->
-        <div class="personal-loan-content" style="flex: 0 0 55%; max-width: 700px; padding: 0 1rem 0 0;">
-          <div class="section-subtitle" style="display: inline-block; background: rgba(74, 108, 247, 0.1); color: #4a6cf7; padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">Personal Loan</div>
-          
-          <h2 style="font-size: 2.2rem; color: #1a202c; margin-bottom: 1rem; line-height: 1.2;">Personal Loans for All Your Needs</h2>
-          
-          <p class="description" style="color: #4a5568; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; max-width: 100%;">
-            Meet your personal financial goals with our easy personal loan options. Minimal documentation and quick disbursal for all your needs.
-          </p>
-          
-          <div class="features-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin: 0 0 1.5rem; max-width: 100%;">
-            <div class="feature-card" style="background: white; padding: 10px; border-radius: 6px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);">
-              <div class="feature-icon" style="font-size: 0.9rem; color: #4a6cf7; background: rgba(74, 108, 247, 0.1); width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0;">💰</div>
-              <div class="feature-details">
-                <h4 style="font-size: 0.85rem; margin: 0; color: #1a202c; font-weight: 600;">Up to ₹25 Lakhs</h4>
-                <p style="font-size: 0.75rem; margin: 0.2rem 0 0; color: #718096;">Flexible Loan Amount</p>
-              </div>
-            </div>
-            
-            <div class="feature-card" style="background: white; padding: 10px; border-radius: 6px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);">
-              <div class="feature-icon" style="font-size: 0.9rem; color: #4a6cf7; background: rgba(74, 108, 247, 0.1); width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0;">📅</div>
-              <div class="feature-details">
-                <h4 style="font-size: 0.85rem; margin: 0; color: #1a202c; font-weight: 600;">1-5 Years</h4>
-                <p style="font-size: 0.75rem; margin: 0.2rem 0 0; color: #718096;">Repayment Tenure</p>
-              </div>
-            </div>
-            
-            <div class="feature-card wide" style="grid-column: span 2; background: white; padding: 10px; border-radius: 6px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);">
-              <div class="feature-icon" style="font-size: 0.9rem; color: #4a6cf7; background: rgba(74, 108, 247, 0.1); width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0;">⚡</div>
-              <div class="feature-details">
-                <h4 style="font-size: 0.85rem; margin: 0; color: #1a202c; font-weight: 600;">Quick Disbursal</h4>
-                <p style="font-size: 0.75rem; margin: 0.2rem 0 0; color: #718096;">Within 24-48 hours of approval</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="cta-group" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-            <a href="#apply" class="cta-button primary" style="background: #4a6cf7; color: white; border: none; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-              Apply Now <span style="margin-left: 8px; transition: transform 0.3s ease;">→</span>
-            </a>
-          </div>
-          
-          <div class="trust-badges" style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem;">
-            <div class="badge" style="background: white; color: #4a5568; font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
-              🔒 100% Secure
-            </div>
-            <div class="badge" style="background: white; color: #4a5568; font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
-              🏆 Trusted by 5000+ Customers
-            </div>
-          </div>
+ <section id="personal-loan" class="personal-loan-section" style="background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); padding: 4rem 0 3rem; position: relative; overflow: hidden;">
+  <div class="container" style="max-width: 1400px; margin: 0 auto; padding-top: 2rem;"> <!-- Added padding-top here -->
+    <h1 style="text-align: center; font-size: 2.5rem; color: #1a202c; margin: 2rem 0; line-height: 1.2; font-weight: 700; width: 100%;">Bima Sarathi</h1>
+    <div class="personal-loan-wrapper" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem; position: relative; z-index: 1; justify-content: space-around;"> <!-- Increased padding-top here -->
+      <div class="personal-loan-content" style="flex: 0 0 55%; max-width: 700px; padding: 2rem 1rem 0 0; margin-top: 1rem; "> <!-- Added padding-top and margin-top here -->
+        <h2 style="font-size: 1.8rem; color: #6bcf9c; margin-bottom: 1.5rem; font-weight: 600;">Your Insurance <span style="color: #1a202c;">Protection Partner</span></h2>
+        <p class="description" style="color: #000000; font-size: 1.1rem; padding: 0.75rem 1.5rem; border: 1px solid #7dc1b8; border-radius: 19px; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; background: #daebe6; border: 1px solid rgba(0, 0, 0, 0.1);">
+          Bima Sarathi makes insurance simple by helping you choose the right protection for your needs. Whether you're looking for health, life, or asset insurance, we guide you to the best plans with clear explanations and trustworthy support, ensuring you get reliable coverage at the right price.
+        </p>
+        
+        <div class="cta-group" style="display: flex; gap: 1rem; margin: 2rem 0;">
+          <a href="Bima_sarathi.html" class="cta-button primary" style="display: inline-block; text-decoration: none; font-weight: 500; font-size: 1rem; transition: all 0.3s ease; text-align: center;min-width: 200px;max-width: 100%; background: #2f5a4d;color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid rgba(0, 0, 0, 0.1);">
+            Explore Insurance Loans<span style="margin-left: 6px; transition: transform 0.3s ease; display: inline-block;">→</span>
+          </a>
         </div>
         
-        <!-- Right Column - Image -->
-        <div class="personal-loan-image" style="flex: 0 0 40%; max-width: 450px; position: relative; padding: 0; margin: -1.5rem -3rem 0 0; transform: translateY(0);">
-          <img src="images/personal.png" alt="Personal Loan" style="width: 100%; height: auto; border: none; box-shadow: none; background: transparent;">
-          <div class="floating-tag" style="position: absolute; top: 20px; right: -20px; background: #4a6cf7; color: white; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; font-weight: 600; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);">
-            <span>From 10.5%*</span>
+        <div class="trust-badges" style="display: flex; gap: 1.5rem; margin: 2rem 0 1rem; flex-wrap: wrap;">
+          <div class="badge" style="display: flex; align-items: center; gap: 0.5rem; color: #4a5568; font-size: 0.9rem; background: white; padding: 0.5rem 1rem; border-radius: 50px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <span>🔒</span> 100% Secure
+          </div>
+          <div class="badge" style="display: flex; align-items: center; gap: 0.5rem; color: #4a5568; font-size: 0.9rem; background: white; padding: 0.5rem 1rem; border-radius: 50px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <span>🏆</span> Trusted by 5,000+ Customers
           </div>
         </div>
       </div>
+      
+      <!-- Right Column - Image -->
+      <div class="personal-loan-image" style="flex: 0 0 40%; max-width: 450px; position: relative; transform: translateY(0);">
+        <img src="images/Bima_Sarathi.png" alt="Bima Sarathi Insurance" style="width: 100%; height: auto; border-radius: 8px;">
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Responsive styles for Personal Loan section -->
   <style>
@@ -1545,70 +1630,39 @@
   </style>
   
   <section id="home-loan" class="home-loan-section" style="background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); padding: 4rem 0 3rem; position: relative; overflow: hidden;">
-    <div class="container" style="max-width: 1400px; margin: 0 auto;">
-      <div class="home-loan-wrapper" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem; position: relative; z-index: 1; padding-top: 1rem;">
-        <!-- Left Column - Image -->
-        <div class="home-loan-image" style="flex: 0 0 40%; max-width: 450px; position: relative; padding: 0; margin: -1.5rem 0 0 -3rem; transform: translateY(0);">
-          <img src="images/Big.png" alt="Home Loan" style="width: 100%; height: auto; border: none; box-shadow: none; background: transparent;">
-          <div class="floating-tag" style="position: absolute; top: 20px; right: -20px; background: #4a6cf7; color: white; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; font-weight: 600; font-size: 0.9rem; box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);">
-            <span>From 8.4%*</span>
-          </div>
+  <div class="container" style="max-width: 1400px; margin: 0 auto;">
+    <h1 style="text-align: center; font-size: 2.5rem; color: #1a202c; margin: 1rem 0; line-height: 1.2; font-weight: 700; width: 100%;">Invest Sarathi</h1>
+    <div class="home-loan-wrapper" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem; position: relative; z-index: 1; padding-top: 1rem; justify-content: space-around;">
+      <!-- Left Column - Image -->
+      <div class="home-loan-image" style="flex: 0 0 40%; max-width: 450px; position: relative; padding: 0; margin: -1.5rem 0 0 -3rem; transform: translateY(0);">
+        <img src="images/Invest_Sarathi.png" alt="Home Loan" style="width: 100%; height: auto; border-radius: 8px;">
+      </div>
+      
+      <!-- Right Column - Content -->
+      <div class="home-loan-content" style="flex: 0 0 55%; max-width: 700px; padding: 0 1rem 0 0;">
+        <h2 style="font-size: 1.8rem; color: #6bcf9c; margin-bottom: 1.5rem; font-weight: 600;">Invest Today, <span style="color: #1a202c;">Prosper Tomorrow</span></h2>
+        <p class="description" style="color: #000000; font-size: 1.1rem; padding: 0.75rem 1.5rem; border: 1px solid #7dc1b8; border-radius: 19px; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; background: #daebe6; border: 1px solid rgba(0, 0, 0, 0.1);">
+          Invest Sarathi makes investing easier by connecting you with smart, reliable wealth-building options. Whether you want to start SIPs, explore mutual funds, or grow your savings through secure investment plans, we guide you with clear insights and trusted recommendations, helping you build your future with confidence.
+        </p>
+        
+        <div class="cta-group" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="invest_sarathi.html" class="cta-button primary" style="display: inline-block; text-decoration: none; font-weight: 500; font-size: 1rem; transition: all 0.3s ease; text-align: center;min-width: 200px;max-width: 100%; background: #2f5a4d;color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid rgba(0, 0, 0, 0.1);">
+    Explore Loan Options <span style="margin-left: 6px; transition: transform 0.3s ease; display: inline-block;">→</span>
+  </a>
         </div>
         
-        <!-- Right Column - Content -->
-        <div class="home-loan-content" style="flex: 0 0 55%; max-width: 700px; padding: 0 1rem 0 0;">
-          <div class="section-subtitle" style="display: inline-block; background: rgba(74, 108, 247, 0.1); color: #4a6cf7; padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">Home Loan</div>
-          
-          <h2 style="font-size: 2.2rem; color: #1a202c; margin-bottom: 1rem; line-height: 1.2;">Your Dream Home Awaits</h2>
-          
-          <p class="description" style="color: #4a5568; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem; max-width: 100%;">
-            Turn your dream home into reality with our attractive home loan options. Special rates for first-time home buyers and flexible repayment plans.
-          </p>
-          
-          <div class="features-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin: 0 0 1.5rem; max-width: 100%;">
-            <div class="feature-card" style="background: white; padding: 10px; border-radius: 6px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);">
-              <div class="feature-icon" style="font-size: 0.9rem; color: #4a6cf7; background: rgba(74, 108, 247, 0.1); width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0;">🏠</div>
-              <div class="feature-details">
-                <h4 style="font-size: 0.85rem; margin: 0; color: #1a202c; font-weight: 600;">Up to ₹5 Crores</h4>
-                <p style="font-size: 0.75rem; margin: 0.2rem 0 0; color: #718096;">Loan Amount</p>
-              </div>
-            </div>
-            
-            <div class="feature-card" style="background: white; padding: 10px; border-radius: 6px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);">
-              <div class="feature-icon" style="font-size: 0.9rem; color: #4a6cf7; background: rgba(74, 108, 247, 0.1); width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0;">📅</div>
-              <div class="feature-details">
-                <h4 style="font-size: 0.85rem; margin: 0; color: #1a202c; font-weight: 600;">Up to 30 Years</h4>
-                <p style="font-size: 0.75rem; margin: 0.2rem 0 0; color: #718096;">Repayment Tenure</p>
-              </div>
-            </div>
-            
-            <div class="feature-card wide" style="grid-column: span 2; background: white; padding: 10px; border-radius: 6px; display: flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); border: 1px solid rgba(0, 0, 0, 0.03);">
-              <div class="feature-icon" style="font-size: 0.9rem; color: #4a6cf7; background: rgba(74, 108, 247, 0.1); width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0;">💰</div>
-              <div class="feature-details">
-                <h4 style="font-size: 0.85rem; margin: 0; color: #1a202c; font-weight: 600;">Low Interest Rates</h4>
-                <p style="font-size: 0.75rem; margin: 0.2rem 0 0; color: #718096;">Competitive rates starting from 8.4%*</p>
-              </div>
-            </div>
+        <div class="trust-badges" style="display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;">
+          <div class="badge" style="display: flex; align-items: center; gap: 0.5rem; color: #4a5568; font-size: 0.95rem;">
+            <span>🔒</span> 100% Secure
           </div>
-          
-          <div class="cta-group" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-            <a href="#apply" class="cta-button primary" style="background: #4a6cf7; color: white; border: none; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-              Apply Now <span style="margin-left: 8px; transition: transform 0.3s ease;">→</span>
-            </a>
-          </div>
-          
-          <div class="trust-badges" style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem;">
-            <div class="badge" style="background: white; color: #4a5568; font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
-              🔒 100% Secure
-            </div>
-            <div class="badge" style="background: white; color: #4a5568; font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);">
-              🏆 Trusted by 3000+ Homeowners
-            </div>
+          <div class="badge" style="display: flex; align-items: center; gap: 0.5rem; color: #4a5568; font-size: 0.95rem;">
+            <span>🏆</span> Trusted by 10,000+ Customers
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   
   <style>
     @media (max-width: 992px) {
@@ -1706,392 +1760,87 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials" style="padding: 5rem 0; background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%); overflow: hidden;">
-    <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 1rem;">
-      <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
-        <h2 style="font-size: 2.2rem; color: #1a202c; margin-bottom: 1rem;">What Our Customers Say</h2>
-        <p style="color: #4a5568; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Hear from businesses and individuals who've experienced our services</p>
-      </div>
-      
-      <div class="testimonials-container" style="position: relative; overflow: hidden;">
-        <div class="testimonial-track" style="display: flex; gap: 2rem; padding: 2rem 0;">
-          <!-- Testimonial Items (will be duplicated by JavaScript) -->
-          <div class="testimonial-item" style="flex: 0 0 350px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-            <div class="testimonial-content" style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7; font-style: italic;">
-              "The loan process was incredibly smooth. I got the funds I needed for my business expansion within 48 hours. Highly recommended!"
+  <section id="how-it-works" class="py-16 md:py-24" style="background-color: #e9f7f5;">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900">Get Your Loan in 4 Simple Steps</h2>
+                    <p class="mt-2 text-lg text-slate-600">Our streamlined process is designed for your convenience.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-4">
+                    <div class="text-center p-4" style="background: transparent;border-radius: 30px;padding: 1rem 1rem;text-align: center;transition: transform 0.3s ease, border-color 0.3s ease;border: 1px solid rgba(0, 0, 0, 0.1);">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full text-white text-2xl font-bold mx-auto" style="background-color: rgb(80 154 144);">1</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Tell Us Your Needs</h3>
+                        <p class="mt-2 text-base text-slate-600">Fill out our simple "Apply Now" form or request assistance. It takes just 2 minutes.</p>
+                    </div>
+                    <div class="text-center p-4" style="background: transparent;border-radius: 30px;padding: 1rem 1rem;text-align: center;transition: transform 0.3s ease, border-color 0.3s ease;border: 1px solid rgba(0, 0, 0, 0.1);">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full text-white text-2xl font-bold mx-auto" style="background-color: rgb(80 154 144);">2</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Get Instantly Matched</h3>
+                        <p class="mt-2 text-base text-slate-600">Our algorithm compares your profile with 40+ lenders to find the best offers for you.</p>
+                    </div>
+                    <div class="text-center p-4" style="background: transparent;border-radius: 30px;padding: 1rem 1rem;text-align: center;transition: transform 0.3s ease, border-color 0.3s ease;border: 1px solid rgba(0, 0, 0, 0.1);">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full text-white text-2xl font-bold mx-auto" style="background-color: rgb(80 154 144);">3</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Expert Assistance</h3>
+                        <p class="mt-2 text-base text-slate-600">Our loan expert contacts you to discuss options and helps you complete your application.</p>
+                    </div>
+                    <div class="text-center p-4" style="background: transparent;border-radius: 30px;padding: 1rem 1rem;text-align: center;transition: transform 0.3s ease, border-color 0.3s ease;border: 1px solid rgba(0, 0, 0, 0.1);">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full text-white text-2xl font-bold mx-auto"style="background-color: rgb(80 154 144);">4</div>
+                        <h3 class="mt-4 text-xl font-semibold text-slate-900">Loan Disbursed</h3>
+                        <p class="mt-2 text-base text-slate-600">Once approved, your loan amount is transferred directly to your bank account, often within 24 hours.</p>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-              <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #4a6cf7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">AS</div>
-              <div>
-                <h4 style="margin: 0 0 0.2rem; color: #1a202c;">Amit Sharma</h4>
-                <p style="margin: 0; color: #718096; font-size: 0.9rem;">Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-item" style="flex: 0 0 350px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-            <div class="testimonial-content" style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7; font-style: italic;">
-              "Excellent customer service! The team guided me through the entire process and helped me get a great rate on my home loan."
-            </div>
-            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-              <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #4a6cf7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">PD</div>
-              <div>
-                <h4 style="margin: 0 0 0.2rem; color: #1a202c;">Priya Desai</h4>
-                <p style="margin: 0; color: #718096; font-size: 0.9rem;">Homeowner</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-item" style="flex: 0 0 350px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-            <div class="testimonial-content" style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7; font-style: italic;">
-              "As a startup, getting funding was challenging, but Credit Corner made it possible. Their business loan options are perfect for new entrepreneurs."
-            </div>
-            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-              <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #4a6cf7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">RM</div>
-              <div>
-                <h4 style="margin: 0 0 0.2rem; color: #1a202c;">Rahul Mehta</h4>
-                <p style="margin: 0; color: #718096; font-size: 0.9rem;">Startup Founder</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-item" style="flex: 0 0 350px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-            <div class="testimonial-content" style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7; font-style: italic;">
-              "The personal loan process was quick and hassle-free. I got approved within hours and the money was in my account the next day."
-            </div>
-            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-              <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #4a6cf7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">SK</div>
-              <div>
-                <h4 style="margin: 0 0 0.2rem; color: #1a202c;">Sneha Kapoor</h4>
-                <p style="margin: 0; color: #718096; font-size: 0.9rem;">Marketing Professional</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-item" style="flex: 0 0 350px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-            <div class="testimonial-content" style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7; font-style: italic;">
-              "I've used their services multiple times for my business. The team is professional, and their rates are very competitive."
-            </div>
-            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-              <div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: #4a6cf7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">VG</div>
-              <div>
-                <h4 style="margin: 0 0 0.2rem; color: #1a202c;">Vikram Gupta</h4>
-                <p style="margin: 0; color: #718096; font-size: 0.9rem;">Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <style>
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-370px * 5 - 2rem * 4));
-          }
-        }
-        
-        .testimonial-track {
-          animation: scroll 30s linear infinite;
-          width: max-content;
-        }
-        
-        .testimonial-track:hover {
-          animation-play-state: paused;
-        }
-        
-        @media (max-width: 768px) {
-          .testimonial-item {
-            flex: 0 0 300px !important;
-          }
-          
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(calc(-320px * 5 - 2rem * 4));
-            }
-          }
-        }
-      </style>
-      
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const track = document.querySelector('.testimonial-track');
-          const items = document.querySelectorAll('.testimonial-item');
-          
-          // Duplicate items for seamless scrolling
-          items.forEach(item => {
-            const clone = item.cloneNode(true);
-            track.appendChild(clone);
-          });
-          
-          // Pause animation on hover
-          track.addEventListener('mouseenter', () => {
-            track.style.animationPlayState = 'paused';
-          });
-          
-          track.addEventListener('mouseleave', () => {
-            track.style.animationPlayState = 'running';
-          });
-        });
-      </script>
-    </div>
-  </section>
+        </section>
 
-  <!-- Application Form Modal -->
-  <style>
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
-      transition: all 0.3s ease;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .modal.show {
-      display: flex;
-      animation: modalFadeIn 0.3s ease-out;
-    }
-    
-    .modal-content {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 10px 50px rgba(0,0,0,0.2);
-      width: 90%;
-      max-width: 800px;
-      position: relative;
-      transform: scale(0.95);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      opacity: 0;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    
-    .modal.show .modal-content {
-      transform: scale(1);
-      opacity: 1;
-    }
-    
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #4a5568;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      background-color: #f8fafc;
-    }
-    
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #4a6cf7;
-      background-color: #fff;
-      box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
-    }
-    
-    #formMessage {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      display: none;
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-    
-    .modal-close-btn {
-      position: absolute;
-      right: 1.5rem;
-      top: 1.5rem;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      font-size: 1.25rem;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      z-index: 10;
-    }
-    
-    .modal-close-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: rotate(90deg);
-    }
-    
-    .btn-submit {
-      background: linear-gradient(135deg, #4a6cf7 0%, #3a5bd9 100%);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-      margin-top: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 15px rgba(74, 108, 247, 0.3);
-    }
-    
-    .btn-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(74, 108, 247, 0.4);
-    }
-    
-    .btn-submit:active {
-      transform: translateY(0);
-    }
-    
-    .modal-header {
-      background: linear-gradient(135deg, #4a6cf7 0%, #3a5bd9 100%);
-      color: white;
-      padding: 2.5rem 2rem 2rem;
-      border-radius: 12px 12px 0 0;
-      text-align: center;
-      position: relative;
-    }
-    
-    .modal-header h2 {
-      margin: 0;
-      color: white;
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    
-    .modal-body {
-      padding: 2rem;
-    }
-    
-    @media (max-width: 768px) {
-      .modal-content {
-        width: 95%;
-        max-width: 100%;
-        margin: 1rem;
-      }
-      
-      .modal-header {
-        padding: 1.75rem 1.5rem 1.5rem;
-      }
-      
-      .modal-header h2 {
-        font-size: 1.5rem;
-      }
-      
-      .modal-close-btn {
-        right: 1rem;
-        top: 1rem;
-        width: 32px;
-        height: 32px;
-      }
-    }
-  </style>
-  
-  <div id="applicationModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Get the Right Loan for Your Needs</h2>
-        <button class="modal-close-btn" id="closeModalBtn">&times;</button>
-      </div>
-      <div class="modal-body">
-      <form id="loanApplicationForm" style="display: grid; gap: 1.2rem;">
-        <div class="form-group">
-          <label for="fullName" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Full Name *</label>
-          <input type="text" id="fullName" name="fullName" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;">
-        </div>
+  <section id="partners" class="py-16 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-center text-xl font-semibold text-slate-700">Trusted by over 40+ leading banks and NBFCs</h2>
         
-        <div class="form-group">
-          <label for="email" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Email *</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required 
-            style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;"
-            placeholder="your@email.com"
-          >
+        <div class="marquee-container mt-8">
+            <div class="marquee-content">
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">HDFC Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">ICICI Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Axis Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">State Bank of India (SBI)</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Kotak Mahindra Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bajaj Finserv</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Tata Capital</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IDFC First Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Poonawalla Fincorp</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bank of Baroda</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IndusInd Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Yes Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Aditya Birla Finance</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">HDB Financial Services</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">SMFG India Credit</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Navi</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Moneyview</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Fibe (EarlySalary)</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">KreditBee</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">MoneyTap</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">PAYTM</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">L&T Finance</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">CASHe</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">RBL Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Federal Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Union Bank of India</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Punjab National Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Canara Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Standard Chartered</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">AU Small Finance Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Mahindra Finance</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Shriram Finance</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IIFL Finance</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Zype</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Upwards</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Indiabulls</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Bandhan Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">IDBI Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">DBS Bank</span>
+                <span class="inline-block py-3 px-6 bg-white border border-slate-200 rounded-lg mr-4 text-slate-700 font-medium whitespace-nowrap">Lendingkart</span>
+            </div>
         </div>
-        
-        <div class="form-group">
-          <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;">
-        </div>
-        
-        <div class="form-group">
-          <label for="company" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Company Name</label>
-          <input type="text" id="company" name="company" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;">
-        </div>
-        
-        <div class="form-group">
-          <label for="loanAmount" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Required Loan Amount (₹)</label>
-          <input type="number" id="loanAmount" name="loanAmount" min="100000" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;">
-        </div>
-        
-        <div class="form-group">
-          <label for="purpose" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Purpose of Loan</label>
-          <select id="purpose" name="purpose" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem; background-color: white;">
-            <option value="" disabled selected>Select purpose</option>
-            <option value="Working Capital">Working Capital</option>
-            <option value="Equipment Purchase">Equipment Purchase</option>
-            <option value="Business Expansion">Business Expansion</option>
-            <option value="Inventory Purchase">Inventory Purchase</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="cibilScore" style="display: block; margin-bottom: 0.5rem; color: #4a5568; font-weight: 500;">Approximate CIBIL Score (if known)</label>
-          <input type="number" id="cibilScore" name="cibilScore" min="300" max="900" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 1rem;">
-        </div>
-        
-        <button type="submit" class="btn-submit">
-          Submit Application
-        </button>
-      </form>
-      <div id="formMessage"></div>
-      </div>
     </div>
-  </div>
+</section>
 
   <!-- Footer -->
   <footer class="main-footer">
@@ -2107,9 +1856,9 @@
           </div>
           <div class="social-links">
             <a href="https://www.facebook.com/share/1B8PLqLGoU/" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0C157.8 0 105.22 45.96 105.22 132.28v65.7H32.01V288h73.21v224h92.57V288z"/></svg></a>
-            <a href="https://www.instagram.com/rig_global?igsh=dHphaWdpemUydGZl" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+            <a href="https://www.instagram.com/rig_global?igshid=dHphaWdpemUydGZl" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
             <a href="https://www.linkedin.com/company/rig-global-solutions/" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
-            <a href="https://wa.me/c/918617715655" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+            <a href="https://wa.me/c/918617715655" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
           </div>
         </div>
         <div class="footer-col">
@@ -2125,9 +1874,8 @@
         <div class="footer-col">
           <h4 class="col-title">Quick Links</h4>
           <ul>
-            <li><a href="credit_corner.html">Credit Corner</a></li>
+            <li><a href="credit_sarthi.html">Credit Sarathi</a></li>
             <li><a href="#">About Us</a></li>
-            <li><a href="#services">Services</a></li>
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
           </ul>
@@ -2142,176 +1890,10 @@
   <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
   </button>
-  
   <!-- Particles.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <script>
-    // Modal functionality with smooth animations
-    function openModal() {
-      const modal = document.getElementById('applicationModal');
-      modal.style.display = 'flex';
-      // Force reflow to enable transition
-      void modal.offsetWidth;
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-  
-    function closeModal() {
-      const modal = document.getElementById('applicationModal');
-      modal.classList.remove('show');
-      setTimeout(() => {
-        if (!modal.classList.contains('show')) {
-          modal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      }, 300);
-    }
-  
-    // Modal functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById('applicationModal');
-      const closeBtn = document.getElementById('closeModalBtn');
-      const applyBtns = document.querySelectorAll('.cta-button.primary, .btn-primary, .btn-apply');
-      const formMessage = document.getElementById('formMessage');
-      
-      // Open modal when any Apply Now button is clicked
-      applyBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          openModal();
-        });
-      });
-      
-      // Close modal when clicking the close button
-      closeBtn.addEventListener('click', closeModal);
-      
-      // Prevent modal from closing when clicking inside the modal content
-      document.querySelector('.modal-content').addEventListener('click', function(event) {
-        event.stopPropagation();
-      });
-      
-      // Close modal when pressing Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          closeModal();
-        }
-      });
-      
-      // Form submission
-      const form = document.getElementById('loanApplicationForm');
-      if (form) {
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          // Get form data
-          const formData = new FormData(this);
-          const formObject = {};
-          formData.forEach((value, key) => formObject[key] = value);
-          
-          // Show loading state
-          if (formMessage) {
-            formMessage.textContent = 'Submitting your application...';
-            formMessage.style.display = 'block';
-            formMessage.style.backgroundColor = '#e2e8f0';
-            formMessage.style.color = '#4a5568';
-          }
-          
-          try {
-            // Replace with your Google Apps Script Web App URL (ends with /exec)
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbz6JSjBIsXdFS94s-s4g1ZtxFFFGwXtRfVOGYmxKLyMa_36PEhkqJHqQMI1kVVMvFuzyw/exec';
-            
-            console.log('Submitting form data:', formObject);
-            
-            // Convert FormData to plain object
-            const formData = {};
-            for (let [key, value] of new FormData(this).entries()) {
-              formData[key] = value;
-            }
-            
-            // Add timestamp to prevent caching
-            const urlWithTimestamp = `${scriptURL}?t=${Date.now()}`;
-            
-            // Make the POST request
-            const response = await fetch(urlWithTimestamp, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              // Convert form data to URL-encoded format
-              body: new URLSearchParams(formData).toString()
-            });
-            
-            if (!response.ok) {
-              const errorText = await response.text();
-              console.error('Server error:', response.status, errorText);
-              throw new Error(`Server responded with status ${response.status}: ${errorText}`);
-            }
-            
-            // Get the response as text first to handle potential parsing issues
-            const responseText = await response.text();
-            let result;
-            
-            try {
-              result = JSON.parse(responseText);
-              console.log('Server response:', result);
-            } catch (e) {
-              console.log('Non-JSON response:', responseText);
-              // If we can't parse JSON, assume success if we got a 200 response
-              result = { status: 'success', message: 'Form submitted successfully' };
-            }
-            
-            // Check for success in both 'status' and 'result' fields for compatibility
-            if ((result.status === 'success' || result.result === 'success')) {
-              if (formMessage) {
-                formMessage.textContent = 'Application submitted successfully! We will contact you soon.';
-                formMessage.style.backgroundColor = '#48bb78';
-                formMessage.style.color = 'white';
-              }
-              
-              // Reset form
-              this.reset();
-              
-              // Close modal after 3 seconds
-              setTimeout(() => {
-                closeModal();
-              }, 3000);
-            } else {
-              // Handle case where the form submitted but returned an error message
-              const errorMessage = result.message || 'There was an issue processing your submission. Please try again.';
-              console.error('Form submission error:', errorMessage);
-              throw new Error(errorMessage);
-            }
-          } catch (error) {
-            console.error('Error!', error);
-            if (formMessage) {
-              // Make error message more user-friendly
-              let displayMessage = 'Failed to submit form. ';
-              
-              if (error.message.includes('NetworkError')) {
-                displayMessage += 'Please check your internet connection and try again.';
-              } else if (error.message.includes('Failed to fetch')) {
-                displayMessage += 'Unable to connect to the server. Please try again later.';
-              } else {
-                displayMessage += error.message || 'Please try again or contact support if the issue persists.';
-              }
-              
-              formMessage.textContent = displayMessage;
-              formMessage.style.backgroundColor = '#f56565';
-              formMessage.style.color = 'white';
-              
-              // Auto-hide error after 5 seconds
-              setTimeout(() => {
-                if (formMessage.textContent === displayMessage) {
-                  formMessage.style.display = 'none';
-                }
-              }, 5000);
-            }
-          }
-        });
-      }
-    });
-    
     // Function to hide loading overlay
     function hideLoadingOverlay() {
       const loadingOverlay = document.getElementById('loadingOverlay');
